@@ -9,18 +9,18 @@ Logs: <br>
 ------------------------------------------------------------------------------------------
 
 <p>2) Токенизация учебной модели, но без токенизации ожидаемого ответа : </p>
-		<p>Results: </p>
-		<p>TotalTests: 7537 </p>
-		<p>SpellerRate 19.56%, YandexRate 9.58% </p>
-Все кейсы: ./logs/normilizedModel_notNormalizedTestWord_logs.txt
+		Results: <br>
+		TotalTests: 7537 <br>
+		SpellerRate 19.56%, YandexRate 9.58% <br><br>
+Все кейсы: ./logs/normilizedModel_notNormalizedTestWord_logs.txt<br>
 Яндекс справился, а наш спеллер нет: ./logs/normilizedModel_notNormalizedTestWord_yaRigth_spellWrong_log.txt
 
 ------------------------------------------------------------------------------------------
 <p>3) Токенизация учебной модели и токенизация ожидаемого ответа: </p>
-		<p>Results:
-		<p>TotalTests: 7429
-		<p>SpellerRate 41.59%, YandexRate 6.97%
-Все кейсы: ./logs/normalizedModel_normalizedTestWord_logs.txt
+		Results:<br>
+		TotalTests: 7429<br>
+		SpellerRate 41.59%, YandexRate 6.97%<br><br>
+Все кейсы: ./logs/normalizedModel_normalizedTestWord_logs.txt<br>
 Яндекс справился, а наш спеллер нет: ./logs/normalizedModel_normalizedTestWord_yaRigth_spellWrong_log.txt
 
 ------------------------------------------------------------------------------------------
