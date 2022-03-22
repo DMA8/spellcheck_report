@@ -1,7 +1,7 @@
 <p>1) Без токенизации учебной модели и ожидаемого ответа : </p>
-	<p>Results: </p>
-	<p>TotalTests: 7388</p>
-	<p>SpellerRate 50.05%, YandexRate 9.77% </p>
+	Results: <br>
+	TotalTests: 7388<br>
+	SpellerRate 50.05%, YandexRate 9.77% <br>
 
 Logs: <br>
 Все кейсы: ./logs/not_normalized_logs.txt <br>
