@@ -3,7 +3,8 @@
 	<p>TotalTests: 7388</p>
 	<p>SpellerRate 50.05%, YandexRate 9.77% </p>
 
-Все кейсы: ./logs/not_normalized_logs.txt
+Logs: <\br>
+Все кейсы: ./logs/not_normalized_logs.txt <\br>
 Яндекс справился, а наш спеллер нет: ./logs/not_normalized_yaRigth_spellWrong_log.txt
 
 ------------------------------------------------------------------------------------------
