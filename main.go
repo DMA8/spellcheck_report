@@ -129,8 +129,9 @@ func main() {
 		}
 		set[msg] = struct{}{}
 		msg = strings.Trim(msg, "\n")
-		msg = speller.SpellCorrect(msg)
+		msg = speller.SpellCorrect(msg) //токенизация тестового слова
 		myErrors := errorGenerator.GenerateTwoErrorNTimes(msg, testCasesPerWord)
+		//не обработан случай, когда сгенерированная ошибка превращается в слово без орфографических ошибок.
 		mu.Lock()
 		for RightWord, generatedErrors := range myErrors {
 			spelRight, yaRigth := 0, 0
