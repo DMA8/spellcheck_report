@@ -1,8 +1,7 @@
 <p>1) Без токенизации учебной модели и ожидаемого ответа : </p>
 	Results: <br>
 	TotalTests: 7388<br>
-	SpellerRate 50.05%, YandexRate 9.77% <br>
-
+	SpellerRate 50.05%, YandexRate 9.77% <br><br>
 Logs: <br>
 Все кейсы: ./logs/not_normalized_logs.txt <br>
 Яндекс справился, а наш спеллер нет: ./logs/not_normalized_yaRigth_spellWrong_log.txt
