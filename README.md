@@ -1,3 +1,24 @@
+ТЕСТ БРЕНДОВ:
+
+<p>Бренды на английском</p>
+Results:<br>
+ TotalTests: 8005<br>
+ SpellerRate 43.44%, YandexRate 10.93%<br>
+ 
+ YandexFails 7130 SpellerRight 2854 SpellerRate 40.03% (Спеллер исправил 40% ошибок яндекса)<br>
+Logs: <br>
+Все кейсы: ./logs/EngBrandsLogs.txt <br>
+Яндекс справился, а наш спеллер нет: ./logs/EngBrandsYaRigth_spellWrong_log.txt
+Яндекс ошибся, а наш спеллер смог исправить: ./logs/EngBrandsSpellerRightYandexWrong.txt
+
+----------------------------------------------------------------------------------------
+
+<p>Бренды на русском</p>
+Results:<br>
+ TotalTests: 8005<br>
+ SpellerRate 59.14%, YandexRate 28.31%<br>
+
+==========================================================================================
 <p>1) Без токенизации учебной модели и ожидаемого ответа : </p>
 	Results: <br>
 	TotalTests: 7388<br>
