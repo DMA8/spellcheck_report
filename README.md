@@ -8,8 +8,8 @@ Results:<br>
  YandexFails 7130 SpellerRight 2854 SpellerRate 40.03% (Спеллер исправил 40% ошибок яндекса)<br>
 Logs: <br>
 Все кейсы: ./logs/EngBrandsLogs.txt <br>
-Яндекс справился, а наш спеллер нет: ./logs/EngBrandsYaRigth_spellWrong_log.txt
-Яндекс ошибся, а наш спеллер смог исправить: ./logs/EngBrandsSpellerRightYandexWrong.txt
+Яндекс справился, а наш спеллер нет: ./logs/EngBrandsYaRigth_spellWrong_log.txt<br>
+Яндекс ошибся, а наш спеллер смог исправить: ./logs/EngBrandsSpellerRightYandexWrong.txt<br>
 
 ----------------------------------------------------------------------------------------
 
@@ -21,8 +21,8 @@ Results:<br>
 <br>
 Logs: <br>
 Все кейсы: ./logs/RU_Brand_Logs.txt <br>
-Яндекс справился, а наш спеллер нет: ./logs/RU_BrandLogs_YaRigth_spellWrong_log.txt
-Яндекс ошибся, а наш спеллер смог исправить: ./logs/RU_Brand_LogsSpellerRightYandexWrong.txt
+Яндекс справился, а наш спеллер нет: ./logs/RU_BrandLogs_YaRigth_spellWrong_log.txt<br>
+Яндекс ошибся, а наш спеллер смог исправить: ./logs/RU_Brand_LogsSpellerRightYandexWrong.txt<br>
 
 ==========================================================================================
 
