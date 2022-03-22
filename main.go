@@ -1,12 +1,15 @@
 package main
 
 import (
-	"bufio"
+	//	"bufio"
+	"encoding/csv"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
+	"regexp"
 	"strings"
 	"sync"
 	"time"
@@ -19,7 +22,7 @@ import (
 
 const (
 	serviceURL       = "http://speller.yandex.net/services/spellservice.json/checkText"
-	nTests           = 10000
+	nTests           = 8000
 	testCasesPerWord = 5
 )
 
@@ -103,7 +106,53 @@ func finishWhenFail(CounterAllTested, CounterSpellerRight, CounterYandexRight, C
 	os.Exit(0)
 }
 
+func getBrandRU(csvReader *csv.Reader) (string, error) {
+	pattern := `^[а-яА-Я\s-]*$`
+	r, err := regexp.Compile(pattern)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for {
+		records, err := csvReader.Read()
+		if err != nil || len(records) < 2{
+			log.Print(err)
+			records, err = csvReader.Read()
+			return "", err
+		}
+		brand := records[1]
+		if r.MatchString(brand) {
+			return strings.ToLower(brand), err
+		}
+	}
+}
+
+func getBrandEN(csvReader *csv.Reader) (string, error) {
+	pattern := `^[a-zA-Z\s-]*$`
+	r, err := regexp.Compile(pattern)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for {
+		records, err := csvReader.Read()
+		if err != nil || len(records) < 2{
+			log.Print(err)
+			//records, err = csvReader.Read()
+			return "", err
+		}
+		brand := records[1]
+		if r.MatchString(brand) {
+			return strings.ToLower(brand), nil
+		}
+	}
+}
+
 func main() {
+	brands, err := os.Open("top-brands-report.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer brands.Close()
+	csvReader := csv.NewReader(brands)
 	var mu sync.Mutex
 	var CounterAllTested, CounterSpellerRight, CounterYandexRight, CounterYandexWrong, CounterSpellerRightWhenYandexWrong int
 
@@ -118,14 +167,14 @@ func main() {
 	done := make(chan struct{})
 
 	// load model
-	err := speller.LoadModel("models/with_brand.gz")
+	err = speller.LoadModel("models/with_brand.gz")
 	if err != nil {
 		fmt.Printf("No such file: %v\n", err)
 		done <- struct{}{}
 		log.Println(err)
 	}
 
-	testFile, err := os.Open("sentences.txt")
+	//testFile, err := os.Open("sentences.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -133,7 +182,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	reader := bufio.NewScanner(testFile)
+	//reader := bufio.NewScanner(testFile)
 	go func() {
 		c := make(chan os.Signal, 1)
 		signal.Notify(c, os.Interrupt)
@@ -150,11 +199,16 @@ func main() {
 	}
 
 	fmt.Fprint(failLogs, "(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*\n\n")
-	for ok := reader.Scan(); ok; {
+	for {
 		var flagLine bool
-		msg := reader.Text()
-		if _, ok := set[msg]; ok || !isCyrillic(msg) || len([]rune(msg)) < 3 {
-			ok = reader.Scan()
+		msg, err := getBrandRU(csvReader)
+		if err == io.EOF {
+			done <- struct{}{}
+			time.Sleep(time.Second * 10)
+			os.Exit(0)
+		}
+		if _, ok := set[msg]; ok || len([]rune(msg)) < 3 {
+			//ok = reader.Scan()
 			continue
 		}
 		set[msg] = struct{}{}
@@ -167,7 +221,6 @@ func main() {
 			spelRight, yaRigth := 0, 0
 			fmt.Printf("Tested word is %s:\n", RightWord)
 			for _, generatedError := range generatedErrors {
-				// yandexResult := testYA(generatedError, CounterAllTested, CounterSpellerRight, CounterYandexRight)
 				yandexResult, _ := yandexSpellerClient.SpellCheck(generatedError)
 				spellerResult := speller.SpellCorrect(generatedError)
 				CounterAllTested++
@@ -194,16 +247,17 @@ func main() {
 			}
 			fmt.Printf("spellerRight: %d, yaRight %d\n", spelRight, yaRigth)
 			fmt.Println("------------------------------------------------------------------")
-			if flagLine{
+			if flagLine {
 				fmt.Fprintf(spellerRightWhenYandexWrond, "-------------------------------------\n")
 				flagLine = false
 			}
 
 			if CounterAllTested > nTests {
+				mu.Unlock()
 				done <- struct{}{}
+				time.Sleep(time.Second * 10)
 			}
 		}
 		mu.Unlock()
-		ok = reader.Scan()
 	}
 }
