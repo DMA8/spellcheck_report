@@ -5,7 +5,7 @@ Results:<br>
  TotalTests: 8005<br>
  SpellerRate 43.44%, YandexRate 10.93%<br>
  
- YandexFails 7130 SpellerRight 2854 SpellerRate 40.03% (Спеллер исправил 40% ошибок яндекса)<br>
+ YandexFails 7130 SpellerRight 2854 SpellerRate 40.03% (Спеллер исправил 40% ошибок яндекса)<br><br>
 Logs: <br>
 Все кейсы: ./logs/EngBrandsLogs.txt <br>
 Яндекс справился, а наш спеллер нет: ./logs/EngBrandsYaRigth_spellWrong_log.txt<br>
