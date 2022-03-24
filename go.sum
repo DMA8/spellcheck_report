@@ -1,9 +1,5 @@
 github.com/Saimunyz/speller v0.0.0-20220321182414-5e532fbe8227 h1:IcOQZHheQtBgfwMIGDxpK8NTg01KBAbXLQVaEgYXVSw=
 github.com/Saimunyz/speller v0.0.0-20220321182414-5e532fbe8227/go.mod h1:9jDnzaYt7TuiIYwwgK4+mHUdn8tR9LqcgbRunCLYwCA=
-github.com/Saimunyz/speller v0.0.0-20220322162113-e98c0b85efdb h1:5UK2Yeeo+IIAnNJpsOI87BYAEiUtR6dAfghG69QDrV8=
-github.com/Saimunyz/speller v0.0.0-20220322162113-e98c0b85efdb/go.mod h1:9jDnzaYt7TuiIYwwgK4+mHUdn8tR9LqcgbRunCLYwCA=
-github.com/Saimunyz/speller v0.0.0-20220322165348-9c673baffe7d h1:8qZVxjybiOk95nXOhnTSTvWJSHx8R/1wIJD9uvNXECY=
-github.com/Saimunyz/speller v0.0.0-20220322165348-9c673baffe7d/go.mod h1:9jDnzaYt7TuiIYwwgK4+mHUdn8tR9LqcgbRunCLYwCA=
 github.com/eskriett/spell v0.0.0-20210919200434-03313e3b725f h1:mPynKhbnZ23WhRhoPILHnoWPmBggreHEjd8EQZ66ddM=
 github.com/eskriett/spell v0.0.0-20210919200434-03313e3b725f/go.mod h1:7rKRnfuXt5i1vs60OAWNrgaT3t1Xr2Brh1mX7s9LQow=
 github.com/eskriett/strmet v0.0.0-20200126103939-2653f802bdb0 h1:GIeVmCzx6nh+ME5+NHwRoe88hX1uts2oa0KoaJdPxp8=

@@ -3,6 +3,7 @@ module reportSpeller
 go 1.17
 
 //require github.com/Saimunyz/speller v0.0.0-20220322162113-e98c0b85efdb
+// require github.com/Saimunyz/speller v0.0.0-20220321182414-5e532fbe8227 //best
 
 require github.com/Saimunyz/speller v0.0.0-20220321182414-5e532fbe8227
 
