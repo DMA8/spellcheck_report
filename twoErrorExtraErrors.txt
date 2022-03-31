@@ -1,6 +1,14 @@
 1
 Model loading...
 Model loaded[8.627612198s]: models/queriesRU-2.gz
+
+Results:
+ TotalTests: 3005
+ SpellerRate 67.15%, YandexRate 46.56% 
+Total words: 9160, SpellerRate 85.33, YandexRate 70.75
+
+
+
 Tested word is | обувь для мальчиков школьные |
 generated error is: обуат длф мальчиурв школьнные; | S: обувь для мальчиков школьный false | Y: обучат длф мальчиков школьные false |
 generated error is: обцыь доя малбчикрв школьнные; | S: обувь для мальчиков школьный false | Y: обувь для мальчиков школьные true |
@@ -4810,7 +4818,4 @@ generated error is: иеднфй ауес; | S: медный аукс true | Y: 
 spellerRight: 5, yaRight 0 
 ------------------------------------------------------------------
 
-Results:
- TotalTests: 3005
- SpellerRate 67.15%, YandexRate 46.56% 
-Total words: 9160, SpellerRate 85.33, YandexRate 70.75
+
