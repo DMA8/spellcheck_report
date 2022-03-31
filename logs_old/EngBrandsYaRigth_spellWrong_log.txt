@@ -1,0 +1,254 @@
+(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*
+
+(mega bloks -> meha blold) | yaSucced: mega bloks | spellerFail: mega blond
+(mega bloks -> megq nlols) | yaSucced: mega bloks | spellerFail: mega gloss
+(adidas -> adifss) | yaSucced: adidas | spellerFail: adiss
+(mango -> namgo) | yaSucced: mango | spellerFail: namco
+(gloria jeans -> gloroq keams) | yaSucced: gloria jeans | spellerFail: gloria teams
+(imho -> imhp) | yaSucced: imho | spellerFail: imp
+(guess -> gyeds) | yaSucced: guess | spellerFail: goods
+(gerry weber -> gwrey erber) | yaSucced: gerry weber | spellerFail: grey erbe
+(gerry weber -> gertu wwbwr) | yaSucced: gerry weber | spellerFail: vertu weber
+(tommy hilfiger -> tinmy hilfugwr) | yaSucced: tommy hilfiger | spellerFail: tiny hilfiger
+(main street -> maun syrret) | yaSucced: main street | spellerFail: maun secret
+(main street -> maun dtrewt) | yaSucced: main street | spellerFail: maun street
+(dar-diar -> dar-diar) | yaSucced: dar-diar | spellerFail: daria
+(dar-diar -> dar-diar) | yaSucced: dar-diar | spellerFail: daria
+(puma -> pumq) | yaSucced: puma | spellerFail: pump
+(calvin klein -> cqlbin jleon) | yaSucced: calvin klein | spellerFail: calvin leon
+(street spirit -> sttewt spitir) | yaSucced: street spirit | spellerFail: street pitir
+(yolo -> uolo) | yaSucced: yolo | spellerFail: polo
+(envy lab -> ebvy lav) | yaSucced: envy lab | spellerFail: envy lav
+(tom tailor -> rom tsilpr) | yaSucced: tom tailor | spellerFail: rom tailor
+(tom tailor -> rom taulpr) | yaSucced: tom tailor | spellerFail: rom taylor
+(axel -> axek) | yaSucced: axel | spellerFail: axe
+(pepe jeans london -> prpe kwans lpmdon) | yaSucced: pepe jeans london | spellerFail: pre swans lumion
+(pepe jeans london -> pepw heana lpndob) | yaSucced: pepe jeans london | spellerFail: pepe heana london
+(bossa nova -> bosds npva) | yaSucced: bossa nova | spellerFail: boss nova
+(nike -> nikw) | yaSucced: nike | spellerFail: nika
+(nike -> nikr) | yaSucced: nike | spellerFail: nika
+(new balance -> mew bslancw) | yaSucced: new balance | spellerFail: mew blanco
+(new balance -> nee balabxe) | yaSucced: new balance | spellerFail: nee balance
+(new balance -> nee balsncr) | yaSucced: new balance | spellerFail: nee balance
+(bonito kids -> bonuti kuds) | yaSucced: bonito kids | spellerFail: botuti kids
+(i love mum -> i lovw mim) | yaSucced: i love mum | spellerFail: i love mim
+(i love mum -> i lobe mim) | yaSucced: i love mum | spellerFail: i love mim
+(i love mum -> i lpve num) | yaSucced: i love mum | spellerFail: i love num
+(taifun by gerry weber -> tsifum by grery wenee) | yaSucced: taifun by gerry weber | spellerFail: taifun by grey wenge
+(nebo -> nwbo) | yaSucced: nebo | spellerFail: nobo
+(sun street -> syn strrey) | yaSucced: sun street | spellerFail: syn store
+(nota bene -> noya brne) | yaSucced: nota bene | spellerFail: noya bone
+(nota bene -> noya benw) | yaSucced: nota bene | spellerFail: noya benz
+(nota bene -> npta beme) | yaSucced: nota bene | spellerFail: npa beme
+(luxor -> kuxpr) | yaSucced: luxor | spellerFail: kur
+(luxor -> kuxpr) | yaSucced: luxor | spellerFail: kur
+(a-sport -> a-sport) | yaSucced: a-sport | spellerFail: avsport
+(finn flare -> funn dlqre) | yaSucced: finn flare | spellerFail: funn dare
+(glam woman -> glan wonab) | yaSucced: glam woman | spellerFail: glan wonlab
+(z-max -> z-max) | yaSucced: z-max | spellerFail: zmax
+(z-max -> z-max) | yaSucced: z-max | spellerFail: zmax
+(z-max -> z-max) | yaSucced: z-max | spellerFail: zmax
+(maks-tops -> maks-tops) | yaSucced: maks-tops | spellerFail: makstoys
+(maks-tops -> maks-tops) | yaSucced: maks-tops | spellerFail: makstoys
+(liu jo -> luu jo) | yaSucced: liu jo | spellerFail: luu jo
+(liu jo -> luu jo) | yaSucced: liu jo | spellerFail: luu jo
+(liu jo -> lou jo) | yaSucced: liu jo | spellerFail: lou jo
+(hard times -> harf tinws) | yaSucced: hard times | spellerFail: hard tints
+(the cave -> thr csve) | yaSucced: the cave | spellerFail: thr cave
+(the cave -> yhe xave) | yaSucced: the cave | spellerFail: the wave
+(tactical pro -> taxticql pri) | yaSucced: tactical pro | spellerFail: tactical pri
+(tactical pro -> yacticak pri) | yaSucced: tactical pro | spellerFail: tactical pri
+(modify -> modufu) | yaSucced: modify | spellerFail: modus
+(kira plastinina -> jira plastonuna) | yaSucced: kira plastinina | spellerFail: jira plastinina
+(kira plastinina -> kirs plasyinuna) | yaSucced: kira plastinina | spellerFail: kirs plastinina
+(kira plastinina -> kita pkqstinina) | yaSucced: kira plastinina | spellerFail: kita plastinina
+(gant -> gsnt) | yaSucced: gant | spellerFail: gst
+(de-carty -> de-carty) | yaSucced: de-carty | spellerFail: decarty
+(miss style -> misd stykr) | yaSucced: miss style | spellerFail: misd style
+(button blue -> butrob blur) | yaSucced: button blue | spellerFail: button blur
+(button blue -> biyton bluw) | yaSucced: button blue | spellerFail: bixton blue
+(tutta mama -> ruttq mqma) | yaSucced: tutta mama | spellerFail: rutto mama
+(love moschino -> live mpschinp) | yaSucced: love moschino | spellerFail: live moschino
+(elinas-shop -> elinas-shop) | yaSucced: elinas-shop | spellerFail: linashop
+(elinas-shop -> elinas-shop) | yaSucced: elinas-shop | spellerFail: linashop
+(elinas-shop -> elinas-shop) | yaSucced: elinas-shop | spellerFail: linashop
+(forte forte -> foryw fotre) | yaSucced: forte forte | spellerFail: foryo forte
+(la cula -> la culq) | yaSucced: la cula | spellerFail: la cult
+(dj plus -> dj olus) | yaSucced: dj plus | spellerFail: dj olus
+(pelican -> pelixam) | yaSucced: pelican | spellerFail: pelikan
+(pelican -> peloxan) | yaSucced: pelican | spellerFail: pelikan
+(fleur de vie -> dleir de viw) | yaSucced: fleur de vie | spellerFail: dleis de vw
+(fleur de vie -> flwyr de viw) | yaSucced: fleur de vie | spellerFail: flower de vw
+(fleur de vie -> dleir de vir) | yaSucced: fleur de vie | spellerFail: dleis de vir
+(betty barclay -> betru barclqt) | yaSucced: betty barclay | spellerFail: beru barclay
+(savage -> sabsge) | yaSucced: savage | spellerFail: sage
+(absolutex -> absoluyez) | yaSucced: absolutex | spellerFail: absolute
+(seventy -> swvemty) | yaSucced: seventy | spellerFail: sweety
+(seventy -> swvemty) | yaSucced: seventy | spellerFail: sweety
+(dc shoes -> dc ahpes) | yaSucced: dc shoes | spellerFail: dc alpes
+(dc shoes -> dc sjies) | yaSucced: dc shoes | spellerFail: dc skies
+(dc shoes -> dc shord) | yaSucced: dc shoes | spellerFail: dc sword
+(naya -> naua) | yaSucced: naya | spellerFail: nana
+(dress no stress -> dteds no atrwss) | yaSucced: dress no stress | spellerFail: teds no stress
+(dress no stress -> dtrss no sttesd) | yaSucced: dress no stress | spellerFail: dress no sttesh
+(dress no stress -> drrds no stredd) | yaSucced: dress no stress | spellerFail: dress no streda
+(il mio -> il mip) | yaSucced: il mio | spellerFail: il mi
+(il mio -> il muo) | yaSucced: il mio | spellerFail: il duo
+(il mio -> il mii) | yaSucced: il mio | spellerFail: il mii
+(il mio -> il moo) | yaSucced: il mio | spellerFail: il moo
+(yuke jeans -> uuke keams) | yaSucced: yuke jeans | spellerFail: duke teams
+(yuke jeans -> yukr jesna) | yaSucced: yuke jeans | spellerFail: yuka vesna
+(yolo shop -> tolo sgop) | yaSucced: yolo shop | spellerFail: tolo shop
+(yolo shop -> yilo shoo) | yaSucced: yolo shop | spellerFail: milo shoo
+(manikini the best -> nabikini tje besr) | yaSucced: manikini the best | spellerFail: nbikini the best
+(lab pal zileri -> lav oal zikero) | yaSucced: lab pal zileri | spellerFail: lav pal zileri
+(start -> atsrt) | yaSucced: start | spellerFail: art
+(la martina -> la maryins) | yaSucced: la martina | spellerFail: la martins
+(yes i do -> yea i do) | yaSucced: yes i do | spellerFail: tea i do
+(yes i do -> yea i do) | yaSucced: yes i do | spellerFail: tea i do
+(yes i do -> ues i do) | yaSucced: yes i do | spellerFail: us i do
+(yes i do -> yrs i do) | yaSucced: yes i do | spellerFail: rs i do
+(tom farr -> ton fatr) | yaSucced: tom farr | spellerFail: ton far
+(fischer -> fisvger) | yaSucced: fischer | spellerFail: fisher
+(es todo -> es rodo) | yaSucced: es todo | spellerFail: es dodo
+(t-sod -> t-sod) | yaSucced: t-sod | spellerFail: tsod
+(be blumarine -> be nlumarime) | yaSucced: be blumarine | spellerFail: be blumarime
+(luxury plus -> lixiry plis) | yaSucced: luxury plus | spellerFail: luxery plus
+(mini maxi -> nini msxi) | yaSucced: mini maxi | spellerFail: nini maxi
+(fun time -> fyn yime) | yaSucced: fun time | spellerFail: fyn time
+(fun time -> gun timr) | yaSucced: fun time | spellerFail: gun time
+(fun time -> fub tume) | yaSucced: fun time | spellerFail: fub time
+(mini club -> muni cluv) | yaSucced: mini club | spellerFail: muni club
+(helena vera -> hekeba vrra) | yaSucced: helena vera | spellerFail: heheba vera
+(m-bimbo -> m-bimbo) | yaSucced: m-bimbo | spellerFail: bimbo
+(m-bimbo -> m-bimbo) | yaSucced: m-bimbo | spellerFail: bimbo
+(black star wear -> blqxk stat wrar) | yaSucced: black star wear | spellerFail: black stat wear
+(black star wear -> blavj atar wesr) | yaSucced: black star wear | spellerFail: blaj star wear
+(antony morato -> amrony notato) | yaSucced: antony morato | spellerFail: amron potato
+(john richmond -> jojn ruchmons) | yaSucced: john richmond | spellerFail: joнn richmond
+(bell bimbo -> bwll binbi) | yaSucced: bell bimbo | spellerFail: ball bibi
+(v-baby -> v-baby) | yaSucced: v-baby | spellerFail: vpbaby
+(v-baby -> v-baby) | yaSucced: v-baby | spellerFail: vpbaby
+(vero moda -> cero mida) | yaSucced: vero moda | spellerFail: zero mida
+(vero moda -> veeo mods) | yaSucced: vero moda | spellerFail: vero mods
+(vero moda -> bero mofa) | yaSucced: vero moda | spellerFail: zero mofa
+(juicy couture -> hyicy courire) | yaSucced: juicy couture | spellerFail: juicy sourire
+(miss lora -> muss loea) | yaSucced: miss lora | spellerFail: muss lola
+(kalina-style -> kalina-style) | yaSucced: kalina-style | spellerFail: alinastyle
+(atlas for men -> atkss fot mwn) | yaSucced: atlas for men | spellerFail: akss fot man
+(argo-classic -> argo-classic) | yaSucced: argo-classic | spellerFail: argoclassic
+(argo-classic -> arho-vlassic) | yaSucced: argo-classic | spellerFail: argoclassic
+(i-style sportswear -> i-style spprtawear) | yaSucced: i-style sportswear | spellerFail: instyle sportswear
+(i-style sportswear -> i-style spirtseear) | yaSucced: i-style sportswear | spellerFail: instyle sportswear
+(evgenia style -> evgenus syule) | yaSucced: evgenia style | spellerFail: venus yule
+(key fashion -> kwy fashopn) | yaSucced: key fashion | spellerFail: key fashoin
+(rip curl -> eip cirl) | yaSucced: rip curl | spellerFail: ip cirl
+(rip curl -> tip cutl) | yaSucced: rip curl | spellerFail: tip cute
+(pal zileri -> pak zoleru) | yaSucced: pal zileri | spellerFail: pak bolero
+(pickup -> oickip) | yaSucced: pickup | spellerFail: dickie
+(bl de luxe -> bl de luce) | yaSucced: bl de luxe | spellerFail: bl de luce
+(bl de luxe -> bl de luce) | yaSucced: bl de luxe | spellerFail: bl de luce
+(bl de luxe -> bl de luxw) | yaSucced: bl de luxe | spellerFail: bl de lux
+(whitney -> whitbeu) | yaSucced: whitney | spellerFail: white
+(whitney -> qjitney) | yaSucced: whitney | spellerFail: britney
+(very cherry -> veey cheety) | yaSucced: very cherry | spellerFail: very cheeky
+(soft secret -> spft sectwt) | yaSucced: soft secret | spellerFail: soft sectet
+(soft secret -> sogt secrrr) | yaSucced: soft secret | spellerFail: sogo secret
+(people in -> oepple in) | yaSucced: people in | spellerFail: apple in
+(happy tree -> hapou rree) | yaSucced: happy tree | spellerFail: happu free
+(happy tree -> hqppu trew) | yaSucced: happy tree | spellerFail: happu trw
+(diadora -> diafira) | yaSucced: diadora | spellerFail: safira
+(art family -> att famolt) | yaSucced: art family | spellerFail: art famot
+(olga skazkina -> ilga sjazkima) | yaSucced: olga skazkina | spellerFail: ilga skazkina
+(olga skazkina -> ilga slazkima) | yaSucced: olga skazkina | spellerFail: ilga skazkina
+(olga skazkina -> olfa skqakina) | yaSucced: olga skazkina | spellerFail: olfa skazkina
+(street-style -> street-style) | yaSucced: street-style | spellerFail: sweetstyle
+(comfy style -> cpmfu stuke) | yaSucced: comfy style | spellerFail: comfy shuke
+(comfy style -> cimfu syule) | yaSucced: comfy style | spellerFail: comfy yule
+(fratria -> ftattia) | yaSucced: fratria | spellerFail: tattva
+(high temp -> hugh tenp) | yaSucced: high temp | spellerFail: hugh ten
+(madmext -> masmexr) | yaSucced: madmext | spellerFail: master
+(stayer -> atauer) | yaSucced: stayer | spellerFail: bauer
+(tartine et chocolat -> tqrtone et chicolst) | yaSucced: tartine et chocolat | spellerFail: trone et chicos
+(tartine et chocolat -> tqrtinr et chocokqt) | yaSucced: tartine et chocolat | spellerFail: tartine et chocokat
+(tartine et chocolat -> rartune et chocilar) | yaSucced: tartine et chocolat | spellerFail: fortune et chocolat
+(classic of your style -> clasaix of uour dttle) | yaSucced: classic of your style | spellerFail: classix of your style
+(happy baby -> jqppy bsby) | yaSucced: happy baby | spellerFail: happy bsby
+(happy baby -> haopu naby) | yaSucced: happy baby | spellerFail: happu baby
+(happy baby -> jqppy babu) | yaSucced: happy baby | spellerFail: happy babu
+(cleo -> clro) | yaSucced: cleo | spellerFail: clio
+(cleo -> clro) | yaSucced: cleo | spellerFail: clio
+(flash of joy -> fkasg of jou) | yaSucced: flash of joy | spellerFail: flash of jou
+(flash of joy -> fkssh of jot) | yaSucced: flash of joy | spellerFail: fresh of hot
+(flash of joy -> flsdh of jpy) | yaSucced: flash of joy | spellerFail: flash of jp
+(ecko unltd -> evko ynlyd) | yaSucced: ecko unltd | spellerFail: evko nlyd
+(cool zone baby -> vool zpne babu) | yaSucced: cool zone baby | spellerFail: vool zone babu
+(cool zone baby -> xool zine babu) | yaSucced: cool zone baby | spellerFail: cool zine babu
+(breeze -> beeezr) | yaSucced: breeze | spellerFail: beeez
+(the gangster -> thr gqmgster) | yaSucced: the gangster | spellerFail: thr gangster
+(the gangster -> thr gangsrrr) | yaSucced: the gangster | spellerFail: thr gangster
+(a-mne -> a-mne) | yaSucced: a-mne | spellerFail: acne
+(a-mne -> a-mne) | yaSucced: a-mne | spellerFail: acne
+(a-mne -> a-mne) | yaSucced: a-mne | spellerFail: acne
+(sweet mama -> awwet mana) | yaSucced: sweet mama | spellerFail: qwwet mana
+(sweet mama -> swrey msma) | yaSucced: sweet mama | spellerFail: sorey mama
+(sweet mama -> awwet msma) | yaSucced: sweet mama | spellerFail: qwwet mama
+(iv-shop -> iv-shop) | yaSucced: iv-shop | spellerFail: ivashop
+(iv-shop -> iv-shop) | yaSucced: iv-shop | spellerFail: ivashop
+(iv-shop -> iv-shop) | yaSucced: iv-shop | spellerFail: ivashop
+(bon bon -> non bom) | yaSucced: bon bon | spellerFail: non bom
+(noisy may -> moisu mqy) | yaSucced: noisy may | spellerFail: moist my
+(business line -> nusoness lime) | yaSucced: business line | spellerFail: business lime
+(business line -> buduness lune) | yaSucced: business line | spellerFail: business lune
+(sonia rykiel -> donua rykiwk) | yaSucced: sonia rykiel | spellerFail: donna rykiel
+(sonia rykiel -> domia rykuek) | yaSucced: sonia rykiel | spellerFail: domia rykiel
+(overlay -> iverlqy) | yaSucced: overlay | spellerFail: everly
+(elena miro -> rleba miri) | yaSucced: elena miro | spellerFail: gleba miri
+(elena miro -> ekens mieo) | yaSucced: elena miro | spellerFail: eken mio
+(azimuth -> azimytj) | yaSucced: azimuth | spellerFail: azimut
+(azimuth -> azimitg) | yaSucced: azimuth | spellerFail: azimut
+(argo classic -> argi clasaix) | yaSucced: argo classic | spellerFail: argo classix
+(argo classic -> atgo cladsix) | yaSucced: argo classic | spellerFail: argo classix
+(argo classic -> srgo vlassix) | yaSucced: argo classic | spellerFail: argo classix
+(manuel ritz -> nanurl rotz) | yaSucced: manuel ritz | spellerFail: naturl gotz
+(manuel ritz -> mqniel ritx) | yaSucced: manuel ritz | spellerFail: miniel rtx
+(sofi strokatto -> dofi atrokarto) | yaSucced: sofi strokatto | spellerFail: dofi strokatto
+(fashion butik -> fasjiin bitij) | yaSucced: fashion butik | spellerFail: fashion bitim
+(fashion butik -> fsshiob buyil) | yaSucced: fashion butik | spellerFail: fashion buyit
+(fashion butik -> fqshiin nytik) | yaSucced: fashion butik | spellerFail: fashion bytik
+(fly -> fky) | yaSucced: fly | spellerFail: sky
+(fly -> fky) | yaSucced: fly | spellerFail: sky
+(fly -> fky) | yaSucced: fly | spellerFail: sky
+(sublevel -> dyblevel) | yaSucced: sublevel | spellerFail: eyelevel
+(west coast -> wrst xoasy) | yaSucced: west coast | spellerFail: west oasy
+(moon rose -> noon rpse) | yaSucced: moon rose | spellerFail: noon rose
+(i am fashion -> i am faahiom) | yaSucced: i am fashion | spellerFail: i am fashiom
+(i am fashion -> i am fashoom) | yaSucced: i am fashion | spellerFail: i am fashoon
+(g-pride -> g-pride) | yaSucced: g-pride | spellerFail: pride
+(original denim -> orihunal dwnum) | yaSucced: original denim | spellerFail: original donum
+(motion kids -> mptoon kods) | yaSucced: motion kids | spellerFail: moon kods
+(motion kids -> motuom kifs) | yaSucced: motion kids | spellerFail: modum kids
+(boxeur des rues -> bixeyr drs rurs) | yaSucced: boxeur des rues | spellerFail: boxer drs rus
+(boxeur des rues -> bpxwur drs rued) | yaSucced: boxeur des rues | spellerFail: boxeur drs red
+(boxeur des rues -> bixeut dea ruea) | yaSucced: boxeur des rues | spellerFail: bizet dea rue
+(luhta -> lyjta) | yaSucced: luhta | spellerFail: lyra
+(e-line moda -> e-line modq) | yaSucced: e-line moda | spellerFail: exline mod
+(e-line moda -> e-line mods) | yaSucced: e-line moda | spellerFail: exline mods
+(trussardi junior -> trusaardu jinipr) | yaSucced: trussardi junior | spellerFail: trussardi jinior
+(instance -> instsncw) | yaSucced: instance | spellerFail: instinct
+(yakuza premium -> yakiaa permium) | yaSucced: yakuza premium | spellerFail: yakima premium
+(dirk bikkembergs -> diek bilkembwrgs) | yaSucced: dirk bikkembergs | spellerFail: diek bikkembergs
+(fazo-r -> fazo-r) | yaSucced: fazo-r | spellerFail: razor
+(nsd-style -> nsd-style) | yaSucced: nsd-style | spellerFail: sdstyle
+(morgan -> norgab) | yaSucced: morgan | spellerFail: normal
+(mia-mia -> mia-mia) | yaSucced: mia-mia | spellerFail: miami
+(mia-mia -> mia-mia) | yaSucced: mia-mia | spellerFail: miami
+(re mark collection -> re marl collectuob) | yaSucced: re mark collection | spellerFail: re mari collection
+(iv-capriz -> iv-capriz) | yaSucced: iv-capriz | spellerFail: ivcapriz
+(iv-capriz -> iv-capriz) | yaSucced: iv-capriz | spellerFail: ivcapriz
+(be very -> be veru) | yaSucced: be very | spellerFail: be vera
+(michael kors -> nicjael lors) | yaSucced: michael kors | spellerFail: michael lors
+(michael kors -> mivhawl kora) | yaSucced: michael kors | spellerFail: michael kora
+(kids fashion -> kida gashiin) | yaSucced: kids fashion | spellerFail: dida fashion
+(kids fashion -> kuds fqshiom) | yaSucced: kids fashion | spellerFail: kids fashiom
+(kids fashion -> kods fasjiin) | yaSucced: kids fashion | spellerFail: kods fashion

@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	nTests           = 8000
+	nTests           = 3000
 	testCasesPerWord = 5
 )
 
@@ -41,17 +41,17 @@ func countRightSuggest(right, suggest string) int {
 }
 
 type fullSentenceTestCounters struct {
-	AllTested int
-	SpellerRight int
-	YandexRight int
-	YandexWrong int
+	AllTested                   int
+	SpellerRight                int
+	YandexRight                 int
+	YandexWrong                 int
 	SpellerRightWhenYandexWrong int
 }
 
 type wordsTestCounters struct {
-	allTested int
-	spellerCorrected int
-	yandexCorrected int
+	allTested                         int
+	spellerCorrected                  int
+	yandexCorrected                   int
 	spellerSuggestAnotherWordFreqDict int
 }
 
@@ -80,13 +80,36 @@ func differnetRunes(errorWord, suggested string) int {
 			counter++
 		}
 	}
-	counter+=diffLen
+	counter += diffLen
 	return counter
 }
 
-
 func main() {
 	var mu sync.Mutex
+	// f2, er2 := os.Open("hits-common.csv")
+	// if er2 != nil {
+	// 	log.Fatal(er2)
+	// }
+	// lines := csv.NewReader(f2)
+	// for ans, err := lines.Read(); err != io.EOF; {
+	// 	if len(ans) > 0 {
+	// 		words := strings.Split(ans[0], ";")[0]
+	// 		splitted := strings.Split(words, " ")
+	// 		lines := make([]string, 0)
+	// 		for _, v := range splitted {
+	// 			if !isCyrillic(v) {
+	// 				continue
+	// 			}
+	// 			lines = append(lines, v)
+	// 		}
+	// 		if len(lines) > 0 && lines[0] != ""{
+	// 			fmt.Println(strings.Join(lines, " "))
+	// 		}
+	// 	}
+	// 	ans, err = lines.Read()
+
+	// }
+
 	sentenceCounter := fullSentenceTestCounters{}
 	wordsCounter := wordsTestCounters{}
 	done := make(chan struct{})
@@ -102,7 +125,7 @@ func main() {
 		if len(splitted) != 2 {
 			ok = reader2.Scan()
 			continue
-		} 
+		}
 		freq, _ := strconv.Atoi(splitted[1])
 		freqMap[splitted[0]] = freq
 		ok = reader2.Scan()
@@ -116,14 +139,14 @@ func main() {
 	)
 
 	// load model
-	err = speller.LoadModel("models/with_brand.gz")
+	err = speller.LoadModel("models/queriesRU-2.gz")
 	if err != nil {
 		fmt.Printf("No such file: %v\n", err)
 		done <- struct{}{}
 		log.Println(err)
 	}
 
-	testFile, err := os.Open("sentences.txt") // PROVIDE A PATH TO THE QUERIES
+	testFile, err := os.Open("queries.txt") // PROVIDE A PATH TO THE QUERIES
 	if err != nil {
 		panic(err)
 	}
@@ -146,6 +169,10 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	bothWrong, err := os.Create("bothWrongLog.txt")
+	if err != nil {
+		panic(err)
+	}
 	for ok := reader.Scan(); ok; {
 		set[strings.ToLower(reader.Text())] = struct{}{}
 		ok = reader.Scan()
@@ -153,9 +180,9 @@ func main() {
 
 	fmt.Fprint(failLogs, "(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*\n\n")
 	for msg, _ := range set {
-		var flagLine bool
+		var flagLine, flagLine2 bool
 		//msg := reader.Text()
-		if  len([]rune(msg)) < 3 {
+		if len([]rune(msg)) < 3 {
 			continue
 		}
 		set[msg] = struct{}{}
@@ -167,13 +194,13 @@ func main() {
 		myErrors := errorGenerator.GenerateTwoErrorNTimes(msg, testCasesPerWord)
 		//не обработан случай, когда сгенерированная ошибка превращается в слово без орфографических ошибок.
 		mu.Lock()
+
 		for RightWord, generatedErrors := range myErrors {
 			spelRight, yaRigth := 0, 0
 			fmt.Printf("Tested word is | %s |\n", RightWord)
 			for _, generatedError := range generatedErrors {
 				yandexResult, _ := yandexSpellerClient.SpellCheck(generatedError)
 				spellerResult := speller.SpellCorrect(generatedError)
-				
 				wordsCounter.allTested += len(strings.Split(generatedError, " "))
 				wordsCounter.spellerCorrected += countRightSuggest(RightWord, spellerResult)
 				wordsCounter.yandexCorrected += countRightSuggest(RightWord, yandexResult)
@@ -181,7 +208,7 @@ func main() {
 				if spellerResult == RightWord {
 					sentenceCounter.SpellerRight++
 					spelRight++
-				}
+				} 
 				if yandexResult == RightWord {
 					sentenceCounter.YandexRight++
 					yaRigth++
@@ -192,6 +219,7 @@ func main() {
 						sentenceCounter.SpellerRightWhenYandexWrong++
 						fmt.Fprintf(spellerRightWhenYandexWrond, "W: %s E: %s Y: %s S: %s\n", RightWord, generatedError, yandexResult, spellerResult)
 					}
+					
 				}
 				if yandexResult == RightWord && spellerResult != RightWord {
 					fmt.Fprintf(failLogs, "(%s -> %s) | yaSucced: %s | spellerFail: %s\n", RightWord, generatedError, yandexResult, spellerResult)
@@ -202,9 +230,9 @@ func main() {
 					if len(ySplt) == len(sSplt) {
 						for i := 0; i < len(ySplt); i++ {
 							if ySplt[i] != sSplt[i] {
-								fmt.Fprintf(failLogs, "Error: %s Expected: %s (freq: %d diffRunes: %d), SpellerSuggest: %s (freq: %d diffRunes: %d)\n", 
-								errSplt[i], rightSplt[i], freqMap[rightSplt[i]], differnetRunes(errSplt[i], rightSplt[i]), 
-								sSplt[i], freqMap[sSplt[i]], differnetRunes(errSplt[i], sSplt[i]))
+								fmt.Fprintf(failLogs, "Error: %s Expected: %s (freq: %d diffRunes: %d), SpellerSuggest: %s (freq: %d diffRunes: %d)\n",
+									errSplt[i], rightSplt[i], freqMap[rightSplt[i]], differnetRunes(errSplt[i], rightSplt[i]),
+									sSplt[i], freqMap[sSplt[i]], differnetRunes(errSplt[i], sSplt[i]))
 								if freqMap[sSplt[i]] != 0 {
 									wordsCounter.spellerSuggestAnotherWordFreqDict++
 								}
@@ -212,15 +240,24 @@ func main() {
 						}
 					}
 					fmt.Fprintf(failLogs, "------------------------------------------\n")
+				}
+				if yandexResult != RightWord && spellerResult != RightWord {
+					flagLine2 = true
+					fmt.Fprintf(bothWrong, "Error: %s Expected: %s SpellerSuggest: %s YandexSuggest: %s\n", generatedError, RightWord, spellerResult, yandexResult)
+				} 
+				fmt.Printf("generated error is: %s; | S: %s %v |", generatedError, spellerResult, spellerResult == RightWord)
+				fmt.Printf(" Y: %s %v |\n", yandexResult, yandexResult == RightWord)
+
 			}
-				fmt.Printf("generated error is: %s; S: %s %v |", generatedError, spellerResult, spellerResult == RightWord)
-				fmt.Printf(" Y: %s %v\n", yandexResult, yandexResult == RightWord)
-			}
-			fmt.Printf("spellerRight: %d, yaRight %d\n", spelRight, yaRigth)
+			fmt.Printf("spellerRight: %d, yaRight %d \n", spelRight, yaRigth)
 			fmt.Println("------------------------------------------------------------------")
 			if flagLine {
 				fmt.Fprintf(spellerRightWhenYandexWrond, "-------------------------------------\n")
 				flagLine = false
+			}
+			if flagLine2 {
+				fmt.Fprintf(bothWrong, "-------------------------------------\n")
+
 			}
 			if sentenceCounter.AllTested > nTests {
 				mu.Unlock()
@@ -235,7 +272,7 @@ func main() {
 func finish(mut *sync.Mutex, c fullSentenceTestCounters, w wordsTestCounters, logFile *os.File) {
 	mut.Lock()
 	defer mut.Unlock()
-	fmt.Printf("\nResults:\n TotalTests: %d\n SpellerRate %.2f%%, YandexRate %.2f%%\n",
+	fmt.Printf("\nResults:\n TotalTests: %d\n SpellerRate %.2f%%, YandexRate %.2f%% \n",
 		c.AllTested, float64(c.SpellerRight)/float64(c.AllTested)*100,
 		float64(c.YandexRight)/float64(c.AllTested)*100)
 	fmt.Fprintf(logFile, "YandexFails %d SpellerRight %d SpellerRate %.2f\n", c.YandexWrong, c.SpellerRightWhenYandexWrong,
