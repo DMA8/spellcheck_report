@@ -1,15 +1,15 @@
 <h1>Результаты тестов</h1>
 Две ошибки в тестовом запросе на каждое слово (если длина слова 3-4 буквы, то генерируется 1 ошибка)<br>
 Полностью исправленные запросы<br>
-**TotalTests: 3005**<br>
-**SpellerRate 66.99%** (Norm: 71.11%),  **YandexRate 28.05%** (Norm: 29.45%)<br>
+TotalTests: 3005<br>
+SpellerRate 66.99% (Norm: 71.11%),  YandexRate 28.05% (Norm: 29.45%)<br>
 Исправленно слов из запросов:<br>
 Total words: 9160, SpellerRate 86.35%, YandexRate 54.57%<br>
 <br>
 Одна ошибка в тестовом запросе на каждое слово (если длина слова меньше 3 букв, то ошибка не генерируется)<br>
 Results:<br>
 Полностью исправленные запросы:<br>
-**TotalTests: 3005**
+TotalTests: 3005
 SpellerRate 63.03% (Norm: 70.42%),  YandexRate 73.21% (Norm: 75.04%)<br>
 Исправленно слов из запросов:<br>
 Total words: 9240, SpellerRate 83.00%, YandexRate 88.47%<br>
