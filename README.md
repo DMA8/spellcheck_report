@@ -10,11 +10,11 @@ Results:<br>
 Полностью исправленные запросы:<br>
  TotalTests: 3005 SpellerRate 67.15%, YandexRate 46.56% <br>
 Исправленно слов из запросов:<br>
-Total words: 9160, SpellerRate 85.33%, YandexRate 70.75%<br>
+Total words: 9160, SpellerRateWords 85.33%, YandexRateWords 70.75%<br>
 <br><br>
 1 ошибка в тестовом слове<br>
 Results:<br>
 Полностью исправленные запросы:
 TotalTests: 3005 SpellerRate 61.30%, YandexRate 73.34% <br>
 Исправленно слов из запросов:<br>
-Total words: 9180, SpellerRate 82.89%, YandexRate 88.68%<br>
+Total words: 9180, SpellerRateWords 82.89%, YandexRateWords 88.68%<br>
