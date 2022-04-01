@@ -11,7 +11,7 @@ TotalTests: 3005<br>
 Полностью исправленные запросы:<br>
 SpellerRate 63.03% (Norm: 70.42%),  YandexRate 73.21% (Norm: 75.04%)<br>
 Исправленно слов из запросов:<br>
-Total words: 9240, SpellerRate 83.00%, YandexRate 88.47%<br>
+Total words: 9240, SpellerRate 83.00%, YandexRate 88.47%<br><hr>
 
 <h3>Комментарии</h3>
 <p><i>Токенайзер</i></p>
