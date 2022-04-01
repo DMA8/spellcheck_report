@@ -1,3 +1,5 @@
+git.wildberries.ru/oer/tokenizer v0.2.8 h1:srlxWhKMnb7YnYASCXu8EhtcxfA3/WUnKkT/XNJqo90=
+git.wildberries.ru/oer/tokenizer v0.2.8/go.mod h1:nBsR83daC7FdJSU+wzLe5HHFS2Q8UtMXFrnewrv3QiA=
 github.com/Saimunyz/speller v0.0.0-20220324114249-34bd39d24521 h1:1konMZEubLil1n4Fum8GDoCvSc2FNsz6dQd1y4xNjF8=
 github.com/Saimunyz/speller v0.0.0-20220324114249-34bd39d24521/go.mod h1:9jDnzaYt7TuiIYwwgK4+mHUdn8tR9LqcgbRunCLYwCA=
 github.com/Saimunyz/speller v0.0.0-20220331102307-2a6c28ff7ba8 h1:6pExTkHQwIxsSuPvoOYoxbxdKhnfvnPXgj5UlWMQE2Y=

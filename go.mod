@@ -10,6 +10,7 @@ go 1.17
 // require github.com/Saimunyz/speller v0.0.0-20220328141454-e858820a7372
 
 require ( // indirect
+	git.wildberries.ru/oer/tokenizer v0.2.8 // indirect
 	github.com/Saimunyz/speller v0.0.0-20220331204210-63c266b1bb1b // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/eskriett/spell v0.0.0-20210919200434-03313e3b725f // indirect

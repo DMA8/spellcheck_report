@@ -17,6 +17,7 @@ import (
 	"reportSpeller/internal/errorGenerator"
 	"reportSpeller/internal/yandexspeller"
 
+	"git.wildberries.ru/oer/tokenizer/normalize"
 	"github.com/Saimunyz/speller" //спеллер
 )
 
@@ -43,6 +44,8 @@ func countRightSuggest(right, suggest string) int {
 type fullSentenceTestCounters struct {
 	AllTested                   int
 	SpellerRight                int
+	SpellerNormalizedRight      int
+	YaNormalizedRight           int
 	YandexRight                 int
 	YandexWrong                 int
 	SpellerRightWhenYandexWrong int
@@ -86,6 +89,11 @@ func differnetRunes(errorWord, suggested string) int {
 
 func main() {
 	var mu sync.Mutex
+	tokenizer := normalize.NewNormalizer()
+	err := tokenizer.LoadDictionariesLocal("./data/words.csv.gz", "./data/spellcheck1.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
 	// f2, er2 := os.Open("hits-common.csv")
 	// if er2 != nil {
 	// 	log.Fatal(er2)
@@ -173,6 +181,25 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	normalizeSuccess, err := os.Create("normalizeSuccess.txt")
+	if err != nil {
+		panic(err)
+	}
+	normalizeFail, err := os.Create("normalizeFail.txt")
+	if err != nil {
+		panic(err)
+	}
+
+
+	normalizeSuccessYA, err := os.Create("normalizeSuccessYA.txt")
+	if err != nil {
+		panic(err)
+	}
+	normalizeFailYA, err := os.Create("normalizeFailYA.txt")
+	if err != nil {
+		panic(err)
+	}
+
 	for ok := reader.Scan(); ok; {
 		set[strings.ToLower(reader.Text())] = struct{}{}
 		ok = reader.Scan()
@@ -180,7 +207,7 @@ func main() {
 
 	fmt.Fprint(failLogs, "(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*\n\n")
 	for msg, _ := range set {
-		var flagLine, flagLine2 bool
+		var flagLine, flagLine2, flagLine3, flagLine4, flagLine5, flagLine6 bool
 		//msg := reader.Text()
 		if len([]rune(msg)) < 3 {
 			continue
@@ -191,8 +218,7 @@ func main() {
 			continue
 		}
 		//msg = speller.SpellCorrect(msg) //токенизация тестового слова
-		myErrors := errorGenerator.GenerateTwoErrorNTimes(msg, testCasesPerWord)
-		//не обработан случай, когда сгенерированная ошибка превращается в слово без орфографических ошибок.
+		myErrors := errorGenerator.GenerateOneErrorNTimes(msg, testCasesPerWord)
 		mu.Lock()
 
 		for RightWord, generatedErrors := range myErrors {
@@ -208,11 +234,45 @@ func main() {
 				if spellerResult == RightWord {
 					sentenceCounter.SpellerRight++
 					spelRight++
-				} 
+				} else {
+					normalizedSpellerSuggest, normalizedRightWord := normalizeDiffWords(spellerResult, RightWord, tokenizer)
+
+					if normalizedSpellerSuggest == normalizedRightWord {
+						if !flagLine3 {
+							fmt.Fprintf(normalizeSuccess, "Right: \"%s\" NormForm: \"%s\"|\n", RightWord, normalizedRightWord)
+						}
+						flagLine3 = true
+						sentenceCounter.SpellerNormalizedRight++
+						fmt.Fprintf(normalizeSuccess, "Speller: \"%s\" SpellerNormForm \"%s\" |(error: \"%s\")\n", spellerResult, normalizedSpellerSuggest, generatedError)
+						// fmt.Fprintf(normalizeSuccess, "Right: \"%s\" NormForm: \"%s\"| Speller: \"%s\" SpellerNormForm \"%s\" |(error: \"%s\")\n", RightWord, normalizedRightWord, spellerResult, normalizedSpellerSuggest, generatedError)
+					} else {
+						if !flagLine4 {
+							fmt.Fprintf(normalizeFail, "Right: \"%s\" NormForm: \"%s\"|\n", RightWord, normalizedRightWord)
+						}
+						flagLine4 = true
+						fmt.Fprintf(normalizeFail, "Speller: \"%s\" SpellerNormForm \"%s\" |(error: \"%s\")\n", spellerResult, normalizedSpellerSuggest, generatedError)
+						// fmt.Fprintf(normalizeFail, "Right: \"%s\" NormForm: \"%s\"| Speller: \"%s\" SpellerNormForm \"%s\" |(error: \"%s\")\n", RightWord, normalizedRightWord, spellerResult, normalizedSpellerSuggest, generatedError)
+					}
+				}
 				if yandexResult == RightWord {
 					sentenceCounter.YandexRight++
 					yaRigth++
 				} else {
+					normYa, normalizedRightWord := normalizeDiffWords(yandexResult, RightWord, tokenizer)
+					if normYa == normalizedRightWord {
+						if !flagLine5 {
+							fmt.Fprintf(normalizeSuccessYA, "Right: \"%s\" NormForm: \"%s\"|\n", RightWord, normalizedRightWord)
+						}
+						sentenceCounter.YaNormalizedRight++
+						flagLine5 = true
+						fmt.Fprintf(normalizeSuccessYA, "YandexSug: \"%s\" YaNorm: \"%s\" |(error: \"%s\")\n", yandexResult, normYa, generatedError)
+					} else {
+						if !flagLine6 {
+							fmt.Fprintf(normalizeFailYA, "Right: \"%s\" NormForm: \"%s\"|\n", RightWord, normalizedRightWord)
+						}
+						flagLine6 = true
+						fmt.Fprintf(normalizeFailYA, "YandexSug: \"%s\" YaNorm: \"%s\" |(error: \"%s\")\n", yandexResult, normYa, generatedError)
+					}
 					sentenceCounter.YandexWrong++
 					if spellerResult == RightWord {
 						flagLine = true
@@ -257,7 +317,23 @@ func main() {
 			}
 			if flagLine2 {
 				fmt.Fprintf(bothWrong, "-------------------------------------\n")
-
+				flagLine2 = false
+			}
+			if flagLine3 {
+				fmt.Fprintf(normalizeSuccess, "-------------------------------------\n")
+				flagLine3 = false
+			}
+			if flagLine4 {
+				fmt.Fprintf(normalizeFail, "-------------------------------------\n")
+				flagLine4 = false
+			}
+			if flagLine5 {
+				fmt.Fprintf(normalizeSuccessYA, "-------------------------------------\n")
+				flagLine5 = false
+			}
+			if flagLine6 {
+				fmt.Fprintf(normalizeFailYA, "-------------------------------------\n")
+				flagLine6 = false
 			}
 			if sentenceCounter.AllTested > nTests {
 				mu.Unlock()
@@ -272,24 +348,39 @@ func main() {
 func finish(mut *sync.Mutex, c fullSentenceTestCounters, w wordsTestCounters, logFile *os.File) {
 	mut.Lock()
 	defer mut.Unlock()
-	fmt.Printf("\nResults:\n TotalTests: %d\n SpellerRate %.2f%%, YandexRate %.2f%% \n",
-		c.AllTested, float64(c.SpellerRight)/float64(c.AllTested)*100,
-		float64(c.YandexRight)/float64(c.AllTested)*100)
+	fmt.Printf("\nResults:\n TotalTests: %d\n SpellerRate %.2f%% (Norm: %.2f%%),  YandexRate %.2f%% (Norm: %.2f%%)\n",
+		c.AllTested, float64(c.SpellerRight)/float64(c.AllTested)*100,  float64(c.SpellerRight + c.SpellerNormalizedRight)/float64(c.AllTested)*100,
+		float64(c.YandexRight)/float64(c.AllTested)*100, float64(c.YandexRight + c.YaNormalizedRight)/float64(c.AllTested)*100)
 	fmt.Fprintf(logFile, "YandexFails %d SpellerRight %d SpellerRate %.2f\n", c.YandexWrong, c.SpellerRightWhenYandexWrong,
 		(float64(c.SpellerRightWhenYandexWrong)/float64(c.YandexWrong))*100)
 	fmt.Printf("Total words: %d, SpellerRate %.2f, YandexRate %.2f\n", w.allTested, (float64(w.spellerCorrected)/float64(w.allTested))*100, (float64(w.yandexCorrected)/float64(w.allTested))*100)
 	os.Exit(0)
 }
 
-// func finishWhenFail(CounterAllTested, CounterSpellerRight, CounterYandexRight, CounterYandexWrong, CounterSpellerRightWhenYandexWrong int, logFile *os.File) {
-// 	fmt.Printf("\nResults:\n TotalTests: %d\n SpellerRate %.2f%%, YandexRate %.2f%%\n",
-// 		CounterAllTested, float64(CounterSpellerRight)/float64(CounterAllTested)*100,
-// 		float64(CounterYandexRight)/float64(CounterAllTested)*100)
+func normalizeDiffWords(suggest, right string, tk *normalize.Normalizer) (string, string) {
+	var outputRight []string
+	var outputSuggest []string
 
-// 	fmt.Fprintf(logFile, "YandexFails %d SpellerRight %d SpellerRate %.2f\n", CounterYandexWrong, CounterSpellerRightWhenYandexWrong,
-// 		(float64(CounterSpellerRightWhenYandexWrong)/float64(CounterYandexWrong))*100)
-// 	os.Exit(0)
-// }
+	splittedSuggest := strings.Split(suggest, " ")
+	splittedRight := strings.Split(right, " ")
+	if len(splittedRight) != len(splittedSuggest) {
+		return suggest, right
+	}
+	for i := range splittedRight {
+		if splittedRight[i] != splittedSuggest[i] {
+			lemmaSuggest := tk.NormalizeWithoutMeta(splittedSuggest[i])[0][0].Lemma
+			outputSuggest = append(outputSuggest, lemmaSuggest)
+			lemmaRight := tk.NormalizeWithoutMeta(splittedRight[i])[0][0].Lemma
+			outputRight = append(outputRight, lemmaRight)
+		} else {
+			outputRight = append(outputRight, splittedRight[i])
+			outputSuggest = append(outputSuggest, splittedSuggest[i])
+		}
+	}
+	suggestAns := strings.Join(outputSuggest, " ")
+	rightAns :=  strings.Join(outputRight, " ")
+	return suggestAns, rightAns
+}
 
 func getBrandRU(csvReader *csv.Reader) (string, error) {
 	pattern := `^[а-яА-Я\s-]*$`
