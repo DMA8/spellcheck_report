@@ -7,7 +7,7 @@ SpellerRate 66.99% (Norm: 71.11%),  YandexRate 28.05% (Norm: 29.45%)<br>
 Total words: 9160, SpellerRate 86.35%, YandexRate 54.57%<br>
 <br>
 Одна ошибка в тестовом запросе на каждое слово (если длина слова меньше 3 букв, то ошибка не генерируется)<br>
-TotalTests: 3005
+TotalTests: 3005<br>
 Полностью исправленные запросы:<br>
 SpellerRate 63.03% (Norm: 70.42%),  YandexRate 73.21% (Norm: 75.04%)<br>
 Исправленно слов из запросов:<br>
