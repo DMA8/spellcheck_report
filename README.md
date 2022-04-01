@@ -1,17 +1,17 @@
 <h1>Результаты тестов</h1>
-<b>Две ошибки в тестовом запросе на каждое слово</b> <br>
-TotalTests: 3005<br>
-Полностью исправленные запросы<br>
-SpellerRateQuery 66.99% (Norm: 71.11%),  YandexRateQuery 28.05% (Norm: 29.45%)<br>
-Исправленно слов из запросов:<br>
-Total words: 9160, SpellerRateWords 86.35%, YandexRateWords 54.57%<br>
+<b>Две ошибки в тестовом запросе на каждое слово:</b> <br>
+    TotalTests: 3005<br>
+    Полностью исправленные запросы<br>
+       SpellerRateQuery 66.99% (Norm: 71.11%),  YandexRateQuery 28.05% (Norm: 29.45%)<br>
+    Исправленно слов из запросов:<br>
+       Total words: 9160, SpellerRateWords 86.35%, YandexRateWords 54.57%<br>
 <br>
-Одна ошибка в тестовом запросе на каждое слово<br>
-TotalTests: 3005<br>
-Полностью исправленные запросы:<br>
-SpellerRateQuery 63.03% (Norm: 70.42%),  YandexRateQuery 73.21% (Norm: 75.04%)<br>
-Исправленно слов из запросов:<br>
-Total words: 9240, SpellerRateWords 83.00%, YandexRateWords 88.47%<br><br>
+<b>Одна ошибка в тестовом запросе на каждое слово:</b><br>
+    TotalTests: 3005<br>
+    Полностью исправленные запросы:<br>
+        SpellerRateQuery 63.03% (Norm: 70.42%),  YandexRateQuery 73.21% (Norm: 75.04%)<br>
+    Исправленно слов из запросов:<br>
+        Total words: 9240, SpellerRateWords 83.00%, YandexRateWords 88.47%<br><br>
 Ошибки генерируются псевдослучайно. Рандомная буква слова заменяется на соседнюю букву на клавиатуре. На кадждый поисковый запрос создается 5 ошибочных вариантов<br>
 Если длина слова 3-4 буквы, то максимум генерируется 1 ошибка.<br>
 <hr>
