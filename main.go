@@ -246,7 +246,7 @@ func main() {
 		if !isCyrillic(msg) {
 			continue
 		}
-		myErrors := errorGenerator.GenerateTwoErrorNTimes(msg, testCasesPerWord)
+		myErrors := errorGenerator.GenerateOneErrorNTimes(msg, testCasesPerWord)
 
 		mu.Lock()
 		for RightWord, generatedErrors := range myErrors {

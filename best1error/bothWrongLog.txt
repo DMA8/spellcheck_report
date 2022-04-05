@@ -1,0 +1,114 @@
+Error: чехоы на уиа соуд Expected: чехлы на киа соул SpellerSuggest: чехол на киа соул YandexSuggest: чехлы на уиа соуд
+-------------------------------------
+Error: игрп длф деврчек оет Expected: игра для девочек лет SpellerSuggest: игры для девочек лет YandexSuggest: игра длф девочек поет
+Error: игрв длч днвочек лнт Expected: игра для девочек лет SpellerSuggest: игры для девочек лет YandexSuggest: игры для девочек лет
+Error: игрп длф дквочек леи Expected: игра для девочек лет SpellerSuggest: игры для девочек лет YandexSuggest: игра длф девочек леди
+-------------------------------------
+Error: чаф матх Expected: чай матэ SpellerSuggest: чай мате YandexSuggest: чаф матх
+Error: сай мптэ Expected: чай матэ SpellerSuggest: чай мята YandexSuggest: сай мптэ
+-------------------------------------
+Error: миси длч теья грпнат и Expected: мист для тебя гранат и SpellerSuggest: миси для тебя гранат и YandexSuggest: миси для тебя гранат и
+-------------------------------------
+Error: брршь мач Expected: брошь мая SpellerSuggest: брошь мак YandexSuggest: брошь матч
+Error: брршь маф Expected: брошь мая SpellerSuggest: брошь мак YandexSuggest: брошь маф
+-------------------------------------
+Error: ремешклм длф часоа Expected: ремешком для часов SpellerSuggest: ремешки для часов YandexSuggest: ремешком длф часов
+-------------------------------------
+Error: ужавка Expected: удавка SpellerSuggest: булавка YandexSuggest: ужовка
+-------------------------------------
+Error: лакрт Expected: лакри SpellerSuggest: лак YandexSuggest: лакарт
+Error: лаури Expected: лакри SpellerSuggest: каури YandexSuggest: лаури
+Error: оакри Expected: лакри SpellerSuggest: очки YandexSuggest: бакри
+Error: лакои Expected: лакри SpellerSuggest: лаки YandexSuggest: лаком
+-------------------------------------
+Error: бальзасы и маскм длф вллос Expected: бальзамы и маски для волос SpellerSuggest: бальзамы и маска для волос YandexSuggest: бальзамы и маски длф волос
+-------------------------------------
+Error: прнял Expected: понял SpellerSuggest: пенал YandexSuggest: принял
+Error: ронял Expected: понял SpellerSuggest: роял YandexSuggest: ронял
+-------------------------------------
+Error: гувша Expected: гуаша SpellerSuggest: душа YandexSuggest: гу вшэ
+Error: гувша Expected: гуаша SpellerSuggest: душа YandexSuggest: гу вшэ
+-------------------------------------
+Error: лод малвшка Expected: лол малышка SpellerSuggest: год малыша YandexSuggest: лод малышка
+-------------------------------------
+Error: набрр блескос Expected: набор блеском SpellerSuggest: набор блесков YandexSuggest: набор блесков
+-------------------------------------
+Error: хорси Expected: хорст SpellerSuggest: холст YandexSuggest: хорси
+Error: хорси Expected: хорст SpellerSuggest: холст YandexSuggest: хорси
+Error: хопст Expected: хорст SpellerSuggest: холст YandexSuggest: холст
+-------------------------------------
+Error: подставкм пол удояки черого цвеиа Expected: подставки под удочки серого цвета SpellerSuggest: подставка по удочки серого цвета YandexSuggest: подставки пол удочки черного цвета
+-------------------------------------
+Error: коробуи длф храннния бумпг Expected: коробки для хранения бумаг SpellerSuggest: коробка для хранения бумаг YandexSuggest: коробки длф хранения бумаг
+-------------------------------------
+Error: ковоики род сиску доя жензин Expected: коврики под миску для женщин SpellerSuggest: коврик под миску для женщин YandexSuggest: коврики род сиську для женщин
+Error: коврикт аод мискц длч женшин Expected: коврики под миску для женщин SpellerSuggest: коврик под миску для женщин YandexSuggest: коврик под миску для женщин
+Error: клврики род мичку доя женшин Expected: коврики под миску для женщин SpellerSuggest: коврик под миску для женщин YandexSuggest: коврики род миску для женщин
+-------------------------------------
+Error: длф уиа Expected: для киа SpellerSuggest: для лица YandexSuggest: длф уиа
+Error: лля кта Expected: для киа SpellerSuggest: для кота YandexSuggest: для кота
+-------------------------------------
+Error: брье Expected: юрье SpellerSuggest: белье YandexSuggest: бриэ
+Error: юрте Expected: юрье SpellerSuggest: пюре YandexSuggest: юрте
+Error: юрте Expected: юрье SpellerSuggest: пюре YandexSuggest: юрте
+Error: юоье Expected: юрье SpellerSuggest: кофе YandexSuggest: юрьева
+-------------------------------------
+Error: бутев Expected: бутеа SpellerSuggest: бутсы YandexSuggest: бутаев
+Error: бутка Expected: бутеа SpellerSuggest: утка YandexSuggest: будка
+Error: бцтеа Expected: бутеа SpellerSuggest: бита YandexSuggest: батеа
+Error: бутеп Expected: бутеа SpellerSuggest: бутсы YandexSuggest: бутеп
+Error: бутна Expected: бутеа SpellerSuggest: бутсы YandexSuggest: бут на
+-------------------------------------
+Error: ммку фишурки Expected: мику фигурки SpellerSuggest: мику фигурка YandexSuggest: мку фигурки
+Error: микк фтгурки Expected: мику фигурки SpellerSuggest: мику фигурка YandexSuggest: микк фигурки
+-------------------------------------
+Error: ыещи с браво стапс Expected: вещи с бравл старс SpellerSuggest: вещи с браво старс YandexSuggest: вещи с браво стас
+-------------------------------------
+Error: платбе вел.р макст Expected: платье велюр макси SpellerSuggest: платье велюр макс YandexSuggest: платье велюр макс
+Error: рлатье внлюр максм Expected: платье велюр макси SpellerSuggest: платье велюр макс YandexSuggest: платье велюр максим
+-------------------------------------
+Error: коозинки длф хранегия поастиковые Expected: корзинки для хранения пластиковые SpellerSuggest: корзинки для хранения пластиковый YandexSuggest: корзинки длф хранения пластиковые
+-------------------------------------
+Error: шкпот магит Expected: шепот магии SpellerSuggest: шепот магия YandexSuggest: шепот магнит
+-------------------------------------
+Error: териомозайки Expected: термомозайки SpellerSuggest: термомозаики YandexSuggest: термомозаики
+-------------------------------------
+Error: белык блкзки ддя девочеи шеольные Expected: белые блузки для девочки школьные SpellerSuggest: белые блузки для девочек школьные YandexSuggest: белые блузки для девочек школьные
+Error: ьелые ьлузки длф девочкт шкодьные Expected: белые блузки для девочки школьные SpellerSuggest: белые блузка для девочки школьные YandexSuggest: белые блузки длф девочки школьные
+-------------------------------------
+Error: сесена капустф млсковская поздгяя Expected: семена капусты московская поздняя SpellerSuggest: семена капуста московская поздняя YandexSuggest: семена капуста московская поздняя
+Error: семееа капустф москоыская похдняя Expected: семена капусты московская поздняя SpellerSuggest: семена капуста московская поздняя YandexSuggest: семена капуста московская поздняя
+-------------------------------------
+Error: еосы лля летей Expected: косы для детей SpellerSuggest: часы для детей YandexSuggest: эосы для детей
+Error: еосы жля детнй Expected: косы для детей SpellerSuggest: часы для детей YandexSuggest: таксы для детей
+Error: клсы длф летей Expected: косы для детей SpellerSuggest: часы для детей YandexSuggest: клсы длф детей
+-------------------------------------
+Error: ла ери Expected: ла кри SpellerSuggest: на три YandexSuggest: ла ари
+Error: ла крм Expected: ла кри SpellerSuggest: ла крем YandexSuggest: ла крм
+Error: ла ури Expected: ла кри SpellerSuggest: на уши YandexSuggest: ла ури
+Error: ла кои Expected: ла кри SpellerSuggest: на кот YandexSuggest: ла кои
+Error: ла кои Expected: ла кри SpellerSuggest: на кот YandexSuggest: ла кои
+-------------------------------------
+Error: шайл мащинка Expected: шафл машинка SpellerSuggest: шарф манишка YandexSuggest: шайл машинка
+Error: шайл машмнка Expected: шафл машинка SpellerSuggest: шары машинки YandexSuggest: шайл машинка
+-------------------------------------
+Error: шарв жля ыыпускного ьала в детскос садц Expected: шары для выпускного бала в детском саду SpellerSuggest: шары для выпускного бала в детский сад YandexSuggest: шарф для выпускного бала в детском саду
+-------------------------------------
+Error: страданин юногл аертера Expected: страдание юного вертера SpellerSuggest: страдания юного вертера YandexSuggest: страдания юного вертера
+-------------------------------------
+Error: авеее Expected: авене SpellerSuggest: веер YandexSuggest: авеее
+Error: аыене Expected: авене SpellerSuggest: акне YandexSuggest: ахене
+Error: авнне Expected: авене SpellerSuggest: ванны YandexSuggest: анне
+Error: пвене Expected: авене SpellerSuggest: пена YandexSuggest: пве не
+Error: авеге Expected: авене SpellerSuggest: авент YandexSuggest: авеге
+-------------------------------------
+Error: ыин флкр женщинв срортивный косиюм Expected: фин флер женщины спортивный костюм SpellerSuggest: фин флер женщин спортивный костюм YandexSuggest: фин флер женщин в спортивный костюм
+-------------------------------------
+Error: россич хули Expected: россия худи SpellerSuggest: россии худи YandexSuggest: россия хули
+-------------------------------------
+Error: наряднфе носочкт длф девочеи Expected: нарядные носочки для девочки SpellerSuggest: нарядные носочки для девочек YandexSuggest: нарядные носочки длф девочки
+-------------------------------------
+Error: коврикт сотв Expected: коврики соты SpellerSuggest: коврик соты YandexSuggest: коврики сотворить
+-------------------------------------
+Error: аодарочный еабор туаневых маслк длф лийа Expected: подарочный набор тканевых масок для лица SpellerSuggest: подарочный набор тканевых масло для лица YandexSuggest: подарочный набор тканевых масок длф лица
+-------------------------------------
