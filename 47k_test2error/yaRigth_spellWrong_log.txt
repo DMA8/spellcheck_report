@@ -1,0 +1,1826 @@
+(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*
+
+(силикон вставка для обуви -> миликрн встпвкп лля оюуыи) | yaSucced: силикон вставка для обуви | spellerFail: силикон вставки для обуви
+Error: встпвкп Expected: вставка (freq: 104 diffRunes: 2), SpellerSuggest: вставки (freq: 80 diffRunes: 2)
+------------------------------------------
+(рюкзаки для фотоаппарата -> рбкзакт жля фоьоаппврата) | yaSucced: рюкзаки для фотоаппарата | spellerFail: рюкзак для фотоаппарата
+Error: рбкзакт Expected: рюкзаки (freq: 499 diffRunes: 2), SpellerSuggest: рюкзак (freq: 5127 diffRunes: 2)
+------------------------------------------
+(шапка с котиками -> щарка с котиупми) | yaSucced: шапка с котиками | spellerFail: папка с котиками
+Error: щарка Expected: шапка (freq: 6135 diffRunes: 2), SpellerSuggest: папка (freq: 860 diffRunes: 2)
+------------------------------------------
+(коробки с окошком -> копобкт с руошком) | yaSucced: коробки с окошком | spellerFail: коробка с окошком
+Error: копобкт Expected: коробки (freq: 430 diffRunes: 2), SpellerSuggest: коробка (freq: 1660 diffRunes: 2)
+------------------------------------------
+(бафа -> баыа) | yaSucced: бафа | spellerFail: база
+Error: баыа Expected: бафа (freq: 3 diffRunes: 1), SpellerSuggest: база (freq: 1141 diffRunes: 1)
+------------------------------------------
+(обуви для лета -> рбувм жля лнта) | yaSucced: обуви для лета | spellerFail: обувь для лета
+Error: рбувм Expected: обуви (freq: 1608 diffRunes: 2), SpellerSuggest: обувь (freq: 8374 diffRunes: 2)
+------------------------------------------
+(пробирка -> прлбиркв) | yaSucced: пробирка | spellerFail: пробирки
+Error: прлбиркв Expected: пробирка (freq: 15 diffRunes: 2), SpellerSuggest: пробирки (freq: 22 diffRunes: 2)
+------------------------------------------
+(партнеры -> паптнерф) | yaSucced: партнеры | spellerFail: партнер
+Error: паптнерф Expected: партнеры (freq: 4 diffRunes: 2), SpellerSuggest: партнер (freq: 157 diffRunes: 2)
+------------------------------------------
+(средства для лечения ногтей -> средчтвп доя лкчееия еогией) | yaSucced: средства для лечения ногтей | spellerFail: средство для лечения ногтей
+Error: средчтвп Expected: средства (freq: 767 diffRunes: 2), SpellerSuggest: средство (freq: 3099 diffRunes: 2)
+------------------------------------------
+(веревки бдсм -> вернвкт блсм) | yaSucced: веревки бдсм | spellerFail: веревка бдсм
+Error: вернвкт Expected: веревки (freq: 50 diffRunes: 2), SpellerSuggest: веревка (freq: 236 diffRunes: 2)
+------------------------------------------
+(абс пластик -> вбс плвстиу) | yaSucced: абс пластик | spellerFail: вас пластик
+Error: вбс Expected: абс (freq: 15 diffRunes: 1), SpellerSuggest: вас (freq: 35 diffRunes: 1)
+------------------------------------------
+(синергетика для пола -> синнргетикв лля аола) | yaSucced: синергетика для пола | spellerFail: синергетик для пола
+Error: синнргетикв Expected: синергетика (freq: 47 diffRunes: 2), SpellerSuggest: синергетик (freq: 202 diffRunes: 2)
+------------------------------------------
+(шапки нхл -> щапкт нзл) | yaSucced: шапки нхл | spellerFail: шапка на
+Error: щапкт Expected: шапки (freq: 967 diffRunes: 2), SpellerSuggest: шапка (freq: 6135 diffRunes: 2)
+Error: нзл Expected: нхл (freq: 20 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 2)
+------------------------------------------
+(границы -> гранмуы) | yaSucced: границы | spellerFail: гранулы
+Error: гранмуы Expected: границы (freq: 20 diffRunes: 2), SpellerSuggest: гранулы (freq: 114 diffRunes: 2)
+------------------------------------------
+(насадки на костыли -> насажкт на косиылт) | yaSucced: насадки на костыли | spellerFail: насадка на костыли
+Error: насажкт Expected: насадки (freq: 853 diffRunes: 2), SpellerSuggest: насадка (freq: 1323 diffRunes: 2)
+------------------------------------------
+(летние костюмы для девочек -> оетнме еостюмф жля дкыочек) | yaSucced: летние костюмы для девочек | spellerFail: летние костюм для девочек
+Error: еостюмф Expected: костюмы (freq: 2411 diffRunes: 2), SpellerSuggest: костюм (freq: 14410 diffRunes: 2)
+------------------------------------------
+(костюм барселоны -> клстюс барселогф) | yaSucced: костюм барселоны | spellerFail: костюм барселона
+Error: барселогф Expected: барселоны (freq: 3 diffRunes: 2), SpellerSuggest: барселона (freq: 54 diffRunes: 2)
+------------------------------------------
+(матрасы от пролежней -> матоасв от пролежееф) | yaSucced: матрасы от пролежней | spellerFail: матрас от пролежней
+Error: матоасв Expected: матрасы (freq: 121 diffRunes: 2), SpellerSuggest: матрас (freq: 1110 diffRunes: 2)
+------------------------------------------
+(панамы для девочек -> ппнамф ддя левосек) | yaSucced: панамы для девочек | spellerFail: панама для девочек
+Error: ппнамф Expected: панамы (freq: 70 diffRunes: 2), SpellerSuggest: панама (freq: 617 diffRunes: 2)
+------------------------------------------
+(экотроник -> эклтроние) | yaSucced: экотроник | spellerFail: элтроник
+Error: эклтроние Expected: экотроник (freq: 1 diffRunes: 2), SpellerSuggest: элтроник (freq: 2 diffRunes: 8)
+------------------------------------------
+(юмор -> юмоо) | yaSucced: юмор | spellerFail: мото
+Error: юмоо Expected: юмор (freq: 20 diffRunes: 1), SpellerSuggest: мото (freq: 320 diffRunes: 3)
+------------------------------------------
+(кулеры с подсветкой -> кулнрв с пожчветкой) | yaSucced: кулеры с подсветкой | spellerFail: кулер с подсветкой
+Error: кулнрв Expected: кулеры (freq: 10 diffRunes: 2), SpellerSuggest: кулер (freq: 212 diffRunes: 2)
+------------------------------------------
+(шоколад пп -> шрколвд пп) | yaSucced: шоколад пп | spellerFail: шоколад по
+Error: пп Expected: пп (freq: 110 diffRunes: 0), SpellerSuggest: по (freq: 6365 diffRunes: 1)
+------------------------------------------
+(жалюзи на окна обои -> жалющт на ркна рбои) | yaSucced: жалюзи на окна обои | spellerFail: жалюзи на киа рио
+Error: ркна Expected: окна (freq: 417 diffRunes: 1), SpellerSuggest: киа (freq: 486 diffRunes: 4)
+Error: рбои Expected: обои (freq: 1337 diffRunes: 1), SpellerSuggest: рио (freq: 314 diffRunes: 2)
+------------------------------------------
+(яйцо пасха -> яйцл ппсъа) | yaSucced: яйцо пасха | spellerFail: яйца пасха
+Error: яйцл Expected: яйцо (freq: 400 diffRunes: 1), SpellerSuggest: яйца (freq: 393 diffRunes: 1)
+------------------------------------------
+(осенью -> осннтю) | yaSucced: осенью | spellerFail: осеннюю
+Error: осннтю Expected: осенью (freq: 6 diffRunes: 2), SpellerSuggest: осеннюю (freq: 5 diffRunes: 3)
+------------------------------------------
+(кофты с молнией -> крфтф с мллниец) | yaSucced: кофты с молнией | spellerFail: кофта с молнией
+Error: крфтф Expected: кофты (freq: 842 diffRunes: 2), SpellerSuggest: кофта (freq: 3597 diffRunes: 2)
+------------------------------------------
+(набор спиц для вязания круговые -> нпюор чпиц лля вящаеия еруглвые) | yaSucced: набор спиц для вязания круговые | spellerFail: набор спицы для вязания круговые
+Error: чпиц Expected: спиц (freq: 60 diffRunes: 1), SpellerSuggest: спицы (freq: 366 diffRunes: 2)
+------------------------------------------
+(дозаторы шампуня для мужчин -> дозаьлры шаипунч доя иужчтн) | yaSucced: дозаторы шампуня для мужчин | spellerFail: дозаторы шампунь для мужчин
+Error: шаипунч Expected: шампуня (freq: 87 diffRunes: 2), SpellerSuggest: шампунь (freq: 6931 diffRunes: 2)
+------------------------------------------
+(эро колготки -> эрр уолглтки) | yaSucced: эро колготки | spellerFail: эра колготки
+Error: эрр Expected: эро (freq: 30 diffRunes: 1), SpellerSuggest: эра (freq: 133 diffRunes: 1)
+------------------------------------------
+(брюки дл мальчика -> бпюеи дл иаоьчика) | yaSucced: брюки дл мальчика | spellerFail: брюки для мальчика
+Error: дл Expected: дл (freq: 393 diffRunes: 0), SpellerSuggest: для (freq: 264457 diffRunes: 1)
+------------------------------------------
+(волки вышивка крестом -> ыолуи авшивка крнсьом) | yaSucced: волки вышивка крестом | spellerFail: голуби вышивка крестом
+Error: ыолуи Expected: волки (freq: 46 diffRunes: 2), SpellerSuggest: голуби (freq: 29 diffRunes: 3)
+------------------------------------------
+(чипсет -> чмрсет) | yaSucced: чипсет | spellerFail: корсет
+Error: чмрсет Expected: чипсет (freq: 0 diffRunes: 2), SpellerSuggest: корсет (freq: 589 diffRunes: 2)
+------------------------------------------
+(пуховики для зимы -> пухлвикт ддя зимф) | yaSucced: пуховики для зимы | spellerFail: пуховик для зимы
+Error: пухлвикт Expected: пуховики (freq: 193 diffRunes: 2), SpellerSuggest: пуховик (freq: 1347 diffRunes: 2)
+------------------------------------------
+(простыни не -> поочтыни не) | yaSucced: простыни не | spellerFail: простыни на
+Error: не Expected: не (freq: 2020 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+------------------------------------------
+(панамки для девочек летние -> панамум длч деыочкк летнтк) | yaSucced: панамки для девочек летние | spellerFail: панама для девочек летние
+Error: панамум Expected: панамки (freq: 27 diffRunes: 2), SpellerSuggest: панама (freq: 617 diffRunes: 2)
+------------------------------------------
+(ремень детский для мальчика -> рнменб детскмц лля сальсика) | yaSucced: ремень детский для мальчика | spellerFail: ремень детские для мальчика
+Error: детскмц Expected: детский (freq: 8262 diffRunes: 2), SpellerSuggest: детские (freq: 10235 diffRunes: 2)
+------------------------------------------
+(наклейки на холодильник приколы -> еаелейки на золрдильник прикрлв) | yaSucced: наклейки на холодильник приколы | spellerFail: наклейки на холодильник прикол
+Error: прикрлв Expected: приколы (freq: 69 diffRunes: 2), SpellerSuggest: прикол (freq: 168 diffRunes: 2)
+------------------------------------------
+(брелок шина -> боелрк щина) | yaSucced: брелок шина | spellerFail: брелок на
+Error: щина Expected: шина (freq: 245 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 4)
+------------------------------------------
+(фитолакка -> фитолвека) | yaSucced: фитолакка | spellerFail: фитосвеча
+Error: фитолвека Expected: фитолакка (freq: 1 diffRunes: 2), SpellerSuggest: фитосвеча (freq: 4 diffRunes: 2)
+------------------------------------------
+(ремкомплекты для ванны -> ремклмплектв доя ввннф) | yaSucced: ремкомплекты для ванны | spellerFail: ремкомплект для ванны
+Error: ремклмплектв Expected: ремкомплекты (freq: 7 diffRunes: 2), SpellerSuggest: ремкомплект (freq: 346 diffRunes: 2)
+------------------------------------------
+(броши для женщин ручной работы -> ьрошм длч жкнщтн руянрй раюотв) | yaSucced: броши для женщин ручной работы | spellerFail: брошь для женщин ручной работы
+Error: ьрошм Expected: броши (freq: 96 diffRunes: 2), SpellerSuggest: брошь (freq: 929 diffRunes: 2)
+------------------------------------------
+(вкладыш для бочки с круглым дном -> вклпжыш доя юояки с круглви днрм) | yaSucced: вкладыш для бочки с круглым дном | spellerFail: вкладыш для очки с круглым дном
+Error: юояки Expected: бочки (freq: 31 diffRunes: 2), SpellerSuggest: очки (freq: 4220 diffRunes: 5)
+------------------------------------------
+(чулки на поясе -> яуоки на аояск) | yaSucced: чулки на поясе | spellerFail: сумки на пояс
+Error: яуоки Expected: чулки (freq: 806 diffRunes: 2), SpellerSuggest: сумки (freq: 2475 diffRunes: 2)
+Error: аояск Expected: поясе (freq: 55 diffRunes: 2), SpellerSuggest: пояс (freq: 1234 diffRunes: 2)
+------------------------------------------
+(сменные ролики для чистки одежды -> смкннык ролмкм длч чичтеи рлежды) | yaSucced: сменные ролики для чистки одежды | spellerFail: сменные ролик для чистки одежды
+Error: ролмкм Expected: ролики (freq: 287 diffRunes: 2), SpellerSuggest: ролик (freq: 425 diffRunes: 2)
+------------------------------------------
+(сапожки женские бежевые -> саподуи жегчкие юкжевые) | yaSucced: сапожки женские бежевые | spellerFail: сапоги женские бежевые
+Error: саподуи Expected: сапожки (freq: 233 diffRunes: 2), SpellerSuggest: сапоги (freq: 3130 diffRunes: 3)
+------------------------------------------
+(виролекс -> виорлекс) | yaSucced: виролекс | spellerFail: вортекс
+Error: виорлекс Expected: виролекс (freq: 0 diffRunes: 2), SpellerSuggest: вортекс (freq: 4 diffRunes: 7)
+------------------------------------------
+(купить четки -> купмьь яеткм) | yaSucced: купить четки | spellerFail: купить щетки
+Error: яеткм Expected: четки (freq: 151 diffRunes: 2), SpellerSuggest: щетки (freq: 918 diffRunes: 2)
+------------------------------------------
+(кинжал -> ктндал) | yaSucced: кинжал | spellerFail: канал
+Error: ктндал Expected: кинжал (freq: 21 diffRunes: 2), SpellerSuggest: канал (freq: 33 diffRunes: 4)
+------------------------------------------
+(органайзеры для хранения косметики -> ооганайзерф длч ъраннния косметием) | yaSucced: органайзеры для хранения косметики | spellerFail: органайзер для хранения косметики
+Error: ооганайзерф Expected: органайзеры (freq: 160 diffRunes: 2), SpellerSuggest: органайзер (freq: 1586 diffRunes: 2)
+------------------------------------------
+(джинсы черные для мальчиков -> джтнмы чергфе доя мальяикоа) | yaSucced: джинсы черные для мальчиков | spellerFail: джинсы черные для мальчика
+Error: мальяикоа Expected: мальчиков (freq: 4888 diffRunes: 2), SpellerSuggest: мальчика (freq: 7564 diffRunes: 3)
+------------------------------------------
+(нквд -> нквл) | yaSucced: нквд | spellerFail: нива
+Error: нквл Expected: нквд (freq: 16 diffRunes: 1), SpellerSuggest: нива (freq: 376 diffRunes: 2)
+------------------------------------------
+(провода для колонок в автомобиле -> прлводв лля колоерк в автомобидн) | yaSucced: провода для колонок в автомобиле | spellerFail: провод для колонок в автомобиле
+Error: прлводв Expected: провода (freq: 195 diffRunes: 2), SpellerSuggest: провод (freq: 661 diffRunes: 2)
+------------------------------------------
+(отмычка -> отиычкв) | yaSucced: отмычка | spellerFail: отмычки
+Error: отиычкв Expected: отмычка (freq: 2 diffRunes: 2), SpellerSuggest: отмычки (freq: 6 diffRunes: 2)
+------------------------------------------
+(грелка для новорожденных гелевая -> гпедка ддя новорожденевх геоеаая) | yaSucced: грелка для новорожденных гелевая | spellerFail: пенка для новорожденных гелевая
+Error: гпедка Expected: грелка (freq: 156 diffRunes: 2), SpellerSuggest: пенка (freq: 1184 diffRunes: 6)
+------------------------------------------
+(триместре -> трисестрн) | yaSucced: триместре | spellerFail: триместр
+Error: трисестрн Expected: триместре (freq: 1 diffRunes: 2), SpellerSuggest: триместр (freq: 6 diffRunes: 2)
+------------------------------------------
+(шторы для девочек -> штроы доя девоскк) | yaSucced: шторы для девочек | spellerFail: штаны для девочек
+Error: штроы Expected: шторы (freq: 2608 diffRunes: 2), SpellerSuggest: штаны (freq: 5755 diffRunes: 2)
+------------------------------------------
+(медела -> мелелп) | yaSucced: медела | spellerFail: мебели
+Error: мелелп Expected: медела (freq: 15 diffRunes: 2), SpellerSuggest: мебели (freq: 704 diffRunes: 2)
+------------------------------------------
+(семена мяты для дома -> скменп сяты лля домв) | yaSucced: семена мяты для дома | spellerFail: семена соты для дома
+Error: сяты Expected: мяты (freq: 48 diffRunes: 1), SpellerSuggest: соты (freq: 88 diffRunes: 1)
+------------------------------------------
+(комбинезон зимний для девочек зимний -> косюинезон зммниф ддя днаочек зммеий) | yaSucced: комбинезон зимний для девочек зимний | spellerFail: комбинезон зимние для девочек зимний
+Error: зммниф Expected: зимний (freq: 1000 diffRunes: 2), SpellerSuggest: зимние (freq: 2118 diffRunes: 2)
+------------------------------------------
+(рамки на магнитах -> рпмкм на мпгнитвх) | yaSucced: рамки на магнитах | spellerFail: рамка на магнитах
+Error: рпмкм Expected: рамки (freq: 325 diffRunes: 2), SpellerSuggest: рамка (freq: 940 diffRunes: 2)
+------------------------------------------
+(манжеты -> манжктв) | yaSucced: манжеты | spellerFail: манжета
+Error: манжктв Expected: манжеты (freq: 46 diffRunes: 2), SpellerSuggest: манжета (freq: 105 diffRunes: 2)
+------------------------------------------
+(элем -> элнм) | yaSucced: элем | spellerFail: шлем
+Error: элнм Expected: элем (freq: 2 diffRunes: 1), SpellerSuggest: шлем (freq: 907 diffRunes: 2)
+------------------------------------------
+(грузчики -> грцзсики) | yaSucced: грузчики | spellerFail: грузики
+Error: грцзсики Expected: грузчики (freq: 3 diffRunes: 2), SpellerSuggest: грузики (freq: 28 diffRunes: 5)
+------------------------------------------
+(белое бархатное платье -> беллк ьпрхатное алаиье) | yaSucced: белое бархатное платье | spellerFail: белла бархатное платье
+Error: беллк Expected: белое (freq: 837 diffRunes: 2), SpellerSuggest: белла (freq: 86 diffRunes: 1)
+------------------------------------------
+(фонтан для котов -> ыоетан доя еотоа) | yaSucced: фонтан для котов | spellerFail: фонтан для кота
+Error: еотоа Expected: котов (freq: 372 diffRunes: 2), SpellerSuggest: кота (freq: 646 diffRunes: 3)
+------------------------------------------
+(шапочки медицинская -> шапоскм мелицинскач) | yaSucced: шапочки медицинская | spellerFail: шапочка медицинская
+Error: шапоскм Expected: шапочки (freq: 219 diffRunes: 2), SpellerSuggest: шапочка (freq: 726 diffRunes: 2)
+------------------------------------------
+(вентиль датчика давления шин -> вегтидь датчиуп даыоения штн) | yaSucced: вентиль датчика давления шин | spellerFail: вентиль датчик давления шин
+Error: датчиуп Expected: датчика (freq: 17 diffRunes: 2), SpellerSuggest: датчик (freq: 355 diffRunes: 2)
+------------------------------------------
+(кожаный куртка -> еожаныц укртка) | yaSucced: кожаный куртка | spellerFail: кожаные куртки
+Error: еожаныц Expected: кожаный (freq: 1012 diffRunes: 2), SpellerSuggest: кожаные (freq: 2408 diffRunes: 2)
+Error: укртка Expected: куртка (freq: 10593 diffRunes: 2), SpellerSuggest: куртки (freq: 2414 diffRunes: 3)
+------------------------------------------
+(куклы монстры -> ецклы монсирв) | yaSucced: куклы монстры | spellerFail: куклы монстр
+Error: монсирв Expected: монстры (freq: 48 diffRunes: 2), SpellerSuggest: монстр (freq: 132 diffRunes: 2)
+------------------------------------------
+(текстовыделитель -> текстовыдедителт) | yaSucced: текстовыделитель | spellerFail: текстовыделители
+Error: текстовыдедителт Expected: текстовыделитель (freq: 34 diffRunes: 2), SpellerSuggest: текстовыделители (freq: 57 diffRunes: 2)
+------------------------------------------
+(костюм белый для девочки -> костбс беоыц жля левояки) | yaSucced: костюм белый для девочки | spellerFail: костюм белые для девочки
+Error: беоыц Expected: белый (freq: 3053 diffRunes: 2), SpellerSuggest: белые (freq: 3838 diffRunes: 2)
+------------------------------------------
+(жабы -> жабф) | yaSucced: жабы | spellerFail: жабо
+Error: жабф Expected: жабы (freq: 7 diffRunes: 1), SpellerSuggest: жабо (freq: 49 diffRunes: 1)
+------------------------------------------
+(оплетка на руль сл стразами -> оплеьеа на ркль сл чтрвзами) | yaSucced: оплетка на руль сл стразами | spellerFail: оплетка на руль со стразами
+Error: сл Expected: сл (freq: 12 diffRunes: 0), SpellerSuggest: со (freq: 3665 diffRunes: 1)
+------------------------------------------
+(проститутка -> рроституткп) | yaSucced: проститутка | spellerFail: проститутки
+Error: рроституткп Expected: проститутка (freq: 2 diffRunes: 2), SpellerSuggest: проститутки (freq: 4 diffRunes: 2)
+------------------------------------------
+(апельсины сушеные -> апедьсинв сугенын) | yaSucced: апельсины сушеные | spellerFail: апельсин сушеный
+Error: апедьсинв Expected: апельсины (freq: 5 diffRunes: 2), SpellerSuggest: апельсин (freq: 108 diffRunes: 2)
+Error: сугенын Expected: сушеные (freq: 142 diffRunes: 2), SpellerSuggest: сушеный (freq: 217 diffRunes: 2)
+------------------------------------------
+(маме -> мвме) | yaSucced: маме | spellerFail: твое
+Error: мвме Expected: маме (freq: 233 diffRunes: 1), SpellerSuggest: твое (freq: 2133 diffRunes: 2)
+------------------------------------------
+(сумки на пояс женские -> суикм на пляс жегскте) | yaSucced: сумки на пояс женские | spellerFail: сумка на пояс женские
+Error: суикм Expected: сумки (freq: 2475 diffRunes: 2), SpellerSuggest: сумка (freq: 9475 diffRunes: 2)
+------------------------------------------
+(шввп -> щввп) | yaSucced: шввп | spellerFail: вв
+Error: щввп Expected: шввп (freq: 6 diffRunes: 1), SpellerSuggest: вв (freq: 154 diffRunes: 3)
+------------------------------------------
+(крепление на сиденья нива -> крерленте на силеньф еива) | yaSucced: крепление на сиденья нива | spellerFail: крепление на сиденье нива
+Error: силеньф Expected: сиденья (freq: 286 diffRunes: 2), SpellerSuggest: сиденье (freq: 444 diffRunes: 2)
+------------------------------------------
+(пылесосы с влажной уборкой -> пылесомф с вовжной убопклй) | yaSucced: пылесосы с влажной уборкой | spellerFail: пылесос с влажной уборкой
+Error: пылесомф Expected: пылесосы (freq: 78 diffRunes: 2), SpellerSuggest: пылесос (freq: 1460 diffRunes: 2)
+------------------------------------------
+(семейная рамка для фото -> семкйеая рвска доя фоио) | yaSucced: семейная рамка для фото | spellerFail: семейная краска для фото
+Error: рвска Expected: рамка (freq: 940 diffRunes: 2), SpellerSuggest: краска (freq: 5398 diffRunes: 6)
+------------------------------------------
+(кроссовки найк на девочку -> кпоссовуи нафк на деыочкц) | yaSucced: кроссовки найк на девочку | spellerFail: кроссовки на на девочку
+Error: нафк Expected: найк (freq: 936 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 2)
+------------------------------------------
+(мухоморы сушеные -> мухосорв сушннык) | yaSucced: мухоморы сушеные | spellerFail: мухомор сушеный
+Error: мухосорв Expected: мухоморы (freq: 22 diffRunes: 2), SpellerSuggest: мухомор (freq: 64 diffRunes: 2)
+Error: сушннык Expected: сушеные (freq: 142 diffRunes: 2), SpellerSuggest: сушеный (freq: 217 diffRunes: 2)
+------------------------------------------
+(полотенца для лица -> полоиенцп длч дица) | yaSucced: полотенца для лица | spellerFail: полотенце для лица
+Error: полоиенцп Expected: полотенца (freq: 871 diffRunes: 2), SpellerSuggest: полотенце (freq: 1880 diffRunes: 2)
+------------------------------------------
+(женские зимние комбинезоны -> эееские щииние уосбинезоны) | yaSucced: женские зимние комбинезоны | spellerFail: детские зимние комбинезоны
+Error: эееские Expected: женские (freq: 31746 diffRunes: 2), SpellerSuggest: детские (freq: 10235 diffRunes: 2)
+------------------------------------------
+(эльбор -> жлььор) | yaSucced: эльбор | spellerFail: алькор
+Error: жлььор Expected: эльбор (freq: 2 diffRunes: 2), SpellerSuggest: алькор (freq: 20 diffRunes: 2)
+------------------------------------------
+(свечи для торта цифры -> чвкчи жля ьорьа цмфрф) | yaSucced: свечи для торта цифры | spellerFail: свечи для торта цифра
+Error: цмфрф Expected: цифры (freq: 461 diffRunes: 2), SpellerSuggest: цифра (freq: 501 diffRunes: 2)
+------------------------------------------
+(мальчики кроссовки -> мальчмкт крочсовкт) | yaSucced: мальчики кроссовки | spellerFail: мальчика кроссовки
+Error: мальчмкт Expected: мальчики (freq: 411 diffRunes: 2), SpellerSuggest: мальчика (freq: 7564 diffRunes: 2)
+------------------------------------------
+(вотчина -> вртчиеа) | yaSucced: вотчина | spellerFail: ветчина
+Error: вртчиеа Expected: вотчина (freq: 1 diffRunes: 2), SpellerSuggest: ветчина (freq: 12 diffRunes: 2)
+------------------------------------------
+(фон для фото -> флн жля фотл) | yaSucced: фон для фото | spellerFail: для для кота
+Error: флн Expected: фон (freq: 117 diffRunes: 1), SpellerSuggest: для (freq: 264457 diffRunes: 2)
+Error: фотл Expected: фото (freq: 915 diffRunes: 1), SpellerSuggest: кота (freq: 646 diffRunes: 2)
+------------------------------------------
+(олаф -> олаы) | yaSucced: олаф | spellerFail: ола
+Error: олаы Expected: олаф (freq: 14 diffRunes: 1), SpellerSuggest: ола (freq: 32 diffRunes: 1)
+------------------------------------------
+(платье для девочки на каждый день -> алаьье длф днвочеи на каждвц дннь) | yaSucced: платье для девочки на каждый день | spellerFail: платье для девочек на каждый день
+Error: днвочеи Expected: девочки (freq: 8841 diffRunes: 2), SpellerSuggest: девочек (freq: 9099 diffRunes: 2)
+------------------------------------------
+(куртки на весну мужские адидас -> купткм на ыеснц мкжскин пдидвс) | yaSucced: куртки на весну мужские адидас | spellerFail: куртка на весну мужские адидас
+Error: купткм Expected: куртки (freq: 2414 diffRunes: 2), SpellerSuggest: куртка (freq: 10593 diffRunes: 2)
+------------------------------------------
+(комплект датчиков движения для системы для -> ермплект дптчикоа дыижееия ддя систниы ддя) | yaSucced: комплект датчиков движения для системы для | spellerFail: комплект датчиком движения для системы для
+Error: дптчикоа Expected: датчиков (freq: 6 diffRunes: 2), SpellerSuggest: датчиком (freq: 126 diffRunes: 2)
+------------------------------------------
+(подростковые туфли для мальчика -> подросткоыык туыди доя мадтчика) | yaSucced: подростковые туфли для мальчика | spellerFail: подростковые худи для мальчика
+Error: туыди Expected: туфли (freq: 3816 diffRunes: 2), SpellerSuggest: худи (freq: 4298 diffRunes: 4)
+------------------------------------------
+(комоды пластиковые -> комллы пламииковые) | yaSucced: комоды пластиковые | spellerFail: колбы пластиковые
+Error: комллы Expected: комоды (freq: 42 diffRunes: 2), SpellerSuggest: колбы (freq: 50 diffRunes: 4)
+------------------------------------------
+(танк ис -> твнк ис) | yaSucced: танк ис | spellerFail: танк из
+Error: ис Expected: ис (freq: 47 diffRunes: 0), SpellerSuggest: из (freq: 12633 diffRunes: 1)
+------------------------------------------
+(подвесы для динамика -> пожвесф жля динпмиуа) | yaSucced: подвесы для динамика | spellerFail: подвес для динамика
+Error: пожвесф Expected: подвесы (freq: 24 diffRunes: 2), SpellerSuggest: подвес (freq: 71 diffRunes: 2)
+------------------------------------------
+(были -> ьыли) | yaSucced: были | spellerFail: мыло
+Error: ьыли Expected: были (freq: 32 diffRunes: 1), SpellerSuggest: мыло (freq: 2727 diffRunes: 2)
+------------------------------------------
+(бензин для -> бннщин лля) | yaSucced: бензин для | spellerFail: женщин для
+Error: бннщин Expected: бензин (freq: 39 diffRunes: 2), SpellerSuggest: женщин (freq: 9517 diffRunes: 2)
+------------------------------------------
+(наклейки с котятами -> нвкоейки с котчьами) | yaSucced: наклейки с котятами | spellerFail: наклейки с котами
+Error: котчьами Expected: котятами (freq: 25 diffRunes: 2), SpellerSuggest: котами (freq: 95 diffRunes: 5)
+------------------------------------------
+(каши хлопья -> кашт хлопбч) | yaSucced: каши хлопья | spellerFail: каша хлопья
+Error: кашт Expected: каши (freq: 168 diffRunes: 1), SpellerSuggest: каша (freq: 785 diffRunes: 1)
+------------------------------------------
+(соболь мех -> сободб мнх) | yaSucced: соболь мех | spellerFail: собой на
+Error: сободб Expected: соболь (freq: 16 diffRunes: 2), SpellerSuggest: собой (freq: 55 diffRunes: 2)
+Error: мнх Expected: мех (freq: 251 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 3)
+------------------------------------------
+(болтушки -> бодтушкм) | yaSucced: болтушки | spellerFail: болтушка
+Error: бодтушкм Expected: болтушки (freq: 4 diffRunes: 2), SpellerSuggest: болтушка (freq: 18 diffRunes: 2)
+------------------------------------------
+(вы друг друга стоите -> вы дпуг жруна чтоиье) | yaSucced: вы друг друга стоите | spellerFail: вы пуф луна стоите
+Error: дпуг Expected: друг (freq: 71 diffRunes: 1), SpellerSuggest: пуф (freq: 206 diffRunes: 4)
+Error: жруна Expected: друга (freq: 27 diffRunes: 2), SpellerSuggest: луна (freq: 259 diffRunes: 5)
+------------------------------------------
+(добавки в чай -> лобавкт в чпй) | yaSucced: добавки в чай | spellerFail: добавка в чай
+Error: лобавкт Expected: добавки (freq: 84 diffRunes: 2), SpellerSuggest: добавка (freq: 120 diffRunes: 2)
+------------------------------------------
+(чехол для наушников -> чехлд длф наугнмков) | yaSucced: чехол для наушников | spellerFail: чехлы для наушников
+Error: чехлд Expected: чехол (freq: 24585 diffRunes: 2), SpellerSuggest: чехлы (freq: 3481 diffRunes: 1)
+------------------------------------------
+(роликовые шторы на окна -> оооиковые щторв на окнв) | yaSucced: роликовые шторы на окна | spellerFail: роликовые шторы на окно
+Error: окнв Expected: окна (freq: 417 diffRunes: 1), SpellerSuggest: окно (freq: 385 diffRunes: 1)
+------------------------------------------
+(фара -> ыара) | yaSucced: фара | spellerFail: пара
+Error: ыара Expected: фара (freq: 188 diffRunes: 1), SpellerSuggest: пара (freq: 340 diffRunes: 1)
+------------------------------------------
+(яша -> яща) | yaSucced: яша | spellerFail: на
+Error: яща Expected: яша (freq: 1 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 3)
+------------------------------------------
+(петровка -> пеьоовка) | yaSucced: петровка | spellerFail: перловка
+Error: пеьоовка Expected: петровка (freq: 3 diffRunes: 2), SpellerSuggest: перловка (freq: 17 diffRunes: 2)
+------------------------------------------
+(ликвидатор меток -> ликаидатоо меиоу) | yaSucced: ликвидатор меток | spellerFail: ликвидатор мешок
+Error: меиоу Expected: меток (freq: 7 diffRunes: 2), SpellerSuggest: мешок (freq: 1046 diffRunes: 2)
+------------------------------------------
+(тональный крем сс -> тонаоьгый креи сс) | yaSucced: тональный крем сс | spellerFail: тональный крем со
+Error: сс Expected: сс (freq: 110 diffRunes: 0), SpellerSuggest: со (freq: 3665 diffRunes: 1)
+------------------------------------------
+(рукава тату -> рккавв татк) | yaSucced: рукава тату | spellerFail: рукав тату
+Error: рккавв Expected: рукава (freq: 188 diffRunes: 2), SpellerSuggest: рукав (freq: 431 diffRunes: 2)
+------------------------------------------
+(плата для телефона -> рлатп доя телефлнв) | yaSucced: плата для телефона | spellerFail: клатч для телефона
+Error: рлатп Expected: плата (freq: 177 diffRunes: 2), SpellerSuggest: клатч (freq: 351 diffRunes: 2)
+------------------------------------------
+(блузы и кофты женские -> юлущы и уофтф женсеик) | yaSucced: блузы и кофты женские | spellerFail: блузы и кофта женский
+Error: уофтф Expected: кофты (freq: 842 diffRunes: 2), SpellerSuggest: кофта (freq: 3597 diffRunes: 2)
+Error: женсеик Expected: женские (freq: 31746 diffRunes: 2), SpellerSuggest: женский (freq: 14309 diffRunes: 2)
+------------------------------------------
+(чехол для телефона а с -> сеход жля тклефонв а с) | yaSucced: чехол для телефона а с | spellerFail: чехол для телефон а с
+Error: тклефонв Expected: телефона (freq: 2778 diffRunes: 2), SpellerSuggest: телефон (freq: 4897 diffRunes: 2)
+------------------------------------------
+(подушки на стул гусь -> прдушкм на стуо гцсь) | yaSucced: подушки на стул гусь | spellerFail: подушка на стул гусь
+Error: прдушкм Expected: подушки (freq: 679 diffRunes: 2), SpellerSuggest: подушка (freq: 3049 diffRunes: 2)
+------------------------------------------
+(цветотерапия -> уветоткрапия) | yaSucced: цветотерапия | spellerFail: светотерапия
+Error: уветоткрапия Expected: цветотерапия (freq: 2 diffRunes: 2), SpellerSuggest: светотерапия (freq: 3 diffRunes: 2)
+------------------------------------------
+(топы женские летние -> топв женчкик летгик) | yaSucced: топы женские летние | spellerFail: топ женский летний
+Error: топв Expected: топы (freq: 459 diffRunes: 1), SpellerSuggest: топ (freq: 4082 diffRunes: 1)
+Error: женчкик Expected: женские (freq: 31746 diffRunes: 2), SpellerSuggest: женский (freq: 14309 diffRunes: 2)
+Error: летгик Expected: летние (freq: 3676 diffRunes: 2), SpellerSuggest: летний (freq: 1451 diffRunes: 2)
+------------------------------------------
+(подвески из кожи -> плдвескм из еожи) | yaSucced: подвески из кожи | spellerFail: подвеска из кожи
+Error: плдвескм Expected: подвески (freq: 314 diffRunes: 2), SpellerSuggest: подвеска (freq: 1787 diffRunes: 2)
+------------------------------------------
+(скраб дл лица -> мкрвб дл лийа) | yaSucced: скраб дл лица | spellerFail: скраб для лица
+Error: дл Expected: дл (freq: 393 diffRunes: 0), SpellerSuggest: для (freq: 264457 diffRunes: 1)
+------------------------------------------
+(красивые платья для женщин на торжество -> кпасивфе плптьч доя жеешин на торжнчтво) | yaSucced: красивые платья для женщин на торжество | spellerFail: красивые платье для женщин на торжество
+Error: плптьч Expected: платья (freq: 3412 diffRunes: 2), SpellerSuggest: платье (freq: 14137 diffRunes: 2)
+------------------------------------------
+(рабы -> рабф) | yaSucced: рабы | spellerFail: шарф
+Error: рабф Expected: рабы (freq: 2 diffRunes: 1), SpellerSuggest: шарф (freq: 1366 diffRunes: 2)
+------------------------------------------
+(джина элит -> джмга жлит) | yaSucced: джина элит | spellerFail: дома плит
+Error: джмга Expected: джина (freq: 8 diffRunes: 2), SpellerSuggest: дома (freq: 1560 diffRunes: 3)
+Error: жлит Expected: элит (freq: 96 diffRunes: 1), SpellerSuggest: плит (freq: 111 diffRunes: 1)
+------------------------------------------
+(пуховик женский искусственная кожа -> аухоаик женчкиф искучственнпя кржа) | yaSucced: пуховик женский искусственная кожа | spellerFail: пуховик женские искусственная кожа
+Error: женчкиф Expected: женский (freq: 14309 diffRunes: 2), SpellerSuggest: женские (freq: 31746 diffRunes: 2)
+------------------------------------------
+(детские наборы для душа -> детмкте наюорв жля дуща) | yaSucced: детские наборы для душа | spellerFail: детские набор для душа
+Error: наюорв Expected: наборы (freq: 1867 diffRunes: 2), SpellerSuggest: набор (freq: 17744 diffRunes: 2)
+------------------------------------------
+(митенки для девочек -> миткнуи длч деврчкк) | yaSucced: митенки для девочек | spellerFail: митенки для девочки
+Error: деврчкк Expected: девочек (freq: 9099 diffRunes: 2), SpellerSuggest: девочки (freq: 8841 diffRunes: 2)
+------------------------------------------
+(подарочные наборы для праздника рамадан -> подароянык набопф лля прпзлника рамвдае) | yaSucced: подарочные наборы для праздника рамадан | spellerFail: подарочный набор для праздника рамадан
+Error: подароянык Expected: подарочные (freq: 518 diffRunes: 2), SpellerSuggest: подарочный (freq: 1519 diffRunes: 2)
+Error: набопф Expected: наборы (freq: 1867 diffRunes: 2), SpellerSuggest: набор (freq: 17744 diffRunes: 2)
+------------------------------------------
+(суде -> сцде) | yaSucced: суде | spellerFail: виде
+Error: сцде Expected: суде (freq: 2 diffRunes: 1), SpellerSuggest: виде (freq: 904 diffRunes: 2)
+------------------------------------------
+(алоэ -> влоэ) | yaSucced: алоэ | spellerFail: волос
+Error: влоэ Expected: алоэ (freq: 280 diffRunes: 1), SpellerSuggest: волос (freq: 12092 diffRunes: 4)
+------------------------------------------
+(сыворотка дл лица -> сывопоика дл лтца) | yaSucced: сыворотка дл лица | spellerFail: сыворотка для лица
+Error: дл Expected: дл (freq: 393 diffRunes: 0), SpellerSuggest: для (freq: 264457 diffRunes: 1)
+------------------------------------------
+(фифа -> фифп) | yaSucced: фифа | spellerFail: ип
+Error: фифп Expected: фифа (freq: 33 diffRunes: 1), SpellerSuggest: ип (freq: 313 diffRunes: 4)
+------------------------------------------
+(билборд -> биобопд) | yaSucced: билборд | spellerFail: бибоп
+Error: биобопд Expected: билборд (freq: 2 diffRunes: 2), SpellerSuggest: бибоп (freq: 8 diffRunes: 5)
+------------------------------------------
+(книга дота -> унигп длта) | yaSucced: книга дота | spellerFail: книга для
+Error: длта Expected: дота (freq: 67 diffRunes: 1), SpellerSuggest: для (freq: 264457 diffRunes: 2)
+------------------------------------------
+(имя -> тмя) | yaSucced: имя | spellerFail: для
+Error: тмя Expected: имя (freq: 81 diffRunes: 1), SpellerSuggest: для (freq: 264457 diffRunes: 2)
+------------------------------------------
+(туфли для мальчиков -> ицфли доя иальчикоа) | yaSucced: туфли для мальчиков | spellerFail: туфли для мальчика
+Error: иальчикоа Expected: мальчиков (freq: 4888 diffRunes: 2), SpellerSuggest: мальчика (freq: 7564 diffRunes: 3)
+------------------------------------------
+(глаз гора -> шлаз глра) | yaSucced: глаз гора | spellerFail: ла ла
+Error: шлаз Expected: глаз (freq: 2240 diffRunes: 1), SpellerSuggest: ла (freq: 124 diffRunes: 4)
+Error: глра Expected: гора (freq: 19 diffRunes: 1), SpellerSuggest: ла (freq: 124 diffRunes: 4)
+------------------------------------------
+(юбки для танцев женские -> юбкм лля твецев жеескте) | yaSucced: юбки для танцев женские | spellerFail: юбка для танцев женские
+Error: юбкм Expected: юбки (freq: 758 diffRunes: 1), SpellerSuggest: юбка (freq: 4890 diffRunes: 1)
+------------------------------------------
+(брелок парный -> бркоок рапный) | yaSucced: брелок парный | spellerFail: брелок красный
+Error: рапный Expected: парный (freq: 68 diffRunes: 2), SpellerSuggest: красный (freq: 1137 diffRunes: 7)
+------------------------------------------
+(энциклопедия динозавров -> энциклопклия динохавроы) | yaSucced: энциклопедия динозавров | spellerFail: энциклопедия динозавры
+Error: динохавроы Expected: динозавров (freq: 74 diffRunes: 2), SpellerSuggest: динозавры (freq: 208 diffRunes: 3)
+------------------------------------------
+(киси миси и хаги ваги игрушка -> уиси ммси и хагм впги игпушуа) | yaSucced: киси миси и хаги ваги игрушка | spellerFail: киси миси и ваги ваги игрушка
+Error: хагм Expected: хаги (freq: 555 diffRunes: 1), SpellerSuggest: ваги (freq: 466 diffRunes: 2)
+------------------------------------------
+(зубная паста рокс для детей -> зкбнпя ппстп покс доя жктей) | yaSucced: зубная паста рокс для детей | spellerFail: зубная паста бокс для детей
+Error: покс Expected: рокс (freq: 87 diffRunes: 1), SpellerSuggest: бокс (freq: 1223 diffRunes: 1)
+------------------------------------------
+(лак пф -> лвк пф) | yaSucced: лак пф | spellerFail: лак по
+Error: пф Expected: пф (freq: 4 diffRunes: 0), SpellerSuggest: по (freq: 6365 diffRunes: 1)
+------------------------------------------
+(чапаев -> чпппев) | yaSucced: чапаев | spellerFail: чоппер
+Error: чпппев Expected: чапаев (freq: 3 diffRunes: 2), SpellerSuggest: чоппер (freq: 4 diffRunes: 2)
+------------------------------------------
+(бабушке полотенце -> баьушкн аллотенце) | yaSucced: бабушке полотенце | spellerFail: бабушка полотенце
+Error: баьушкн Expected: бабушке (freq: 117 diffRunes: 2), SpellerSuggest: бабушка (freq: 144 diffRunes: 2)
+------------------------------------------
+(костюм легкий -> крсиюм лкнкий) | yaSucced: костюм легкий | spellerFail: костюм тонкий
+Error: лкнкий Expected: легкий (freq: 278 diffRunes: 2), SpellerSuggest: тонкий (freq: 383 diffRunes: 2)
+------------------------------------------
+(статуэтки для сада и огорода -> сиатуэткт ддя садп и огооожа) | yaSucced: статуэтки для сада и огорода | spellerFail: статуэтка для сада и огорода
+Error: сиатуэткт Expected: статуэтки (freq: 272 diffRunes: 2), SpellerSuggest: статуэтка (freq: 515 diffRunes: 2)
+------------------------------------------
+(каши с года -> кашт с шода) | yaSucced: каши с года | spellerFail: каша с года
+Error: кашт Expected: каши (freq: 168 diffRunes: 1), SpellerSuggest: каша (freq: 785 diffRunes: 1)
+------------------------------------------
+(скул -> скцл) | yaSucced: скул | spellerFail: стол
+Error: скцл Expected: скул (freq: 15 diffRunes: 1), SpellerSuggest: стол (freq: 2371 diffRunes: 2)
+------------------------------------------
+(рондель -> ронднлт) | yaSucced: рондель | spellerFail: ронделл
+Error: ронднлт Expected: рондель (freq: 5 diffRunes: 2), SpellerSuggest: ронделл (freq: 16 diffRunes: 2)
+------------------------------------------
+(формы для изготовления плитки -> фопмв жля изготлвлентя плмики) | yaSucced: формы для изготовления плитки | spellerFail: форма для изготовления плитки
+Error: фопмв Expected: формы (freq: 930 diffRunes: 2), SpellerSuggest: форма (freq: 3418 diffRunes: 2)
+------------------------------------------
+(носовой платок для женщин -> нрслвой плвтое лля женщте) | yaSucced: носовой платок для женщин | spellerFail: носовой платье для женщин
+Error: плвтое Expected: платок (freq: 1070 diffRunes: 2), SpellerSuggest: платье (freq: 14137 diffRunes: 2)
+------------------------------------------
+(мишкин лес -> мищкие лкс) | yaSucced: мишкин лес | spellerFail: мишки лес
+Error: мищкие Expected: мишкин (freq: 2 diffRunes: 2), SpellerSuggest: мишки (freq: 294 diffRunes: 2)
+------------------------------------------
+(мечи -> мнчи) | yaSucced: мечи | spellerFail: мячи
+Error: мнчи Expected: мечи (freq: 20 diffRunes: 1), SpellerSuggest: мячи (freq: 124 diffRunes: 1)
+------------------------------------------
+(стул педикюрный -> сткл аедикбрный) | yaSucced: стул педикюрный | spellerFail: стол педикюрный
+Error: сткл Expected: стул (freq: 1482 diffRunes: 1), SpellerSuggest: стол (freq: 2371 diffRunes: 1)
+------------------------------------------
+(журналы оттобре -> жцрналв отьоюре) | yaSucced: журналы оттобре | spellerFail: журнал оттобре
+Error: жцрналв Expected: журналы (freq: 107 diffRunes: 2), SpellerSuggest: журнал (freq: 715 diffRunes: 2)
+------------------------------------------
+(тренажеры для похудения -> трегажерф доя похуженич) | yaSucced: тренажеры для похудения | spellerFail: тренажер для похудения
+Error: трегажерф Expected: тренажеры (freq: 61 diffRunes: 2), SpellerSuggest: тренажер (freq: 590 diffRunes: 2)
+------------------------------------------
+(саске из наруто -> мвске из напуьо) | yaSucced: саске из наруто | spellerFail: маска из наруто
+Error: мвске Expected: саске (freq: 28 diffRunes: 2), SpellerSuggest: маска (freq: 6727 diffRunes: 2)
+------------------------------------------
+(футболки найк для мальчиков -> фцтболкм нпйк доя малбяиков) | yaSucced: футболки найк для мальчиков | spellerFail: футболка найк для мальчиков
+Error: фцтболкм Expected: футболки (freq: 4004 diffRunes: 2), SpellerSuggest: футболка (freq: 13723 diffRunes: 2)
+------------------------------------------
+(для голубей -> ддя голуьнй) | yaSucced: для голубей | spellerFail: для голубой
+Error: голуьнй Expected: голубей (freq: 11 diffRunes: 2), SpellerSuggest: голубой (freq: 406 diffRunes: 2)
+------------------------------------------
+(выбор -> ыфбор) | yaSucced: выбор | spellerFail: набор
+Error: ыфбор Expected: выбор (freq: 52 diffRunes: 2), SpellerSuggest: набор (freq: 17744 diffRunes: 2)
+------------------------------------------
+(горная вода -> нореая ыода) | yaSucced: горная вода | spellerFail: новая вода
+Error: нореая Expected: горная (freq: 15 diffRunes: 2), SpellerSuggest: новая (freq: 235 diffRunes: 4)
+------------------------------------------
+(средство против сальных желез -> чркдство прлтиа маоьных эелкз) | yaSucced: средство против сальных желез | spellerFail: средство против сальных шелк
+Error: эелкз Expected: желез (freq: 1 diffRunes: 2), SpellerSuggest: шелк (freq: 420 diffRunes: 2)
+------------------------------------------
+(виво -> виыо) | yaSucced: виво | spellerFail: вино
+Error: виыо Expected: виво (freq: 30 diffRunes: 1), SpellerSuggest: вино (freq: 183 diffRunes: 1)
+------------------------------------------
+(масло хны -> масдл зны) | yaSucced: масло хны | spellerFail: масло на
+Error: зны Expected: хны (freq: 50 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 3)
+------------------------------------------
+(прозрачная ваза -> прозоасная ыаза) | yaSucced: прозрачная ваза | spellerFail: прозрачная база
+Error: ыаза Expected: ваза (freq: 685 diffRunes: 1), SpellerSuggest: база (freq: 1141 diffRunes: 1)
+------------------------------------------
+(лейпциг -> лефпцин) | yaSucced: лейпциг | spellerFail: лепин
+Error: лефпцин Expected: лейпциг (freq: 1 diffRunes: 2), SpellerSuggest: лепин (freq: 3 diffRunes: 5)
+------------------------------------------
+(лев подарок -> леы аодароу) | yaSucced: лев подарок | spellerFail: лет подарок
+Error: леы Expected: лев (freq: 294 diffRunes: 1), SpellerSuggest: лет (freq: 4003 diffRunes: 1)
+------------------------------------------
+(предохранители -> прндохранителм) | yaSucced: предохранители | spellerFail: предохранитель
+Error: прндохранителм Expected: предохранители (freq: 14 diffRunes: 2), SpellerSuggest: предохранитель (freq: 36 diffRunes: 2)
+------------------------------------------
+(наклейки ангелы -> нпкдейки аегелв) | yaSucced: наклейки ангелы | spellerFail: наклейки ангел
+Error: аегелв Expected: ангелы (freq: 55 diffRunes: 2), SpellerSuggest: ангел (freq: 232 diffRunes: 2)
+------------------------------------------
+(самоклейка цена -> саиоклнйка цкна) | yaSucced: самоклейка цена | spellerFail: самоклейка на
+Error: цкна Expected: цена (freq: 169 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 4)
+------------------------------------------
+(топикрем -> тоаикоем) | yaSucced: топикрем | spellerFail: топиком
+Error: тоаикоем Expected: топикрем (freq: 21 diffRunes: 2), SpellerSuggest: топиком (freq: 21 diffRunes: 3)
+------------------------------------------
+(пк до -> пк до) | yaSucced: пк до | spellerFail: по по
+Error: пк Expected: пк (freq: 329 diffRunes: 0), SpellerSuggest: по (freq: 6365 diffRunes: 1)
+Error: до Expected: до (freq: 1217 diffRunes: 0), SpellerSuggest: по (freq: 6365 diffRunes: 1)
+------------------------------------------
+(прозрачный чехол для нот -> поохрачный чнъол лля нлт) | yaSucced: прозрачный чехол для нот | spellerFail: прозрачный чехол для на
+Error: нлт Expected: нот (freq: 569 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 2)
+------------------------------------------
+(полки над унитазом -> прлкм нвд унитазли) | yaSucced: полки над унитазом | spellerFail: полка над унитазом
+Error: прлкм Expected: полки (freq: 423 diffRunes: 2), SpellerSuggest: полка (freq: 1383 diffRunes: 2)
+------------------------------------------
+(найк мужское -> найе мужмкок) | yaSucced: найк мужское | spellerFail: найк мужской
+Error: мужмкок Expected: мужское (freq: 1179 diffRunes: 2), SpellerSuggest: мужской (freq: 5858 diffRunes: 2)
+------------------------------------------
+(портьеры в гостинную высота -> рорттеры в гостиенцю высоип) | yaSucced: портьеры в гостинную высота | spellerFail: портьеры в гостиную высота
+Error: гостиенцю Expected: гостинную (freq: 6 diffRunes: 2), SpellerSuggest: гостиную (freq: 174 diffRunes: 4)
+------------------------------------------
+(розетта -> рохетьа) | yaSucced: розетта | spellerFail: розетка
+Error: рохетьа Expected: розетта (freq: 1 diffRunes: 2), SpellerSuggest: розетка (freq: 337 diffRunes: 2)
+------------------------------------------
+(ундина -> цнжина) | yaSucced: ундина | spellerFail: нина
+Error: цнжина Expected: ундина (freq: 3 diffRunes: 2), SpellerSuggest: нина (freq: 71 diffRunes: 6)
+------------------------------------------
+(желтые ленты -> жеотык лкеты) | yaSucced: желтые ленты | spellerFail: желтый лет
+Error: жеотык Expected: желтые (freq: 444 diffRunes: 2), SpellerSuggest: желтый (freq: 510 diffRunes: 2)
+Error: лкеты Expected: ленты (freq: 426 diffRunes: 2), SpellerSuggest: лет (freq: 4003 diffRunes: 4)
+------------------------------------------
+(шрот -> щрот) | yaSucced: шрот | spellerFail: от
+Error: щрот Expected: шрот (freq: 8 diffRunes: 1), SpellerSuggest: от (freq: 8510 diffRunes: 4)
+------------------------------------------
+(формы для выпечки вафель -> фррмф лля выреяки ввфнль) | yaSucced: формы для выпечки вафель | spellerFail: форма для выпечки вафель
+Error: фррмф Expected: формы (freq: 930 diffRunes: 2), SpellerSuggest: форма (freq: 3418 diffRunes: 2)
+------------------------------------------
+(на высокий -> на высоктц) | yaSucced: на высокий | spellerFail: на высокой
+Error: высоктц Expected: высокий (freq: 186 diffRunes: 2), SpellerSuggest: высокой (freq: 938 diffRunes: 2)
+------------------------------------------
+(светильники цветы -> свнтильникм увнты) | yaSucced: светильники цветы | spellerFail: светильник цветы
+Error: свнтильникм Expected: светильники (freq: 308 diffRunes: 2), SpellerSuggest: светильник (freq: 1680 diffRunes: 2)
+------------------------------------------
+(спайси соус -> саайсм моус) | yaSucced: спайси соус | spellerFail: слайм бокс
+Error: саайсм Expected: спайси (freq: 3 diffRunes: 2), SpellerSuggest: слайм (freq: 320 diffRunes: 3)
+Error: моус Expected: соус (freq: 580 diffRunes: 1), SpellerSuggest: бокс (freq: 1223 diffRunes: 2)
+------------------------------------------
+(стеклоочиститель -> стеклрочистителб) | yaSucced: стеклоочиститель | spellerFail: стеклоочистителя
+Error: стеклрочистителб Expected: стеклоочиститель (freq: 48 diffRunes: 2), SpellerSuggest: стеклоочистителя (freq: 256 diffRunes: 2)
+------------------------------------------
+(фильтр нива -> ыиоьтр нмва) | yaSucced: фильтр нива | spellerFail: фильтр на
+Error: нмва Expected: нива (freq: 376 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 3)
+------------------------------------------
+(комбинезон для девочки осенний -> уомбиеезон длф деарчки осеениф) | yaSucced: комбинезон для девочки осенний | spellerFail: комбинезон для девочки осенние
+Error: осеениф Expected: осенний (freq: 204 diffRunes: 2), SpellerSuggest: осенние (freq: 864 diffRunes: 2)
+------------------------------------------
+(кресла качалки для взрослых -> кречлв уачалкт лля вщросдых) | yaSucced: кресла качалки для взрослых | spellerFail: кресло качалки для взрослых
+Error: кречлв Expected: кресла (freq: 319 diffRunes: 2), SpellerSuggest: кресло (freq: 1306 diffRunes: 2)
+------------------------------------------
+(отвертки для ноутбука -> ртверткм доя нрутбукп) | yaSucced: отвертки для ноутбука | spellerFail: отвертка для ноутбука
+Error: ртверткм Expected: отвертки (freq: 71 diffRunes: 2), SpellerSuggest: отвертка (freq: 176 diffRunes: 2)
+------------------------------------------
+(наклейки ваз -> епклейки ыаз) | yaSucced: наклейки ваз | spellerFail: наклейки на
+Error: ыаз Expected: ваз (freq: 1717 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 2)
+------------------------------------------
+(круглая сковородка для яиц -> кругоаф скрвородуа длч яиу) | yaSucced: круглая сковородка для яиц | spellerFail: круглая сковорода для яиц
+Error: скрвородуа Expected: сковородка (freq: 215 diffRunes: 2), SpellerSuggest: сковорода (freq: 1063 diffRunes: 3)
+------------------------------------------
+(идем -> идкм) | yaSucced: идем | spellerFail: дом
+Error: идкм Expected: идем (freq: 4 diffRunes: 1), SpellerSuggest: дом (freq: 1574 diffRunes: 4)
+------------------------------------------
+(сыр фета -> сыо фнта) | yaSucced: сыр фета | spellerFail: со на
+Error: сыо Expected: сыр (freq: 393 diffRunes: 1), SpellerSuggest: со (freq: 3665 diffRunes: 2)
+Error: фнта Expected: фета (freq: 6 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 4)
+------------------------------------------
+(розовый дом -> розоаыц длм) | yaSucced: розовый дом | spellerFail: розовый для
+Error: длм Expected: дом (freq: 1574 diffRunes: 1), SpellerSuggest: для (freq: 264457 diffRunes: 1)
+------------------------------------------
+(станок для очистки проводов -> мтаеок ддя лчтстки рроводрв) | yaSucced: станок для очистки проводов | spellerFail: станок для чистки проводов
+Error: лчтстки Expected: очистки (freq: 333 diffRunes: 2), SpellerSuggest: чистки (freq: 875 diffRunes: 7)
+------------------------------------------
+(александр дугин -> аоександо лцгин) | yaSucced: александр дугин | spellerFail: александр логан
+Error: лцгин Expected: дугин (freq: 2 diffRunes: 2), SpellerSuggest: логан (freq: 193 diffRunes: 2)
+------------------------------------------
+(ачкасов -> ачкпмов) | yaSucced: ачкасов | spellerFail: акимов
+Error: ачкпмов Expected: ачкасов (freq: 1 diffRunes: 2), SpellerSuggest: акимов (freq: 5 diffRunes: 6)
+------------------------------------------
+(экшн -> эешн) | yaSucced: экшн | spellerFail: фен
+Error: эешн Expected: экшн (freq: 52 diffRunes: 1), SpellerSuggest: фен (freq: 807 diffRunes: 3)
+------------------------------------------
+(японские ароматизаторы -> японскмк аооматизаторф) | yaSucced: японские ароматизаторы | spellerFail: японский ароматизатор
+Error: японскмк Expected: японские (freq: 269 diffRunes: 2), SpellerSuggest: японский (freq: 267 diffRunes: 2)
+Error: аооматизаторф Expected: ароматизаторы (freq: 57 diffRunes: 2), SpellerSuggest: ароматизатор (freq: 623 diffRunes: 2)
+------------------------------------------
+(формы для капкейков -> фррмв лля еапккйков) | yaSucced: формы для капкейков | spellerFail: форма для капкейков
+Error: фррмв Expected: формы (freq: 930 diffRunes: 2), SpellerSuggest: форма (freq: 3418 diffRunes: 2)
+------------------------------------------
+(наклейки дома -> нпкоейки доиа) | yaSucced: наклейки дома | spellerFail: наклейки дота
+Error: доиа Expected: дома (freq: 1560 diffRunes: 1), SpellerSuggest: дота (freq: 67 diffRunes: 1)
+------------------------------------------
+(плитка инфракрасная настольная -> плмтуа мнфрпкрасная настооьгая) | yaSucced: плитка инфракрасная настольная | spellerFail: плита инфракрасная настольная
+Error: плмтуа Expected: плитка (freq: 341 diffRunes: 2), SpellerSuggest: плита (freq: 357 diffRunes: 3)
+------------------------------------------
+(палочка для чистки -> палоякп доя чисикм) | yaSucced: палочка для чистки | spellerFail: палочки для чистки
+Error: палоякп Expected: палочка (freq: 232 diffRunes: 2), SpellerSuggest: палочки (freq: 800 diffRunes: 2)
+------------------------------------------
+(миры -> ммры) | yaSucced: миры | spellerFail: шары
+Error: ммры Expected: миры (freq: 19 diffRunes: 1), SpellerSuggest: шары (freq: 1589 diffRunes: 2)
+------------------------------------------
+(погремушка на коляску игрушки -> пошремушкп на уолчску игрушут) | yaSucced: погремушка на коляску игрушки | spellerFail: погремушка на коляску игрушка
+Error: игрушут Expected: игрушки (freq: 5536 diffRunes: 2), SpellerSuggest: игрушка (freq: 8204 diffRunes: 2)
+------------------------------------------
+(пневматика калибра -> пневмвтикв уалибрп) | yaSucced: пневматика калибра | spellerFail: пневматики калибр
+Error: пневмвтикв Expected: пневматика (freq: 36 diffRunes: 2), SpellerSuggest: пневматики (freq: 51 diffRunes: 2)
+Error: уалибрп Expected: калибра (freq: 19 diffRunes: 2), SpellerSuggest: калибр (freq: 54 diffRunes: 2)
+------------------------------------------
+(пока я ни я -> плка я ни я) | yaSucced: пока я ни я | spellerFail: пока я не я
+Error: ни Expected: ни (freq: 56 diffRunes: 0), SpellerSuggest: не (freq: 2020 diffRunes: 1)
+------------------------------------------
+(коврики для кухни -> ковпикм ддя кцхнт) | yaSucced: коврики для кухни | spellerFail: коврик для кухни
+Error: ковпикм Expected: коврики (freq: 1295 diffRunes: 2), SpellerSuggest: коврик (freq: 4034 diffRunes: 2)
+------------------------------------------
+(динамика -> динаммкп) | yaSucced: динамика | spellerFail: динамики
+Error: динаммкп Expected: динамика (freq: 38 diffRunes: 2), SpellerSuggest: динамики (freq: 125 diffRunes: 2)
+------------------------------------------
+(футболка мужская рыбак -> футболуп муэскпя рфбвк) | yaSucced: футболка мужская рыбак | spellerFail: футболка мужская рибок
+Error: рфбвк Expected: рыбак (freq: 27 diffRunes: 2), SpellerSuggest: рибок (freq: 295 diffRunes: 2)
+------------------------------------------
+(набор посуды из прессованного алюминия -> нпбрр аосудв из прессованглго алюсинтя) | yaSucced: набор посуды из прессованного алюминия | spellerFail: набор посуда из прессованного алюминия
+Error: аосудв Expected: посуды (freq: 1416 diffRunes: 2), SpellerSuggest: посуда (freq: 2386 diffRunes: 2)
+------------------------------------------
+(вагинальный -> вагинальнфф) | yaSucced: вагинальный | spellerFail: вагинальные
+Error: вагинальнфф Expected: вагинальный (freq: 29 diffRunes: 2), SpellerSuggest: вагинальные (freq: 53 diffRunes: 2)
+------------------------------------------
+(подставка под горячее блюда -> подстпвуа прд гроячее блюлп) | yaSucced: подставка под горячее блюда | spellerFail: подставка под горячее блюдо
+Error: блюлп Expected: блюда (freq: 48 diffRunes: 2), SpellerSuggest: блюдо (freq: 311 diffRunes: 2)
+------------------------------------------
+(платья женские на праздник -> плптьч женсктн на пращлник) | yaSucced: платья женские на праздник | spellerFail: платье женские на праздник
+Error: плптьч Expected: платья (freq: 3412 diffRunes: 2), SpellerSuggest: платье (freq: 14137 diffRunes: 2)
+------------------------------------------
+(цисты артемии -> йимты арьемит) | yaSucced: цисты артемии | spellerFail: зимы артемис
+Error: йимты Expected: цисты (freq: 2 diffRunes: 2), SpellerSuggest: зимы (freq: 813 diffRunes: 3)
+Error: арьемит Expected: артемии (freq: 2 diffRunes: 2), SpellerSuggest: артемис (freq: 5 diffRunes: 2)
+------------------------------------------
+(ботинки на мальчика весенние -> ботиееи на ипльчика весеннмк) | yaSucced: ботинки на мальчика весенние | spellerFail: ботинки на мальчика весенняя
+Error: весеннмк Expected: весенние (freq: 1135 diffRunes: 2), SpellerSuggest: весенняя (freq: 1539 diffRunes: 2)
+------------------------------------------
+(платье миледи -> плптьк имледи) | yaSucced: платье миледи | spellerFail: платье леди
+Error: имледи Expected: миледи (freq: 13 diffRunes: 2), SpellerSuggest: леди (freq: 438 diffRunes: 6)
+------------------------------------------
+(субличности -> чцбличности) | yaSucced: субличности | spellerFail: публичности
+Error: чцбличности Expected: субличности (freq: 1 diffRunes: 2), SpellerSuggest: публичности (freq: 1 diffRunes: 2)
+------------------------------------------
+(весна платья -> вечга платтч) | yaSucced: весна платья | spellerFail: весна платье
+Error: платтч Expected: платья (freq: 3412 diffRunes: 2), SpellerSuggest: платье (freq: 14137 diffRunes: 2)
+------------------------------------------
+(наборы вышивка крестом -> набопф ыыштвка кпестои) | yaSucced: наборы вышивка крестом | spellerFail: набор вышивка крестом
+Error: набопф Expected: наборы (freq: 1867 diffRunes: 2), SpellerSuggest: набор (freq: 17744 diffRunes: 2)
+------------------------------------------
+(банты на выпускной -> ьвнты на выпучкнлй) | yaSucced: банты на выпускной | spellerFail: ленты на выпускной
+Error: ьвнты Expected: банты (freq: 107 diffRunes: 2), SpellerSuggest: ленты (freq: 426 diffRunes: 2)
+------------------------------------------
+(стеклянные перегородки для ванны -> стеклягнын перегоролкт доя ыангы) | yaSucced: стеклянные перегородки для ванны | spellerFail: стеклянные перегородка для ванны
+Error: перегоролкт Expected: перегородки (freq: 22 diffRunes: 2), SpellerSuggest: перегородка (freq: 62 diffRunes: 2)
+------------------------------------------
+(упаковка чая -> цпакоыка чпя) | yaSucced: упаковка чая | spellerFail: упаковка для
+Error: чпя Expected: чая (freq: 506 diffRunes: 1), SpellerSuggest: для (freq: 264457 diffRunes: 2)
+------------------------------------------
+(часы камера -> яасы уамепа) | yaSucced: часы камера | spellerFail: часы лампа
+Error: уамепа Expected: камера (freq: 897 diffRunes: 2), SpellerSuggest: лампа (freq: 2748 diffRunes: 4)
+------------------------------------------
+(горшки пластиковые -> грпшки пласиикоыые) | yaSucced: горшки пластиковые | spellerFail: игрушки пластиковые
+Error: грпшки Expected: горшки (freq: 251 diffRunes: 2), SpellerSuggest: игрушки (freq: 5536 diffRunes: 7)
+------------------------------------------
+(пп ша -> пп ша) | yaSucced: пп ша | spellerFail: по на
+Error: пп Expected: пп (freq: 110 diffRunes: 0), SpellerSuggest: по (freq: 6365 diffRunes: 1)
+Error: ша Expected: ша (freq: 12 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+------------------------------------------
+(книги по массажу -> книнт по мамспжу) | yaSucced: книги по массажу | spellerFail: книга по массажу
+Error: книнт Expected: книги (freq: 3386 diffRunes: 2), SpellerSuggest: книга (freq: 8336 diffRunes: 2)
+------------------------------------------
+(помада алая -> помалп влая) | yaSucced: помада алая | spellerFail: помада для
+Error: влая Expected: алая (freq: 30 diffRunes: 1), SpellerSuggest: для (freq: 264457 diffRunes: 3)
+------------------------------------------
+(ключ трещотка -> клбч трещлтуа) | yaSucced: ключ трещотка | spellerFail: ключ трещетка
+Error: трещлтуа Expected: трещотка (freq: 36 diffRunes: 2), SpellerSuggest: трещетка (freq: 65 diffRunes: 2)
+------------------------------------------
+(махровые халаты для девочек -> махррвфе хадатф ддя левояек) | yaSucced: махровые халаты для девочек | spellerFail: махровые халат для девочек
+Error: хадатф Expected: халаты (freq: 344 diffRunes: 2), SpellerSuggest: халат (freq: 2143 diffRunes: 2)
+------------------------------------------
+(фореталь -> ыореьаль) | yaSucced: фореталь | spellerFail: лореаль
+Error: ыореьаль Expected: фореталь (freq: 1 diffRunes: 2), SpellerSuggest: лореаль (freq: 308 diffRunes: 5)
+------------------------------------------
+(карнавальный костюм олень -> уарнавальеый клмтюм ооегь) | yaSucced: карнавальный костюм олень | spellerFail: карнавальный костюм осень
+Error: ооегь Expected: олень (freq: 106 diffRunes: 2), SpellerSuggest: осень (freq: 1392 diffRunes: 2)
+------------------------------------------
+(кисти для краски -> кмстм доя коаскм) | yaSucced: кисти для краски | spellerFail: кисть для краски
+Error: кмстм Expected: кисти (freq: 693 diffRunes: 2), SpellerSuggest: кисть (freq: 1024 diffRunes: 2)
+------------------------------------------
+(силиконовые валики для ресниц -> милтконовые ввликм доя песнтц) | yaSucced: силиконовые валики для ресниц | spellerFail: силиконовые валик для ресниц
+Error: ввликм Expected: валики (freq: 54 diffRunes: 2), SpellerSuggest: валик (freq: 351 diffRunes: 2)
+------------------------------------------
+(дота футболка -> жота фктбллка) | yaSucced: дота футболка | spellerFail: кота футболка
+Error: жота Expected: дота (freq: 67 diffRunes: 1), SpellerSuggest: кота (freq: 646 diffRunes: 1)
+------------------------------------------
+(расческа шт -> расчнсеа шт) | yaSucced: расческа шт | spellerFail: расческа от
+Error: шт Expected: шт (freq: 2965 diffRunes: 0), SpellerSuggest: от (freq: 8510 diffRunes: 1)
+------------------------------------------
+(зарядные устройства на андроид -> заряднвн кстройствв на анжрлид) | yaSucced: зарядные устройства на андроид | spellerFail: зарядное устройство на андроид
+Error: заряднвн Expected: зарядные (freq: 28 diffRunes: 2), SpellerSuggest: зарядное (freq: 809 diffRunes: 2)
+Error: кстройствв Expected: устройства (freq: 63 diffRunes: 2), SpellerSuggest: устройство (freq: 883 diffRunes: 2)
+------------------------------------------
+(санкт петербург сувенир -> сануи петнрюург скыенир) | yaSucced: санкт петербург сувенир | spellerFail: санки петербург сувенир
+Error: сануи Expected: санкт (freq: 56 diffRunes: 2), SpellerSuggest: санки (freq: 90 diffRunes: 1)
+------------------------------------------
+(куртки плащ -> курькт алащ) | yaSucced: куртки плащ | spellerFail: куртка плащ
+Error: курькт Expected: куртки (freq: 2414 diffRunes: 2), SpellerSuggest: куртка (freq: 10593 diffRunes: 2)
+------------------------------------------
+(жидкие тени для глаз -> жидктн тнни жля нлаз) | yaSucced: жидкие тени для глаз | spellerFail: жидкий тени для глаз
+Error: жидктн Expected: жидкие (freq: 294 diffRunes: 2), SpellerSuggest: жидкий (freq: 578 diffRunes: 2)
+------------------------------------------
+(наборы для стемпинга -> наблрф ддя стнмпмнга) | yaSucced: наборы для стемпинга | spellerFail: набор для стемпинга
+Error: наблрф Expected: наборы (freq: 1867 diffRunes: 2), SpellerSuggest: набор (freq: 17744 diffRunes: 2)
+------------------------------------------
+(сыроварение -> сыровпреник) | yaSucced: сыроварение | spellerFail: сыроварения
+Error: сыровпреник Expected: сыроварение (freq: 2 diffRunes: 2), SpellerSuggest: сыроварения (freq: 4 diffRunes: 2)
+------------------------------------------
+(игрушки в авто -> игрушут в пвто) | yaSucced: игрушки в авто | spellerFail: игрушка в авто
+Error: игрушут Expected: игрушки (freq: 5536 diffRunes: 2), SpellerSuggest: игрушка (freq: 8204 diffRunes: 2)
+------------------------------------------
+(искусственные цветы дом -> искусствкннве увеиы длм) | yaSucced: искусственные цветы дом | spellerFail: искусственные цветы для
+Error: длм Expected: дом (freq: 1574 diffRunes: 1), SpellerSuggest: для (freq: 264457 diffRunes: 1)
+------------------------------------------
+(школьные юбка -> гкольеые юбкв) | yaSucced: школьные юбка | spellerFail: школьные юбки
+Error: юбкв Expected: юбка (freq: 4890 diffRunes: 1), SpellerSuggest: юбки (freq: 758 diffRunes: 1)
+------------------------------------------
+(детское средство для подмывания -> детсклн срежствр длч подмыыанич) | yaSucced: детское средство для подмывания | spellerFail: детские средство для подмывания
+Error: детсклн Expected: детское (freq: 2211 diffRunes: 2), SpellerSuggest: детские (freq: 10235 diffRunes: 2)
+------------------------------------------
+(для хорька -> лля зорбка) | yaSucced: для хорька | spellerFail: для коробка
+Error: зорбка Expected: хорька (freq: 17 diffRunes: 2), SpellerSuggest: коробка (freq: 1660 diffRunes: 5)
+------------------------------------------
+(фильтр атолл -> филттп птоол) | yaSucced: фильтр атолл | spellerFail: фильтр поло
+Error: птоол Expected: атолл (freq: 10 diffRunes: 2), SpellerSuggest: поло (freq: 1184 diffRunes: 3)
+------------------------------------------
+(блинный -> ьлиеный) | yaSucced: блинный | spellerFail: длинный
+Error: ьлиеный Expected: блинный (freq: 2 diffRunes: 2), SpellerSuggest: длинный (freq: 729 diffRunes: 2)
+------------------------------------------
+(бомбочка для ванн -> бомюочеа лля впнн) | yaSucced: бомбочка для ванн | spellerFail: бомбочка для ванны
+Error: впнн Expected: ванн (freq: 265 diffRunes: 1), SpellerSuggest: ванны (freq: 1078 diffRunes: 2)
+------------------------------------------
+(скалка для теста деревянная -> чкаока жля ткчта дереыяннвя) | yaSucced: скалка для теста деревянная | spellerFail: чашка для торта деревянная
+Error: чкаока Expected: скалка (freq: 109 diffRunes: 2), SpellerSuggest: чашка (freq: 532 diffRunes: 5)
+Error: ткчта Expected: теста (freq: 324 diffRunes: 2), SpellerSuggest: торта (freq: 922 diffRunes: 2)
+------------------------------------------
+(бутылочка шт -> бцтыдочка шт) | yaSucced: бутылочка шт | spellerFail: бутылочка от
+Error: шт Expected: шт (freq: 2965 diffRunes: 0), SpellerSuggest: от (freq: 8510 diffRunes: 1)
+------------------------------------------
+(держатель ручек -> деожптель ркчкк) | yaSucced: держатель ручек | spellerFail: держатель ручки
+Error: ркчкк Expected: ручек (freq: 245 diffRunes: 2), SpellerSuggest: ручки (freq: 1504 diffRunes: 2)
+------------------------------------------
+(мужские рубашки в клетку -> мужчеие руюашкт в коеткк) | yaSucced: мужские рубашки в клетку | spellerFail: мужские рубашка в клетку
+Error: руюашкт Expected: рубашки (freq: 983 diffRunes: 2), SpellerSuggest: рубашка (freq: 5023 diffRunes: 2)
+------------------------------------------
+(кольцо в носу -> крльцл в носц) | yaSucced: кольцо в носу | spellerFail: кольцо в нос
+Error: носц Expected: носу (freq: 33 diffRunes: 1), SpellerSuggest: нос (freq: 229 diffRunes: 1)
+------------------------------------------
+(формы для приготовления суши -> йормф доя пригртоыления сцши) | yaSucced: формы для приготовления суши | spellerFail: форма для приготовления суши
+Error: йормф Expected: формы (freq: 930 diffRunes: 2), SpellerSuggest: форма (freq: 3418 diffRunes: 2)
+------------------------------------------
+(казан чугунный с крышкой и дужкой -> казвг якгунный с крышурй и жуэкой) | yaSucced: казан чугунный с крышкой и дужкой | spellerFail: казан чугунный с крышкой и ручкой
+Error: жуэкой Expected: дужкой (freq: 3 diffRunes: 2), SpellerSuggest: ручкой (freq: 491 diffRunes: 2)
+------------------------------------------
+(аквалайн -> аквалвфн) | yaSucced: аквалайн | spellerFail: аквалин
+Error: аквалвфн Expected: аквалайн (freq: 2 diffRunes: 2), SpellerSuggest: аквалин (freq: 3 diffRunes: 3)
+------------------------------------------
+(на жару -> на жаоу) | yaSucced: на жару | spellerFail: на ладу
+Error: жаоу Expected: жару (freq: 5 diffRunes: 1), SpellerSuggest: ладу (freq: 68 diffRunes: 2)
+------------------------------------------
+(платье женское на новый год -> плптте жеескре на нлыый гож) | yaSucced: платье женское на новый год | spellerFail: платье женские на новый год
+Error: жеескре Expected: женское (freq: 5712 diffRunes: 2), SpellerSuggest: женские (freq: 31746 diffRunes: 2)
+------------------------------------------
+(трикотажный жакет женский -> трикотажгфй жпует жеескмй) | yaSucced: трикотажный жакет женский | spellerFail: трикотажный жилет женский
+Error: жпует Expected: жакет (freq: 815 diffRunes: 2), SpellerSuggest: жилет (freq: 1981 diffRunes: 2)
+------------------------------------------
+(палочки для букетов -> паоочуи жля ьцкетов) | yaSucced: палочки для букетов | spellerFail: палочки для цветов
+Error: ьцкетов Expected: букетов (freq: 44 diffRunes: 2), SpellerSuggest: цветов (freq: 1578 diffRunes: 7)
+------------------------------------------
+(брет гарт -> бреь гаот) | yaSucced: брет гарт | spellerFail: крем от
+Error: бреь Expected: брет (freq: 0 diffRunes: 1), SpellerSuggest: крем (freq: 11799 diffRunes: 2)
+Error: гаот Expected: гарт (freq: 3 diffRunes: 1), SpellerSuggest: от (freq: 8510 diffRunes: 4)
+------------------------------------------
+(накидки на авто -> накмдкм на автр) | yaSucced: накидки на авто | spellerFail: накидка на авто
+Error: накмдкм Expected: накидки (freq: 174 diffRunes: 2), SpellerSuggest: накидка (freq: 576 diffRunes: 2)
+------------------------------------------
+(самоделка -> самодедкп) | yaSucced: самоделка | spellerFail: самоделки
+Error: самодедкп Expected: самоделка (freq: 1 diffRunes: 2), SpellerSuggest: самоделки (freq: 2 diffRunes: 2)
+------------------------------------------
+(холл -> ъолл) | yaSucced: холл | spellerFail: ролл
+Error: ъолл Expected: холл (freq: 7 diffRunes: 1), SpellerSuggest: ролл (freq: 62 diffRunes: 1)
+------------------------------------------
+(комплекты футболка с шортами для мальчика -> комплеутф фцтбоока с шлрьами лля маоьчиуа) | yaSucced: комплекты футболка с шортами для мальчика | spellerFail: комплект футболка с шортами для мальчика
+Error: комплеутф Expected: комплекты (freq: 350 diffRunes: 2), SpellerSuggest: комплект (freq: 4653 diffRunes: 2)
+------------------------------------------
+(детские тарелки на присосках -> жетскте тарелет на аписосках) | yaSucced: детские тарелки на присосках | spellerFail: детские тарелка на присосках
+Error: тарелет Expected: тарелки (freq: 714 diffRunes: 2), SpellerSuggest: тарелка (freq: 1070 diffRunes: 2)
+------------------------------------------
+(ночные маски для волос -> еочгые мамкм ддя ыооос) | yaSucced: ночные маски для волос | spellerFail: ночные маска для волос
+Error: мамкм Expected: маски (freq: 1501 diffRunes: 2), SpellerSuggest: маска (freq: 6727 diffRunes: 2)
+------------------------------------------
+(костюм женский из льна -> крчтюм жкнскиф из оьна) | yaSucced: костюм женский из льна | spellerFail: костюм женские из льна
+Error: жкнскиф Expected: женский (freq: 14309 diffRunes: 2), SpellerSuggest: женские (freq: 31746 diffRunes: 2)
+------------------------------------------
+(часы игрушка для мальчика -> чамы мгрушкв доя мпдьчика) | yaSucced: часы игрушка для мальчика | spellerFail: часы игрушки для мальчика
+Error: мгрушкв Expected: игрушка (freq: 8204 diffRunes: 2), SpellerSuggest: игрушки (freq: 5536 diffRunes: 2)
+------------------------------------------
+(гель дл стирки -> геоь дл чтиркм) | yaSucced: гель дл стирки | spellerFail: гель для стирки
+Error: дл Expected: дл (freq: 393 diffRunes: 0), SpellerSuggest: для (freq: 264457 diffRunes: 1)
+------------------------------------------
+(москитол -> москитло) | yaSucced: москитол | spellerFail: москитной
+Error: москитло Expected: москитол (freq: 6 diffRunes: 2), SpellerSuggest: москитной (freq: 52 diffRunes: 2)
+------------------------------------------
+(аккумулятор варта -> акккмклятор ыарьа) | yaSucced: аккумулятор варта | spellerFail: аккумулятор карта
+Error: ыарьа Expected: варта (freq: 8 diffRunes: 2), SpellerSuggest: карта (freq: 1077 diffRunes: 2)
+------------------------------------------
+(светодиодная лента за -> светолилдная дентп за) | yaSucced: светодиодная лента за | spellerFail: светодиодная лента на
+Error: за Expected: за (freq: 1622 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+------------------------------------------
+(космонавты -> космонваты) | yaSucced: космонавты | spellerFail: космонавт
+Error: космонваты Expected: космонавты (freq: 6 diffRunes: 2), SpellerSuggest: космонавт (freq: 38 diffRunes: 3)
+------------------------------------------
+(туча -> ткча) | yaSucced: туча | spellerFail: тела
+Error: ткча Expected: туча (freq: 4 diffRunes: 1), SpellerSuggest: тела (freq: 2111 diffRunes: 2)
+------------------------------------------
+(книги для внеклассного чтения -> унигт лля внккласмного ятентя) | yaSucced: книги для внеклассного чтения | spellerFail: книга для внеклассного чтения
+Error: унигт Expected: книги (freq: 3386 diffRunes: 2), SpellerSuggest: книга (freq: 8336 diffRunes: 2)
+------------------------------------------
+(мешочки -> сешочеи) | yaSucced: мешочки | spellerFail: мешочек
+Error: сешочеи Expected: мешочки (freq: 105 diffRunes: 2), SpellerSuggest: мешочек (freq: 179 diffRunes: 2)
+------------------------------------------
+(мир книги -> мтр кнмгт) | yaSucced: мир книги | spellerFail: мир книга
+Error: кнмгт Expected: книги (freq: 3386 diffRunes: 2), SpellerSuggest: книга (freq: 8336 diffRunes: 2)
+------------------------------------------
+(футболка она моя -> футбллуа лна мря) | yaSucced: футболка она моя | spellerFail: футболка на для
+Error: лна Expected: она (freq: 49 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 3)
+Error: мря Expected: моя (freq: 230 diffRunes: 1), SpellerSuggest: для (freq: 264457 diffRunes: 2)
+------------------------------------------
+(духа -> дкха) | yaSucced: духа | spellerFail: духи
+Error: дкха Expected: духа (freq: 7 diffRunes: 1), SpellerSuggest: духи (freq: 4230 diffRunes: 2)
+------------------------------------------
+(игра манчкин -> инра магчуин) | yaSucced: игра манчкин | spellerFail: игра магазин
+Error: магчуин Expected: манчкин (freq: 20 diffRunes: 2), SpellerSuggest: магазин (freq: 276 diffRunes: 2)
+------------------------------------------
+(платье детское с бабочками нх -> поатбе детсуок с ювбочками нх) | yaSucced: платье детское с бабочками нх | spellerFail: платье детское с бабочками на
+Error: нх Expected: нх (freq: 1 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+------------------------------------------
+(чехлы с подогревом на киа -> чехдф с плдогрнвом на еиа) | yaSucced: чехлы с подогревом на киа | spellerFail: чехол с подогревом на киа
+Error: чехдф Expected: чехлы (freq: 3481 diffRunes: 2), SpellerSuggest: чехол (freq: 24585 diffRunes: 2)
+------------------------------------------
+(сцене -> сцеен) | yaSucced: сцене | spellerFail: стен
+Error: сцеен Expected: сцене (freq: 6 diffRunes: 2), SpellerSuggest: стен (freq: 308 diffRunes: 3)
+------------------------------------------
+(лунатики -> лунаттеи) | yaSucced: лунатики | spellerFail: ланатти
+Error: лунаттеи Expected: лунатики (freq: 0 diffRunes: 2), SpellerSuggest: ланатти (freq: 1 diffRunes: 3)
+------------------------------------------
+(леденцы на палочке без сахара -> леденйв на пплочкк бех сазарв) | yaSucced: леденцы на палочке без сахара | spellerFail: леденцы на палочки без сахара
+Error: пплочкк Expected: палочке (freq: 106 diffRunes: 2), SpellerSuggest: палочки (freq: 800 diffRunes: 2)
+------------------------------------------
+(патонг -> рптонг) | yaSucced: патонг | spellerFail: ротанг
+Error: рптонг Expected: патонг (freq: 1 diffRunes: 2), SpellerSuggest: ротанг (freq: 53 diffRunes: 2)
+------------------------------------------
+(провода акб -> рроводп акь) | yaSucced: провода акб | spellerFail: провод акб
+Error: рроводп Expected: провода (freq: 195 diffRunes: 2), SpellerSuggest: провод (freq: 661 diffRunes: 2)
+------------------------------------------
+(олимпийки свитшоты худи толстовки -> одимпийеи свитготф зуди ьолстоаки) | yaSucced: олимпийки свитшоты худи толстовки | spellerFail: олимпийки свитшот худи толстовки
+Error: свитготф Expected: свитшоты (freq: 157 diffRunes: 2), SpellerSuggest: свитшот (freq: 1476 diffRunes: 2)
+------------------------------------------
+(летучий змей -> леикчий змнй) | yaSucced: летучий змей | spellerFail: легкий зимний
+Error: леикчий Expected: летучий (freq: 10 diffRunes: 2), SpellerSuggest: легкий (freq: 278 diffRunes: 4)
+Error: змнй Expected: змей (freq: 69 diffRunes: 1), SpellerSuggest: зимний (freq: 1000 diffRunes: 5)
+------------------------------------------
+(береты для женщин -> юеретф длч дкнщин) | yaSucced: береты для женщин | spellerFail: берет для женщин
+Error: юеретф Expected: береты (freq: 60 diffRunes: 2), SpellerSuggest: берет (freq: 357 diffRunes: 2)
+------------------------------------------
+(шапочки детские для девочек -> гапочеи дктсуие доя деаояек) | yaSucced: шапочки детские для девочек | spellerFail: тапочки детские для девочек
+Error: гапочеи Expected: шапочки (freq: 219 diffRunes: 2), SpellerSuggest: тапочки (freq: 1605 diffRunes: 2)
+------------------------------------------
+(тональный крем для лица диор -> тонплтный креи жля лицв лиор) | yaSucced: тональный крем для лица диор | spellerFail: тональный крем для лица тигр
+Error: лиор Expected: диор (freq: 175 diffRunes: 1), SpellerSuggest: тигр (freq: 275 diffRunes: 2)
+------------------------------------------
+(простыня двуспальная -> аростынч двуспалбнач) | yaSucced: простыня двуспальная | spellerFail: простынь двуспальная
+Error: аростынч Expected: простыня (freq: 593 diffRunes: 2), SpellerSuggest: простынь (freq: 965 diffRunes: 2)
+------------------------------------------
+(котлеты овощные -> уоилеты лвозные) | yaSucced: котлеты овощные | spellerFail: жилеты водные
+Error: уоилеты Expected: котлеты (freq: 34 diffRunes: 2), SpellerSuggest: жилеты (freq: 203 diffRunes: 7)
+Error: лвозные Expected: овощные (freq: 35 diffRunes: 2), SpellerSuggest: водные (freq: 64 diffRunes: 7)
+------------------------------------------
+(лето платья -> летр пдвтья) | yaSucced: лето платья | spellerFail: лет платья
+Error: летр Expected: лето (freq: 2248 diffRunes: 1), SpellerSuggest: лет (freq: 4003 diffRunes: 1)
+------------------------------------------
+(женские колготки в горошек -> денсеие колготет в грпошек) | yaSucced: женские колготки в горошек | spellerFail: детские колготки в горошек
+Error: денсеие Expected: женские (freq: 31746 diffRunes: 2), SpellerSuggest: детские (freq: 10235 diffRunes: 2)
+------------------------------------------
+(перчатки за -> пеочатеи за) | yaSucced: перчатки за | spellerFail: перчатки на
+Error: за Expected: за (freq: 1622 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+------------------------------------------
+(бокалы для вина хрустальные -> бркалф доя втна хрусталбнык) | yaSucced: бокалы для вина хрустальные | spellerFail: бокалы для вина хрустальный
+Error: хрусталбнык Expected: хрустальные (freq: 42 diffRunes: 2), SpellerSuggest: хрустальный (freq: 57 diffRunes: 2)
+------------------------------------------
+(женские футболки для девочек -> жкнсеие футбллкт жля деаочкк) | yaSucced: женские футболки для девочек | spellerFail: женские футболка для девочки
+Error: футбллкт Expected: футболки (freq: 4004 diffRunes: 2), SpellerSuggest: футболка (freq: 13723 diffRunes: 2)
+Error: деаочкк Expected: девочек (freq: 9099 diffRunes: 2), SpellerSuggest: девочки (freq: 8841 diffRunes: 2)
+------------------------------------------
+(утка ла ла фа -> утуа ла ла фа) | yaSucced: утка ла ла фа | spellerFail: утка на на на
+Error: ла Expected: ла (freq: 124 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+Error: ла Expected: ла (freq: 124 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+Error: фа Expected: фа (freq: 36 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+------------------------------------------
+(бюстгальтер твое -> бюмтгадьтер тыое) | yaSucced: бюстгальтер твое | spellerFail: бюстгальтер топ
+Error: тыое Expected: твое (freq: 2133 diffRunes: 1), SpellerSuggest: топ (freq: 4082 diffRunes: 3)
+------------------------------------------
+(лейки для душа -> лнйкм ддя душп) | yaSucced: лейки для душа | spellerFail: лейка для душа
+Error: лнйкм Expected: лейки (freq: 61 diffRunes: 2), SpellerSuggest: лейка (freq: 270 diffRunes: 2)
+------------------------------------------
+(шапки для девочки -> шаакм лля жевочуи) | yaSucced: шапки для девочки | spellerFail: шапка для девочки
+Error: шаакм Expected: шапки (freq: 967 diffRunes: 2), SpellerSuggest: шапка (freq: 6135 diffRunes: 2)
+------------------------------------------
+(ласси комбинезон -> лвсст косюинезон) | yaSucced: ласси комбинезон | spellerFail: лэсси комбинезон
+Error: лвсст Expected: ласси (freq: 21 diffRunes: 2), SpellerSuggest: лэсси (freq: 7 diffRunes: 2)
+------------------------------------------
+(фуражки -> фцрадки) | yaSucced: фуражки | spellerFail: оградки
+Error: фцрадки Expected: фуражки (freq: 5 diffRunes: 2), SpellerSuggest: оградки (freq: 5 diffRunes: 2)
+------------------------------------------
+(кавалер -> каваднр) | yaSucced: кавалер | spellerFail: кавани
+Error: каваднр Expected: кавалер (freq: 3 diffRunes: 2), SpellerSuggest: кавани (freq: 3 diffRunes: 3)
+------------------------------------------
+(сладкое для -> слажкре длч) | yaSucced: сладкое для | spellerFail: сладкие для
+Error: слажкре Expected: сладкое (freq: 22 diffRunes: 2), SpellerSuggest: сладкие (freq: 122 diffRunes: 2)
+------------------------------------------
+(бумажные формы для наращивания -> бумвжнын форсв доя нарвщивагия) | yaSucced: бумажные формы для наращивания | spellerFail: бумажные форма для наращивания
+Error: форсв Expected: формы (freq: 930 diffRunes: 2), SpellerSuggest: форма (freq: 3418 diffRunes: 2)
+------------------------------------------
+(юбка девочке -> юбкв дквочкк) | yaSucced: юбка девочке | spellerFail: юбка девочки
+Error: дквочкк Expected: девочке (freq: 554 diffRunes: 2), SpellerSuggest: девочки (freq: 8841 diffRunes: 2)
+------------------------------------------
+(сонная лощина -> срннаф длщина) | yaSucced: сонная лощина | spellerFail: сонная глина
+Error: длщина Expected: лощина (freq: 1 diffRunes: 2), SpellerSuggest: глина (freq: 457 diffRunes: 5)
+------------------------------------------
+(футболки монро -> футблдки мрноо) | yaSucced: футболки монро | spellerFail: футболки манго
+Error: мрноо Expected: монро (freq: 34 diffRunes: 2), SpellerSuggest: манго (freq: 687 diffRunes: 2)
+------------------------------------------
+(кавер на -> кпвеп на) | yaSucced: кавер на | spellerFail: ковер на
+Error: кпвеп Expected: кавер (freq: 13 diffRunes: 2), SpellerSuggest: ковер (freq: 923 diffRunes: 2)
+------------------------------------------
+(божоле -> божрлк) | yaSucced: божоле | spellerFail: борк
+Error: божрлк Expected: божоле (freq: 2 diffRunes: 2), SpellerSuggest: борк (freq: 21 diffRunes: 4)
+------------------------------------------
+(колыбели для новорожденных -> кооыбелм лля ноаорожженных) | yaSucced: колыбели для новорожденных | spellerFail: колыбель для новорожденных
+Error: кооыбелм Expected: колыбели (freq: 2 diffRunes: 2), SpellerSuggest: колыбель (freq: 37 diffRunes: 2)
+------------------------------------------
+(весенние куртки для мальчика подростка -> внсегние кцрткт длч салбчика аодпостка) | yaSucced: весенние куртки для мальчика подростка | spellerFail: весенние куртка для мальчика подростка
+Error: кцрткт Expected: куртки (freq: 2414 diffRunes: 2), SpellerSuggest: куртка (freq: 10593 diffRunes: 2)
+------------------------------------------
+(черный комбинезон детский -> чеонфй уосбинезон жетмкий) | yaSucced: черный комбинезон детский | spellerFail: черный комбинезон женский
+Error: жетмкий Expected: детский (freq: 8262 diffRunes: 2), SpellerSuggest: женский (freq: 14309 diffRunes: 2)
+------------------------------------------
+(дворец -> дыорей) | yaSucced: дворец | spellerFail: дверей
+Error: дыорей Expected: дворец (freq: 8 diffRunes: 2), SpellerSuggest: дверей (freq: 318 diffRunes: 2)
+------------------------------------------
+(пони куклы -> плни еуклв) | yaSucced: пони куклы | spellerFail: пони кукла
+Error: еуклв Expected: куклы (freq: 921 diffRunes: 2), SpellerSuggest: кукла (freq: 1824 diffRunes: 2)
+------------------------------------------
+(набор аксессуаров для бани полотенца -> наьоо пксечсуаров лля бвни полотеецп) | yaSucced: набор аксессуаров для бани полотенца | spellerFail: набор аксессуаров для бани полотенце
+Error: полотеецп Expected: полотенца (freq: 871 diffRunes: 2), SpellerSuggest: полотенце (freq: 1880 diffRunes: 2)
+------------------------------------------
+(все правила английского языка в схемах -> вче поавтла англмйскошо языеп в схеивх) | yaSucced: все правила английского языка в схемах | spellerFail: все правила английского язык в схемах
+Error: языеп Expected: языка (freq: 196 diffRunes: 2), SpellerSuggest: язык (freq: 793 diffRunes: 2)
+------------------------------------------
+(планшеты для игры -> планщнты лля игрв) | yaSucced: планшеты для игры | spellerFail: планшеты для игр
+Error: игрв Expected: игры (freq: 1574 diffRunes: 1), SpellerSuggest: игр (freq: 281 diffRunes: 1)
+------------------------------------------
+(жидкие карандаши для глаз -> жмдеие кврандашт лля гоаз) | yaSucced: жидкие карандаши для глаз | spellerFail: жидкие карандаш для глаз
+Error: кврандашт Expected: карандаши (freq: 694 diffRunes: 2), SpellerSuggest: карандаш (freq: 2531 diffRunes: 2)
+------------------------------------------
+(антиперспиранты -> агтиперспирантв) | yaSucced: антиперспиранты | spellerFail: антиперспирант
+Error: агтиперспирантв Expected: антиперспиранты (freq: 2 diffRunes: 2), SpellerSuggest: антиперспирант (freq: 170 diffRunes: 2)
+------------------------------------------
+(кофе это -> крфе эио) | yaSucced: кофе это | spellerFail: кофе рио
+Error: эио Expected: это (freq: 290 diffRunes: 1), SpellerSuggest: рио (freq: 314 diffRunes: 1)
+------------------------------------------
+(палочка для губ -> пвлочкв длч гцб) | yaSucced: палочка для губ | spellerFail: палочки для губ
+Error: пвлочкв Expected: палочка (freq: 232 diffRunes: 2), SpellerSuggest: палочки (freq: 800 diffRunes: 2)
+------------------------------------------
+(рыжий кот игры -> рыэмй клт игрв) | yaSucced: рыжий кот игры | spellerFail: рыжий кот игра
+Error: игрв Expected: игры (freq: 1574 diffRunes: 1), SpellerSuggest: игра (freq: 3157 diffRunes: 1)
+------------------------------------------
+(позолоченный -> позодоченныф) | yaSucced: позолоченный | spellerFail: позолоченные
+Error: позодоченныф Expected: позолоченный (freq: 11 diffRunes: 2), SpellerSuggest: позолоченные (freq: 50 diffRunes: 2)
+------------------------------------------
+(имперка -> имреока) | yaSucced: имперка | spellerFail: игрока
+Error: имреока Expected: имперка (freq: 1 diffRunes: 2), SpellerSuggest: игрока (freq: 5 diffRunes: 5)
+------------------------------------------
+(кобо абэ -> коьо аюэ) | yaSucced: кобо абэ | spellerFail: комод ас
+Error: коьо Expected: кобо (freq: 2 diffRunes: 1), SpellerSuggest: комод (freq: 494 diffRunes: 2)
+Error: аюэ Expected: абэ (freq: 3 diffRunes: 1), SpellerSuggest: ас (freq: 179 diffRunes: 2)
+------------------------------------------
+(сумки из гобелена -> скмкт из глюелена) | yaSucced: сумки из гобелена | spellerFail: сумка из гобелена
+Error: скмкт Expected: сумки (freq: 2475 diffRunes: 2), SpellerSuggest: сумка (freq: 9475 diffRunes: 2)
+------------------------------------------
+(подстрижка -> подсирижкв) | yaSucced: подстрижка | spellerFail: подстрижки
+Error: подсирижкв Expected: подстрижка (freq: 1 diffRunes: 2), SpellerSuggest: подстрижки (freq: 3 diffRunes: 2)
+------------------------------------------
+(мигалка на батарейках -> мтгалкв на бвтаркйках) | yaSucced: мигалка на батарейках | spellerFail: мигалки на батарейках
+Error: мтгалкв Expected: мигалка (freq: 17 diffRunes: 2), SpellerSuggest: мигалки (freq: 20 diffRunes: 2)
+------------------------------------------
+(наши -> нащи) | yaSucced: наши | spellerFail: на
+Error: нащи Expected: наши (freq: 44 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 2)
+------------------------------------------
+(детские комбинезон для новорожденных -> детсеик крмбиеезон доя новороэдегных) | yaSucced: детские комбинезон для новорожденных | spellerFail: детский комбинезон для новорожденных
+Error: детсеик Expected: детские (freq: 10235 diffRunes: 2), SpellerSuggest: детский (freq: 8262 diffRunes: 2)
+------------------------------------------
+(камушки для декора -> еасушки доя жекооа) | yaSucced: камушки для декора | spellerFail: ракушки для декора
+Error: еасушки Expected: камушки (freq: 42 diffRunes: 2), SpellerSuggest: ракушки (freq: 57 diffRunes: 2)
+------------------------------------------
+(комикс для детей -> уомикм лля детнц) | yaSucced: комикс для детей | spellerFail: домик для детей
+Error: уомикм Expected: комикс (freq: 275 diffRunes: 2), SpellerSuggest: домик (freq: 831 diffRunes: 2)
+------------------------------------------
+(кручу верчу -> кпкчу ыерсу) | yaSucced: кручу верчу | spellerFail: куклу мерси
+Error: кпкчу Expected: кручу (freq: 2 diffRunes: 2), SpellerSuggest: куклу (freq: 46 diffRunes: 2)
+Error: ыерсу Expected: верчу (freq: 1 diffRunes: 2), SpellerSuggest: мерси (freq: 25 diffRunes: 2)
+------------------------------------------
+(бежевое платье миди женское -> юежеыое плвьье мижи женчкон) | yaSucced: бежевое платье миди женское | spellerFail: бежевое платье мини женское
+Error: мижи Expected: миди (freq: 589 diffRunes: 1), SpellerSuggest: мини (freq: 2768 diffRunes: 1)
+------------------------------------------
+(книги по лепке из пластилина -> кнтгм по леркк из плачттлина) | yaSucced: книги по лепке из пластилина | spellerFail: книга по лепка из пластилина
+Error: кнтгм Expected: книги (freq: 3386 diffRunes: 2), SpellerSuggest: книга (freq: 8336 diffRunes: 2)
+Error: леркк Expected: лепке (freq: 4 diffRunes: 2), SpellerSuggest: лепка (freq: 36 diffRunes: 2)
+------------------------------------------
+(аксессуары для обуви коричневого цвета -> аескссуары жля обквм коричннвлго йвеиа) | yaSucced: аксессуары для обуви коричневого цвета | spellerFail: аксессуары для обувь коричневого цвета
+Error: обквм Expected: обуви (freq: 1608 diffRunes: 2), SpellerSuggest: обувь (freq: 8374 diffRunes: 2)
+------------------------------------------
+(скраб дл тела -> мкрвб дл теоа) | yaSucced: скраб дл тела | spellerFail: скраб для тела
+Error: дл Expected: дл (freq: 393 diffRunes: 0), SpellerSuggest: для (freq: 264457 diffRunes: 1)
+------------------------------------------
+(стакан для мужчины -> сьакаг жля сужчинф) | yaSucced: стакан для мужчины | spellerFail: стакан для мужчин
+Error: сужчинф Expected: мужчины (freq: 337 diffRunes: 2), SpellerSuggest: мужчин (freq: 4717 diffRunes: 2)
+------------------------------------------
+(правильный выбор -> прввмльный авбор) | yaSucced: правильный выбор | spellerFail: правильный набор
+Error: авбор Expected: выбор (freq: 52 diffRunes: 2), SpellerSuggest: набор (freq: 17744 diffRunes: 2)
+------------------------------------------
+(чистка стеклокерамики -> чтсткп стекллккрамики) | yaSucced: чистка стеклокерамики | spellerFail: чистки стеклокерамики
+Error: чтсткп Expected: чистка (freq: 199 diffRunes: 2), SpellerSuggest: чистки (freq: 875 diffRunes: 2)
+------------------------------------------
+(массажные кольца для пальцев -> мамсажнык еольцв лля палбцеы) | yaSucced: массажные кольца для пальцев | spellerFail: массажные кольцо для пальцев
+Error: еольцв Expected: кольца (freq: 1618 diffRunes: 2), SpellerSuggest: кольцо (freq: 3175 diffRunes: 2)
+------------------------------------------
+(сдам -> сжам) | yaSucced: сдам | spellerFail: сам
+Error: сжам Expected: сдам (freq: 3 diffRunes: 1), SpellerSuggest: сам (freq: 162 diffRunes: 3)
+------------------------------------------
+(лодка на радиоуправлении -> дожка на рвдиоуправлннии) | yaSucced: лодка на радиоуправлении | spellerFail: кошка на радиоуправлении
+Error: дожка Expected: лодка (freq: 126 diffRunes: 2), SpellerSuggest: кошка (freq: 413 diffRunes: 2)
+------------------------------------------
+(бактерий для аквариума -> бвктериц доя вувариума) | yaSucced: бактерий для аквариума | spellerFail: бактерии для аквариума
+Error: бвктериц Expected: бактерий (freq: 5 diffRunes: 2), SpellerSuggest: бактерии (freq: 40 diffRunes: 2)
+------------------------------------------
+(генрих форд -> гнерих ыорд) | yaSucced: генрих форд | spellerFail: генри форд
+Error: гнерих Expected: генрих (freq: 15 diffRunes: 2), SpellerSuggest: генри (freq: 40 diffRunes: 3)
+------------------------------------------
+(шприц духи -> шрртц дцхи) | yaSucced: шприц духи | spellerFail: шорты дети
+Error: шрртц Expected: шприц (freq: 225 diffRunes: 2), SpellerSuggest: шорты (freq: 4602 diffRunes: 2)
+Error: дцхи Expected: духи (freq: 4230 diffRunes: 1), SpellerSuggest: дети (freq: 472 diffRunes: 2)
+------------------------------------------
+(каффы уши -> кафыф ушт) | yaSucced: каффы уши | spellerFail: каффы шт
+Error: ушт Expected: уши (freq: 272 diffRunes: 1), SpellerSuggest: шт (freq: 2965 diffRunes: 3)
+------------------------------------------
+(комбинезон конверт зимний -> крмбиннзон еонвери щимниц) | yaSucced: комбинезон конверт зимний | spellerFail: комбинезон конверт зимние
+Error: щимниц Expected: зимний (freq: 1000 diffRunes: 2), SpellerSuggest: зимние (freq: 2118 diffRunes: 2)
+------------------------------------------
+(майн -> иайн) | yaSucced: майн | spellerFail: лайн
+Error: иайн Expected: майн (freq: 38 diffRunes: 1), SpellerSuggest: лайн (freq: 39 diffRunes: 1)
+------------------------------------------
+(машины на радиоуправлении -> мащинф на радиоупрввлкнии) | yaSucced: машины на радиоуправлении | spellerFail: машина на радиоуправлении
+Error: мащинф Expected: машины (freq: 1612 diffRunes: 2), SpellerSuggest: машина (freq: 1630 diffRunes: 2)
+------------------------------------------
+(розовые маски для лица -> позоаые мвскт доя оица) | yaSucced: розовые маски для лица | spellerFail: розовые маска для лица
+Error: мвскт Expected: маски (freq: 1501 diffRunes: 2), SpellerSuggest: маска (freq: 6727 diffRunes: 2)
+------------------------------------------
+(подсачек рыболовный -> подсаянк рвболовнфй) | yaSucced: подсачек рыболовный | spellerFail: подсак рыболовный
+Error: подсаянк Expected: подсачек (freq: 3 diffRunes: 2), SpellerSuggest: подсак (freq: 6 diffRunes: 3)
+------------------------------------------
+(звездное недо -> хвезднре нкдо) | yaSucced: звездное недо | spellerFail: звездное небо
+Error: нкдо Expected: недо (freq: 3 diffRunes: 1), SpellerSuggest: небо (freq: 153 diffRunes: 2)
+------------------------------------------
+(женский кроссовки -> эенскиф кррссоаки) | yaSucced: женский кроссовки | spellerFail: женские кроссовки
+Error: эенскиф Expected: женский (freq: 14309 diffRunes: 2), SpellerSuggest: женские (freq: 31746 diffRunes: 2)
+------------------------------------------
+(поезд игрушка -> рлезд ишрушеа) | yaSucced: поезд игрушка | spellerFail: плед игрушка
+Error: рлезд Expected: поезд (freq: 211 diffRunes: 2), SpellerSuggest: плед (freq: 1602 diffRunes: 3)
+------------------------------------------
+(машинка для малышей -> магинкв длч салышкй) | yaSucced: машинка для малышей | spellerFail: машинки для малышей
+Error: магинкв Expected: машинка (freq: 2258 diffRunes: 2), SpellerSuggest: машинки (freq: 1008 diffRunes: 2)
+------------------------------------------
+(обои для девочки с картинками -> оюои длч лнвочки с уартинкамт) | yaSucced: обои для девочки с картинками | spellerFail: очки для девочки с картинками
+Error: оюои Expected: обои (freq: 1337 diffRunes: 1), SpellerSuggest: очки (freq: 4220 diffRunes: 2)
+------------------------------------------
+(книги для детей тактильная -> книнт доя деьец тактильгвя) | yaSucced: книги для детей тактильная | spellerFail: книга для детей тактильная
+Error: книнт Expected: книги (freq: 3386 diffRunes: 2), SpellerSuggest: книга (freq: 8336 diffRunes: 2)
+------------------------------------------
+(торт кг -> ьорт кг) | yaSucced: торт кг | spellerFail: сорт кг
+Error: ьорт Expected: торт (freq: 639 diffRunes: 1), SpellerSuggest: сорт (freq: 41 diffRunes: 1)
+------------------------------------------
+(пенсии -> пенсмм) | yaSucced: пенсии | spellerFail: пенсию
+Error: пенсмм Expected: пенсии (freq: 1 diffRunes: 2), SpellerSuggest: пенсию (freq: 3 diffRunes: 2)
+------------------------------------------
+(зорька крем -> щорбка крес) | yaSucced: зорька крем | spellerFail: коробка корея
+Error: щорбка Expected: зорька (freq: 11 diffRunes: 2), SpellerSuggest: коробка (freq: 1660 diffRunes: 5)
+Error: крес Expected: крем (freq: 11799 diffRunes: 1), SpellerSuggest: корея (freq: 1000 diffRunes: 4)
+------------------------------------------
+(костюм теплый спортивный детский на мальчика -> комьюм теалыф саортивныц летскиц на ипльчика) | yaSucced: костюм теплый спортивный детский на мальчика | spellerFail: костюм теплый спортивный детские на мальчика
+Error: летскиц Expected: детский (freq: 8262 diffRunes: 2), SpellerSuggest: детские (freq: 10235 diffRunes: 2)
+------------------------------------------
+(пауэр -> раужр) | yaSucced: пауэр | spellerFail: радар
+Error: раужр Expected: пауэр (freq: 29 diffRunes: 2), SpellerSuggest: радар (freq: 38 diffRunes: 2)
+------------------------------------------
+(симс на -> симч на) | yaSucced: симс на | spellerFail: см на
+Error: симч Expected: симс (freq: 15 diffRunes: 1), SpellerSuggest: см (freq: 3337 diffRunes: 3)
+------------------------------------------
+(финдус -> ыинжус) | yaSucced: финдус | spellerFail: минус
+Error: ыинжус Expected: финдус (freq: 12 diffRunes: 2), SpellerSuggest: минус (freq: 45 diffRunes: 4)
+------------------------------------------
+(яой -> яоц) | yaSucced: яой | spellerFail: яиц
+Error: яоц Expected: яой (freq: 38 diffRunes: 1), SpellerSuggest: яиц (freq: 350 diffRunes: 1)
+------------------------------------------
+(муза -> мцза) | yaSucced: муза | spellerFail: за
+Error: мцза Expected: муза (freq: 16 diffRunes: 1), SpellerSuggest: за (freq: 1622 diffRunes: 4)
+------------------------------------------
+(крем дл лица -> кркм дл лицп) | yaSucced: крем дл лица | spellerFail: крем для лица
+Error: дл Expected: дл (freq: 393 diffRunes: 0), SpellerSuggest: для (freq: 264457 diffRunes: 1)
+------------------------------------------
+(салфетки бумажные цветные -> чадфетки бумажефе цветгын) | yaSucced: салфетки бумажные цветные | spellerFail: салфетки бумажные цветы
+Error: цветгын Expected: цветные (freq: 1165 diffRunes: 2), SpellerSuggest: цветы (freq: 1374 diffRunes: 3)
+------------------------------------------
+(мышка для компьютера -> мфщка лля комрьютерп) | yaSucced: мышка для компьютера | spellerFail: маска для компьютера
+Error: мфщка Expected: мышка (freq: 445 diffRunes: 2), SpellerSuggest: маска (freq: 6727 diffRunes: 2)
+------------------------------------------
+(шторы коричневые -> штрпы коомчневые) | yaSucced: шторы коричневые | spellerFail: штаны коричневые
+Error: штрпы Expected: шторы (freq: 2608 diffRunes: 2), SpellerSuggest: штаны (freq: 5755 diffRunes: 2)
+------------------------------------------
+(крепления для браслетов из бисера -> ерепленич лля браслктлв из ьтсера) | yaSucced: крепления для браслетов из бисера | spellerFail: крепление для браслетов из бисера
+Error: ерепленич Expected: крепления (freq: 213 diffRunes: 2), SpellerSuggest: крепление (freq: 566 diffRunes: 2)
+------------------------------------------
+(визитницы натуральная кожа -> вищитницф гатуралбная кожв) | yaSucced: визитницы натуральная кожа | spellerFail: визитница натуральная кожа
+Error: вищитницф Expected: визитницы (freq: 10 diffRunes: 2), SpellerSuggest: визитница (freq: 136 diffRunes: 2)
+------------------------------------------
+(икра кальмара -> иура кальмврп) | yaSucced: икра кальмара | spellerFail: игра кальмара
+Error: иура Expected: икра (freq: 91 diffRunes: 1), SpellerSuggest: игра (freq: 3157 diffRunes: 1)
+------------------------------------------
+(штанишки для мальчиков -> гтанишуи жля мальчмкоа) | yaSucced: штанишки для мальчиков | spellerFail: штанишки для мальчика
+Error: мальчмкоа Expected: мальчиков (freq: 4888 diffRunes: 2), SpellerSuggest: мальчика (freq: 7564 diffRunes: 3)
+------------------------------------------
+(защитные накладки на углы -> зашитнык гакладкт на угды) | yaSucced: защитные накладки на углы | spellerFail: защитные накладка на углы
+Error: гакладкт Expected: накладки (freq: 652 diffRunes: 2), SpellerSuggest: накладка (freq: 725 diffRunes: 2)
+------------------------------------------
+(задняя спинка на мотоцикл -> заднчч спмгка на иотрцикл) | yaSucced: задняя спинка на мотоцикл | spellerFail: задняя сумка на мотоцикл
+Error: спмгка Expected: спинка (freq: 23 diffRunes: 2), SpellerSuggest: сумка (freq: 9475 diffRunes: 4)
+------------------------------------------
+(валерка -> валкреа) | yaSucced: валерка | spellerFail: валера
+Error: валкреа Expected: валерка (freq: 5 diffRunes: 2), SpellerSuggest: валера (freq: 39 diffRunes: 3)
+------------------------------------------
+(подарки для женщины на -> пожпрки доя женщмнв на) | yaSucced: подарки для женщины на | spellerFail: подарки для женщин на
+Error: женщмнв Expected: женщины (freq: 452 diffRunes: 2), SpellerSuggest: женщин (freq: 9517 diffRunes: 2)
+------------------------------------------
+(дл мужчин -> дл мкжчмн) | yaSucced: дл мужчин | spellerFail: для мужчин
+Error: дл Expected: дл (freq: 393 diffRunes: 0), SpellerSuggest: для (freq: 264457 diffRunes: 1)
+------------------------------------------
+(кубики для девочки -> ккбтки ддя днвлчки) | yaSucced: кубики для девочки | spellerFail: куртки для девочки
+Error: ккбтки Expected: кубики (freq: 402 diffRunes: 2), SpellerSuggest: куртки (freq: 2414 diffRunes: 2)
+------------------------------------------
+(чехол на телефон самсунг книжка -> чехлд на телеыог саисунш унтжка) | yaSucced: чехол на телефон самсунг книжка | spellerFail: чехлы на телефон самсунг книжка
+Error: чехлд Expected: чехол (freq: 24585 diffRunes: 2), SpellerSuggest: чехлы (freq: 3481 diffRunes: 1)
+------------------------------------------
+(глюки -> гдюкм) | yaSucced: глюки | spellerFail: дюйм
+Error: гдюкм Expected: глюки (freq: 2 diffRunes: 2), SpellerSuggest: дюйм (freq: 15 diffRunes: 5)
+------------------------------------------
+(простыня и наволочка -> простфнч и нвволочуа) | yaSucced: простыня и наволочка | spellerFail: простынь и наволочка
+Error: простфнч Expected: простыня (freq: 593 diffRunes: 2), SpellerSuggest: простынь (freq: 965 diffRunes: 2)
+------------------------------------------
+(карнавальный костюм мышки -> кврнавальныц крстюи иышкт) | yaSucced: карнавальный костюм мышки | spellerFail: карнавальный костюм мышка
+Error: иышкт Expected: мышки (freq: 206 diffRunes: 2), SpellerSuggest: мышка (freq: 445 diffRunes: 2)
+------------------------------------------
+(вареники -> варнгики) | yaSucced: вареники | spellerFail: парники
+Error: варнгики Expected: вареники (freq: 16 diffRunes: 2), SpellerSuggest: парники (freq: 32 diffRunes: 5)
+------------------------------------------
+(памперсы трусики от -> пампкрсф тручиуи от) | yaSucced: памперсы трусики от | spellerFail: памперсы трусики шт
+Error: от Expected: от (freq: 8510 diffRunes: 0), SpellerSuggest: шт (freq: 2965 diffRunes: 1)
+------------------------------------------
+(не молоко йогурты -> не иоооко йогуотф) | yaSucced: не молоко йогурты | spellerFail: не молоко йогурт
+Error: йогуотф Expected: йогурты (freq: 9 diffRunes: 2), SpellerSuggest: йогурт (freq: 97 diffRunes: 2)
+------------------------------------------
+(сборники огэ -> сборгикм огж) | yaSucced: сборники огэ | spellerFail: сборник огэ
+Error: сборгикм Expected: сборники (freq: 9 diffRunes: 2), SpellerSuggest: сборник (freq: 276 diffRunes: 2)
+------------------------------------------
+(музыкальные игрушки на кроватку -> мцзыкальеые тгрушкм на кооваткц) | yaSucced: музыкальные игрушки на кроватку | spellerFail: музыкальные игрушка на кроватку
+Error: тгрушкм Expected: игрушки (freq: 5536 diffRunes: 2), SpellerSuggest: игрушка (freq: 8204 diffRunes: 2)
+------------------------------------------
+(дядя -> лядя) | yaSucced: дядя | spellerFail: лада
+Error: лядя Expected: дядя (freq: 48 diffRunes: 1), SpellerSuggest: лада (freq: 725 diffRunes: 2)
+------------------------------------------
+(игровые компьютеры -> игровфк еомпьютерв) | yaSucced: игровые компьютеры | spellerFail: игровой компьютер
+Error: игровфк Expected: игровые (freq: 325 diffRunes: 2), SpellerSuggest: игровой (freq: 890 diffRunes: 2)
+Error: еомпьютерв Expected: компьютеры (freq: 34 diffRunes: 2), SpellerSuggest: компьютер (freq: 228 diffRunes: 2)
+------------------------------------------
+(заметки прозрачные -> звмнтки прозрвчнык) | yaSucced: заметки прозрачные | spellerFail: заметки прозрачный
+Error: прозрвчнык Expected: прозрачные (freq: 577 diffRunes: 2), SpellerSuggest: прозрачный (freq: 1371 diffRunes: 2)
+------------------------------------------
+(единички -> ндтнички) | yaSucced: единички | spellerFail: ножнички
+Error: ндтнички Expected: единички (freq: 1 diffRunes: 2), SpellerSuggest: ножнички (freq: 9 diffRunes: 2)
+------------------------------------------
+(мини пилочки для ногтей -> ммни пиоочкм длч ношткй) | yaSucced: мини пилочки для ногтей | spellerFail: мини пилочка для ногтей
+Error: пиоочкм Expected: пилочки (freq: 59 diffRunes: 2), SpellerSuggest: пилочка (freq: 78 diffRunes: 2)
+------------------------------------------
+(рюкзак девочке -> рюухак девочун) | yaSucced: рюкзак девочке | spellerFail: рюкзак девочки
+Error: девочун Expected: девочке (freq: 554 diffRunes: 2), SpellerSuggest: девочки (freq: 8841 diffRunes: 2)
+------------------------------------------
+(триммер шт -> трисмеп шт) | yaSucced: триммер шт | spellerFail: триммер от
+Error: шт Expected: шт (freq: 2965 diffRunes: 0), SpellerSuggest: от (freq: 8510 diffRunes: 1)
+------------------------------------------
+(детский бюстгальтер -> детмкиц бюмтгвльтер) | yaSucced: детский бюстгальтер | spellerFail: детские бюстгальтер
+Error: детмкиц Expected: детский (freq: 8262 diffRunes: 2), SpellerSuggest: детские (freq: 10235 diffRunes: 2)
+------------------------------------------
+(начальник -> начальнту) | yaSucced: начальник | spellerFail: начальной
+Error: начальнту Expected: начальник (freq: 8 diffRunes: 2), SpellerSuggest: начальной (freq: 108 diffRunes: 2)
+------------------------------------------
+(защитная шторка на окно -> зашмтная шиоруа на окнл) | yaSucced: защитная шторка на окно | spellerFail: защитная штора на окно
+Error: шиоруа Expected: шторка (freq: 266 diffRunes: 2), SpellerSuggest: штора (freq: 976 diffRunes: 3)
+------------------------------------------
+(фото куб -> фотл еуб) | yaSucced: фото куб | spellerFail: от руб
+Error: фотл Expected: фото (freq: 915 diffRunes: 1), SpellerSuggest: от (freq: 8510 diffRunes: 4)
+Error: еуб Expected: куб (freq: 183 diffRunes: 1), SpellerSuggest: руб (freq: 231 diffRunes: 1)
+------------------------------------------
+(весенние куртки для подростков -> весеннтк куоткм доя аодрлстков) | yaSucced: весенние куртки для подростков | spellerFail: весенняя куртка для подростков
+Error: весеннтк Expected: весенние (freq: 1135 diffRunes: 2), SpellerSuggest: весенняя (freq: 1539 diffRunes: 2)
+Error: куоткм Expected: куртки (freq: 2414 diffRunes: 2), SpellerSuggest: куртка (freq: 10593 diffRunes: 2)
+------------------------------------------
+(шасси -> швчси) | yaSucced: шасси | spellerFail: швеи
+Error: швчси Expected: шасси (freq: 4 diffRunes: 2), SpellerSuggest: швеи (freq: 9 diffRunes: 3)
+------------------------------------------
+(бары для -> юары лля) | yaSucced: бары для | spellerFail: шары для
+Error: юары Expected: бары (freq: 3 diffRunes: 1), SpellerSuggest: шары (freq: 1589 diffRunes: 1)
+------------------------------------------
+(шкатулки для украшений из дерева -> шеатулкт доя цкпашений из днрнва) | yaSucced: шкатулки для украшений из дерева | spellerFail: шкатулка для украшений из дерева
+Error: шеатулкт Expected: шкатулки (freq: 71 diffRunes: 2), SpellerSuggest: шкатулка (freq: 520 diffRunes: 2)
+------------------------------------------
+(фрезы для снятия гель лака твердосплавные -> фпезв ддя сеяиия нель лвка твердомплавнык) | yaSucced: фрезы для снятия гель лака твердосплавные | spellerFail: фреза для снятия гель лака твердосплавные
+Error: фпезв Expected: фрезы (freq: 205 diffRunes: 2), SpellerSuggest: фреза (freq: 450 diffRunes: 2)
+------------------------------------------
+(форма для -> йормв длч) | yaSucced: форма для | spellerFail: корм для
+Error: йормв Expected: форма (freq: 3418 diffRunes: 2), SpellerSuggest: корм (freq: 4141 diffRunes: 2)
+------------------------------------------
+(силиконовые формы для шоколада цветы -> миоиконовые форсв жля шоуллада цаеиы) | yaSucced: силиконовые формы для шоколада цветы | spellerFail: силиконовые форма для шоколада цветы
+Error: форсв Expected: формы (freq: 930 diffRunes: 2), SpellerSuggest: форма (freq: 3418 diffRunes: 2)
+------------------------------------------
+(карбонель -> карблгель) | yaSucced: карбонель | spellerFail: калгель
+Error: карблгель Expected: карбонель (freq: 1 diffRunes: 2), SpellerSuggest: калгель (freq: 1 diffRunes: 7)
+------------------------------------------
+(причины -> аричинв) | yaSucced: причины | spellerFail: причин
+Error: аричинв Expected: причины (freq: 13 diffRunes: 2), SpellerSuggest: причин (freq: 16 diffRunes: 2)
+------------------------------------------
+(генератор с авр -> геннрптор с пвр) | yaSucced: генератор с авр | spellerFail: генератор с пвх
+Error: пвр Expected: авр (freq: 2 diffRunes: 1), SpellerSuggest: пвх (freq: 524 diffRunes: 1)
+------------------------------------------
+(размотка -> оазмлтка) | yaSucced: размотка | spellerFail: разметка
+Error: оазмлтка Expected: размотка (freq: 1 diffRunes: 2), SpellerSuggest: разметка (freq: 12 diffRunes: 2)
+------------------------------------------
+(картофеля -> картоынля) | yaSucced: картофеля | spellerFail: картонная
+Error: картоынля Expected: картофеля (freq: 78 diffRunes: 2), SpellerSuggest: картонная (freq: 146 diffRunes: 2)
+------------------------------------------
+(пастельные цвета -> пвстельнын цвеип) | yaSucced: пастельные цвета | spellerFail: постельные цвета
+Error: пвстельнын Expected: пастельные (freq: 59 diffRunes: 2), SpellerSuggest: постельные (freq: 42 diffRunes: 2)
+------------------------------------------
+(набор карандашей для губ шт -> еаюор карпндагей лля нуб шт) | yaSucced: набор карандашей для губ шт | spellerFail: набор карандашей для губ от
+Error: шт Expected: шт (freq: 2965 diffRunes: 0), SpellerSuggest: от (freq: 8510 diffRunes: 1)
+------------------------------------------
+(в сеть -> в сетб) | yaSucced: в сеть | spellerFail: в сети
+Error: сетб Expected: сеть (freq: 94 diffRunes: 1), SpellerSuggest: сети (freq: 141 diffRunes: 1)
+------------------------------------------
+(игра вышибалы -> инра выгибалф) | yaSucced: игра вышибалы | spellerFail: игра вышибала
+Error: выгибалф Expected: вышибалы (freq: 1 diffRunes: 2), SpellerSuggest: вышибала (freq: 1 diffRunes: 2)
+------------------------------------------
+(цепочки на шею -> уепочкт на шню) | yaSucced: цепочки на шею | spellerFail: цепочка на шею
+Error: уепочкт Expected: цепочки (freq: 306 diffRunes: 2), SpellerSuggest: цепочка (freq: 1313 diffRunes: 2)
+------------------------------------------
+(покатушки -> покаткшкт) | yaSucced: покатушки | spellerFail: покатушка
+Error: покаткшкт Expected: покатушки (freq: 1 diffRunes: 2), SpellerSuggest: покатушка (freq: 1 diffRunes: 2)
+------------------------------------------
+(благовония дым -> ьлановония двм) | yaSucced: благовония дым | spellerFail: благовония дом
+Error: двм Expected: дым (freq: 69 diffRunes: 1), SpellerSuggest: дом (freq: 1574 diffRunes: 1)
+------------------------------------------
+(бутылочки для кормления -> бутыллчкт ддя корслееия) | yaSucced: бутылочки для кормления | spellerFail: бутылочка для кормления
+Error: бутыллчкт Expected: бутылочки (freq: 235 diffRunes: 2), SpellerSuggest: бутылочка (freq: 376 diffRunes: 2)
+------------------------------------------
+(фа ге -> фа ге) | yaSucced: фа ге | spellerFail: на гб
+Error: фа Expected: фа (freq: 36 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+Error: ге Expected: ге (freq: 11 diffRunes: 0), SpellerSuggest: гб (freq: 384 diffRunes: 1)
+------------------------------------------
+(гель ля умывания -> гедь ля цмыыания) | yaSucced: гель ля умывания | spellerFail: гель для умывания
+Error: ля Expected: ля (freq: 232 diffRunes: 0), SpellerSuggest: для (freq: 264457 diffRunes: 3)
+------------------------------------------
+(прозрачные сумки для хранения -> ррозраяные суикм жля хоанкния) | yaSucced: прозрачные сумки для хранения | spellerFail: прозрачные сумка для хранения
+Error: суикм Expected: сумки (freq: 2475 diffRunes: 2), SpellerSuggest: сумка (freq: 9475 diffRunes: 2)
+------------------------------------------
+(сандалии ск -> сандвдии ск) | yaSucced: сандалии ск | spellerFail: сандалии со
+Error: ск Expected: ск (freq: 24 diffRunes: 0), SpellerSuggest: со (freq: 3665 diffRunes: 1)
+------------------------------------------
+(чей бок -> чнй ьок) | yaSucced: чей бок | spellerFail: чай со
+Error: чнй Expected: чей (freq: 20 diffRunes: 1), SpellerSuggest: чай (freq: 3903 diffRunes: 1)
+Error: ьок Expected: бок (freq: 48 diffRunes: 1), SpellerSuggest: со (freq: 3665 diffRunes: 2)
+------------------------------------------
+(платье женское из льна -> аоатье жнеское из льнв) | yaSucced: платье женское из льна | spellerFail: платье женские из льна
+Error: жнеское Expected: женское (freq: 5712 diffRunes: 2), SpellerSuggest: женские (freq: 31746 diffRunes: 3)
+------------------------------------------
+(чехлы на белый -> яехоы на юнлый) | yaSucced: чехлы на белый | spellerFail: чехол на белый
+Error: яехоы Expected: чехлы (freq: 3481 diffRunes: 2), SpellerSuggest: чехол (freq: 24585 diffRunes: 2)
+------------------------------------------
+(наклейки на футболку -> науоейки на футьолкк) | yaSucced: наклейки на футболку | spellerFail: наклейки на футболки
+Error: футьолкк Expected: футболку (freq: 81 diffRunes: 2), SpellerSuggest: футболки (freq: 4004 diffRunes: 2)
+------------------------------------------
+(флисовая поддева для мальчика -> ылислвая подлква ддя иальчикп) | yaSucced: флисовая поддева для мальчика | spellerFail: флисовая полка для мальчика
+Error: подлква Expected: поддева (freq: 20 diffRunes: 2), SpellerSuggest: полка (freq: 1383 diffRunes: 5)
+------------------------------------------
+(правильный -> правиоьныф) | yaSucced: правильный | spellerFail: правильные
+Error: правиоьныф Expected: правильный (freq: 6 diffRunes: 2), SpellerSuggest: правильные (freq: 7 diffRunes: 2)
+------------------------------------------
+(рубашки в клетку мужские -> рубашум в улеткк мужсуте) | yaSucced: рубашки в клетку мужские | spellerFail: рубашка в клетку мужские
+Error: рубашум Expected: рубашки (freq: 983 diffRunes: 2), SpellerSuggest: рубашка (freq: 5023 diffRunes: 2)
+------------------------------------------
+(формы для плитки -> фоомф ддя алмтки) | yaSucced: формы для плитки | spellerFail: форма для плитки
+Error: фоомф Expected: формы (freq: 930 diffRunes: 2), SpellerSuggest: форма (freq: 3418 diffRunes: 2)
+------------------------------------------
+(элвин су -> элытн су) | yaSucced: элвин су | spellerFail: элит см
+Error: элытн Expected: элвин (freq: 8 diffRunes: 2), SpellerSuggest: элит (freq: 96 diffRunes: 2)
+Error: су Expected: су (freq: 34 diffRunes: 0), SpellerSuggest: см (freq: 3337 diffRunes: 1)
+------------------------------------------
+(береты омон -> бернтф омое) | yaSucced: береты омон | spellerFail: берет омон
+Error: бернтф Expected: береты (freq: 60 diffRunes: 2), SpellerSuggest: берет (freq: 357 diffRunes: 2)
+------------------------------------------
+(подстилки на пляж -> подсьилкт на пдяж) | yaSucced: подстилки на пляж | spellerFail: подстилка на пляж
+Error: подсьилкт Expected: подстилки (freq: 28 diffRunes: 2), SpellerSuggest: подстилка (freq: 96 diffRunes: 2)
+------------------------------------------
+(фигурки слона -> фигуокм сллнп) | yaSucced: фигурки слона | spellerFail: фигурка слона
+Error: фигуокм Expected: фигурки (freq: 1411 diffRunes: 2), SpellerSuggest: фигурка (freq: 1418 diffRunes: 2)
+------------------------------------------
+(солнцезащитные очки с двойными стеклами -> молнцезащиьные очуи с двойнысм стеклвмт) | yaSucced: солнцезащитные очки с двойными стеклами | spellerFail: солнцезащитные очки с двойным стеклом
+Error: двойнысм Expected: двойными (freq: 51 diffRunes: 2), SpellerSuggest: двойным (freq: 79 diffRunes: 2)
+Error: стеклвмт Expected: стеклами (freq: 25 diffRunes: 2), SpellerSuggest: стеклом (freq: 106 diffRunes: 2)
+------------------------------------------
+(шпаргалки по математике -> шппргалкт по маткматтке) | yaSucced: шпаргалки по математике | spellerFail: шпаргалка по математике
+Error: шппргалкт Expected: шпаргалки (freq: 13 diffRunes: 2), SpellerSuggest: шпаргалка (freq: 17 diffRunes: 2)
+------------------------------------------
+(кольцо шайба -> еолбцо щайюа) | yaSucced: кольцо шайба | spellerFail: кольцо гайка
+Error: щайюа Expected: шайба (freq: 76 diffRunes: 2), SpellerSuggest: гайка (freq: 79 diffRunes: 2)
+------------------------------------------
+(абиссинский нуг -> аьисстнский нун) | yaSucced: абиссинский нуг | spellerFail: абиссинский нан
+Error: нун Expected: нуг (freq: 1 diffRunes: 1), SpellerSuggest: нан (freq: 101 diffRunes: 1)
+------------------------------------------
+(оригинальная кружка -> опигинадьная кркдка) | yaSucced: оригинальная кружка | spellerFail: оригинальная краска
+Error: кркдка Expected: кружка (freq: 3135 diffRunes: 2), SpellerSuggest: краска (freq: 5398 diffRunes: 2)
+------------------------------------------
+(коврики для ванной комнаты -> коврткт жля вангоц коиеаты) | yaSucced: коврики для ванной комнаты | spellerFail: коврик для ванной комнаты
+Error: коврткт Expected: коврики (freq: 1295 diffRunes: 2), SpellerSuggest: коврик (freq: 4034 diffRunes: 2)
+------------------------------------------
+(детская футболка с уткой -> жетскач фктьолка с цтеой) | yaSucced: детская футболка с уткой | spellerFail: женская футболка с уткой
+Error: жетскач Expected: детская (freq: 7866 diffRunes: 2), SpellerSuggest: женская (freq: 20248 diffRunes: 2)
+------------------------------------------
+(нева -> невв) | yaSucced: нева | spellerFail: не
+Error: невв Expected: нева (freq: 92 diffRunes: 1), SpellerSuggest: не (freq: 2020 diffRunes: 2)
+------------------------------------------
+(флаконы для путешествий -> флакоев длч путешествтф) | yaSucced: флаконы для путешествий | spellerFail: флакон для путешествий
+Error: флакоев Expected: флаконы (freq: 75 diffRunes: 2), SpellerSuggest: флакон (freq: 270 diffRunes: 2)
+------------------------------------------
+(за рубль -> за руьлб) | yaSucced: за рубль | spellerFail: на руль
+Error: за Expected: за (freq: 1622 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+Error: руьлб Expected: рубль (freq: 38 diffRunes: 2), SpellerSuggest: руль (freq: 591 diffRunes: 3)
+------------------------------------------
+(игрушки за -> мнрушки за) | yaSucced: игрушки за | spellerFail: игрушки на
+Error: за Expected: за (freq: 1622 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+------------------------------------------
+(шуб чебурашка -> щуб чебурвшкв) | yaSucced: шуб чебурашка | spellerFail: шуба чебурашка
+Error: щуб Expected: шуб (freq: 12 diffRunes: 1), SpellerSuggest: шуба (freq: 419 diffRunes: 2)
+------------------------------------------
+(хобб -> хоюб) | yaSucced: хобб | spellerFail: хб
+Error: хоюб Expected: хобб (freq: 9 diffRunes: 1), SpellerSuggest: хб (freq: 219 diffRunes: 3)
+------------------------------------------
+(мл для женщин парфюмерная -> мл длч женштн парфюмнрнпя) | yaSucced: мл для женщин парфюмерная | spellerFail: мм для женщин парфюмерная
+Error: мл Expected: мл (freq: 1419 diffRunes: 0), SpellerSuggest: мм (freq: 1542 diffRunes: 1)
+------------------------------------------
+(летние брюки мужские хлопок -> летнмн юоюки мцжсеие хлраок) | yaSucced: летние брюки мужские хлопок | spellerFail: летние носки мужские хлопок
+Error: юоюки Expected: брюки (freq: 8801 diffRunes: 2), SpellerSuggest: носки (freq: 6388 diffRunes: 2)
+------------------------------------------
+(сниппеты -> сеипреты) | yaSucced: сниппеты | spellerFail: секреты
+Error: сеипреты Expected: сниппеты (freq: 1 diffRunes: 2), SpellerSuggest: секреты (freq: 108 diffRunes: 6)
+------------------------------------------
+(футболка мчс -> футброка мяс) | yaSucced: футболка мчс | spellerFail: футболка мяч
+Error: мяс Expected: мчс (freq: 82 diffRunes: 1), SpellerSuggest: мяч (freq: 1012 diffRunes: 1)
+------------------------------------------
+(азовский -> пзоаский) | yaSucced: азовский | spellerFail: плоский
+Error: пзоаский Expected: азовский (freq: 4 diffRunes: 2), SpellerSuggest: плоский (freq: 88 diffRunes: 6)
+------------------------------------------
+(платье см -> плвтьн см) | yaSucced: платье см | spellerFail: платье со
+Error: см Expected: см (freq: 3337 diffRunes: 0), SpellerSuggest: со (freq: 3665 diffRunes: 1)
+------------------------------------------
+(бюстгальтеры с застежкой -> бюмтгальтерв с застеэкрй) | yaSucced: бюстгальтеры с застежкой | spellerFail: бюстгальтер с застежкой
+Error: бюмтгальтерв Expected: бюстгальтеры (freq: 181 diffRunes: 2), SpellerSuggest: бюстгальтер (freq: 1575 diffRunes: 2)
+------------------------------------------
+(спортивные детские шапки для мальчиков -> срортивгые детсеин шппкм доя малбяиков) | yaSucced: спортивные детские шапки для мальчиков | spellerFail: спортивные детские шапка для мальчиков
+Error: шппкм Expected: шапки (freq: 967 diffRunes: 2), SpellerSuggest: шапка (freq: 6135 diffRunes: 2)
+------------------------------------------
+(дверные ручки для мебели -> дыкрные пучкт лля мебеом) | yaSucced: дверные ручки для мебели | spellerFail: дверные ручка для мебели
+Error: пучкт Expected: ручки (freq: 1504 diffRunes: 2), SpellerSuggest: ручка (freq: 2871 diffRunes: 2)
+------------------------------------------
+(платья для девочек месяцев -> рлатьч длф днвосек мнмяцев) | yaSucced: платья для девочек месяцев | spellerFail: платье для девочек месяцев
+Error: рлатьч Expected: платья (freq: 3412 diffRunes: 2), SpellerSuggest: платье (freq: 14137 diffRunes: 2)
+------------------------------------------
+(туфли вечерние женские -> ьцфли весерник жегскме) | yaSucced: туфли вечерние женские | spellerFail: туфли весенние женские
+Error: весерник Expected: вечерние (freq: 302 diffRunes: 2), SpellerSuggest: весенние (freq: 1135 diffRunes: 2)
+------------------------------------------
+(статуэтки рыбы -> сиатуэткм рыбф) | yaSucced: статуэтки рыбы | spellerFail: статуэтка рыба
+Error: сиатуэткм Expected: статуэтки (freq: 272 diffRunes: 2), SpellerSuggest: статуэтка (freq: 515 diffRunes: 2)
+Error: рыбф Expected: рыбы (freq: 200 diffRunes: 1), SpellerSuggest: рыба (freq: 174 diffRunes: 1)
+------------------------------------------
+(чай в чайнике -> чац в чайгикк) | yaSucced: чай в чайнике | spellerFail: чая в чайник
+Error: чац Expected: чай (freq: 3903 diffRunes: 1), SpellerSuggest: чая (freq: 506 diffRunes: 1)
+Error: чайгикк Expected: чайнике (freq: 5 diffRunes: 2), SpellerSuggest: чайник (freq: 1584 diffRunes: 2)
+------------------------------------------
+(хроники дождевых чащоб -> зрониуи доэдквых сащою) | yaSucced: хроники дождевых чащоб | spellerFail: хроники дождевых сабо
+Error: сащою Expected: чащоб (freq: 1 diffRunes: 2), SpellerSuggest: сабо (freq: 841 diffRunes: 2)
+------------------------------------------
+(пальто вязаное женское -> палтьо вфзагое жеечкое) | yaSucced: пальто вязаное женское | spellerFail: платье вязаное женское
+Error: палтьо Expected: пальто (freq: 3850 diffRunes: 2), SpellerSuggest: платье (freq: 14137 diffRunes: 3)
+------------------------------------------
+(на лица -> на оица) | yaSucced: на лица | spellerFail: на окна
+Error: оица Expected: лица (freq: 7353 diffRunes: 1), SpellerSuggest: окна (freq: 417 diffRunes: 2)
+------------------------------------------
+(кондитерские продукты -> кондитеоскик рродцкты) | yaSucced: кондитерские продукты | spellerFail: кондитерский продукты
+Error: кондитеоскик Expected: кондитерские (freq: 177 diffRunes: 2), SpellerSuggest: кондитерский (freq: 234 diffRunes: 2)
+------------------------------------------
+(картины вышивка -> кпртинв вышивуп) | yaSucced: картины вышивка | spellerFail: картина вышивка
+Error: кпртинв Expected: картины (freq: 1296 diffRunes: 2), SpellerSuggest: картина (freq: 3088 diffRunes: 2)
+------------------------------------------
+(уборка окон -> уьоркп окое) | yaSucced: уборка окон | spellerFail: уборки окон
+Error: уьоркп Expected: уборка (freq: 59 diffRunes: 2), SpellerSuggest: уборки (freq: 488 diffRunes: 2)
+------------------------------------------
+(держатель для крышек от кастрюль -> днпжатель доя крыщкк от квсьрюль) | yaSucced: держатель для крышек от кастрюль | spellerFail: держатель для крышки от кастрюль
+Error: крыщкк Expected: крышек (freq: 95 diffRunes: 2), SpellerSuggest: крышки (freq: 391 diffRunes: 2)
+------------------------------------------
+(для мытья бутылочки -> доя сыиья бутылоякм) | yaSucced: для мытья бутылочки | spellerFail: для мытья бутылок
+Error: бутылоякм Expected: бутылочки (freq: 235 diffRunes: 2), SpellerSuggest: бутылок (freq: 144 diffRunes: 3)
+------------------------------------------
+(баюн -> бабн) | yaSucced: баюн | spellerFail: баба
+Error: бабн Expected: баюн (freq: 17 diffRunes: 1), SpellerSuggest: баба (freq: 67 diffRunes: 1)
+------------------------------------------
+(юкка -> юккп) | yaSucced: юкка | spellerFail: юбка
+Error: юккп Expected: юкка (freq: 6 diffRunes: 1), SpellerSuggest: юбка (freq: 4890 diffRunes: 2)
+------------------------------------------
+(толстовки для девочек -> толстовут доя девлчее) | yaSucced: толстовки для девочек | spellerFail: толстовка для девочек
+Error: толстовут Expected: толстовки (freq: 502 diffRunes: 2), SpellerSuggest: толстовка (freq: 2372 diffRunes: 2)
+------------------------------------------
+(щеточки для бровей шт -> щнточкт лля ьровкй шт) | yaSucced: щеточки для бровей шт | spellerFail: щеточка для бровей шт
+Error: щнточкт Expected: щеточки (freq: 62 diffRunes: 2), SpellerSuggest: щеточка (freq: 127 diffRunes: 2)
+------------------------------------------
+(гель лаки коди -> гнль лакт уоди) | yaSucced: гель лаки коди | spellerFail: гель лак коди
+Error: лакт Expected: лаки (freq: 456 diffRunes: 1), SpellerSuggest: лак (freq: 3018 diffRunes: 1)
+------------------------------------------
+(угол -> цгол) | yaSucced: угол | spellerFail: стол
+Error: цгол Expected: угол (freq: 91 diffRunes: 1), SpellerSuggest: стол (freq: 2371 diffRunes: 2)
+------------------------------------------
+(подарки на день рождение -> прдпрки на денб рржденик) | yaSucced: подарки на день рождение | spellerFail: подарки на день рождения
+Error: рржденик Expected: рождение (freq: 234 diffRunes: 2), SpellerSuggest: рождения (freq: 1312 diffRunes: 2)
+------------------------------------------
+(декоративные штучки -> декрратиыные шткяки) | yaSucced: декоративные штучки | spellerFail: декоративные шторки
+Error: шткяки Expected: штучки (freq: 78 diffRunes: 2), SpellerSuggest: шторки (freq: 262 diffRunes: 2)
+------------------------------------------
+(феррит -> фкприт) | yaSucced: феррит | spellerFail: крит
+Error: фкприт Expected: феррит (freq: 2 diffRunes: 2), SpellerSuggest: крит (freq: 3 diffRunes: 6)
+------------------------------------------
+(майки на бретельках -> мпйкт на брнтельказ) | yaSucced: майки на бретельках | spellerFail: майка на бретельках
+Error: мпйкт Expected: майки (freq: 635 diffRunes: 2), SpellerSuggest: майка (freq: 2394 diffRunes: 2)
+------------------------------------------
+(спортивной -> спориивноф) | yaSucced: спортивной | spellerFail: спортивное
+Error: спориивноф Expected: спортивной (freq: 25 diffRunes: 2), SpellerSuggest: спортивное (freq: 415 diffRunes: 2)
+------------------------------------------
+(антилопа для мальчиков -> антиооаа ддя иальчикоа) | yaSucced: антилопа для мальчиков | spellerFail: антилопа для мальчика
+Error: иальчикоа Expected: мальчиков (freq: 4888 diffRunes: 2), SpellerSuggest: мальчика (freq: 7564 diffRunes: 3)
+------------------------------------------
+(вибрация -> вибрацтф) | yaSucced: вибрация | spellerFail: вибрации
+Error: вибрацтф Expected: вибрация (freq: 4 diffRunes: 2), SpellerSuggest: вибрации (freq: 5 diffRunes: 2)
+------------------------------------------
+(волосы без желтизны шампунь -> водосф бкз делтизеы шампуеб) | yaSucced: волосы без желтизны шампунь | spellerFail: волос без желтизны шампунь
+Error: водосф Expected: волосы (freq: 516 diffRunes: 2), SpellerSuggest: волос (freq: 12092 diffRunes: 2)
+------------------------------------------
+(катарина -> катприга) | yaSucced: катарина | spellerFail: катерина
+Error: катприга Expected: катарина (freq: 4 diffRunes: 2), SpellerSuggest: катерина (freq: 24 diffRunes: 2)
+------------------------------------------
+(тюль с перьями -> тюдь с пнртями) | yaSucced: тюль с перьями | spellerFail: тюль с нитями
+Error: пнртями Expected: перьями (freq: 84 diffRunes: 2), SpellerSuggest: нитями (freq: 10 diffRunes: 7)
+------------------------------------------
+(детский зимний комбинезон для девочки -> жетсеий зимемй клмбинезлн лля левочуи) | yaSucced: детский зимний комбинезон для девочки | spellerFail: женский зимний комбинезон для девочки
+Error: жетсеий Expected: детский (freq: 8262 diffRunes: 2), SpellerSuggest: женский (freq: 14309 diffRunes: 2)
+------------------------------------------
+(простыня евро на -> прлстынч квро на) | yaSucced: простыня евро на | spellerFail: простынь евро на
+Error: прлстынч Expected: простыня (freq: 593 diffRunes: 2), SpellerSuggest: простынь (freq: 965 diffRunes: 2)
+------------------------------------------
+(в во -> в во) | yaSucced: в во | spellerFail: в по
+Error: во Expected: во (freq: 163 diffRunes: 0), SpellerSuggest: по (freq: 6365 diffRunes: 1)
+------------------------------------------
+(штативы -> щтативф) | yaSucced: штативы | spellerFail: штатив
+Error: щтативф Expected: штативы (freq: 9 diffRunes: 2), SpellerSuggest: штатив (freq: 374 diffRunes: 2)
+------------------------------------------
+(комбинезон женский широкие брюки -> еомбиннзон жннскиф шипоеие юрбки) | yaSucced: комбинезон женский широкие брюки | spellerFail: комбинезон женские широкие брюки
+Error: жннскиф Expected: женский (freq: 14309 diffRunes: 2), SpellerSuggest: женские (freq: 31746 diffRunes: 2)
+------------------------------------------
+(трансформеры конструктор -> ьрансформерв еончтруктор) | yaSucced: трансформеры конструктор | spellerFail: трансформер конструктор
+Error: ьрансформерв Expected: трансформеры (freq: 115 diffRunes: 2), SpellerSuggest: трансформер (freq: 381 diffRunes: 2)
+------------------------------------------
+(худи кошка -> хцди клщка) | yaSucced: худи кошка | spellerFail: худи кепка
+Error: клщка Expected: кошка (freq: 413 diffRunes: 2), SpellerSuggest: кепка (freq: 1739 diffRunes: 2)
+------------------------------------------
+(узбеки -> цзбкки) | yaSucced: узбеки | spellerFail: азбуки
+Error: цзбкки Expected: узбеки (freq: 1 diffRunes: 2), SpellerSuggest: азбуки (freq: 7 diffRunes: 2)
+------------------------------------------
+(картриджи для воскоплава -> уартриджт длч восерплава) | yaSucced: картриджи для воскоплава | spellerFail: картридж для воскоплава
+Error: уартриджт Expected: картриджи (freq: 431 diffRunes: 2), SpellerSuggest: картридж (freq: 1803 diffRunes: 2)
+------------------------------------------
+(футболка ария -> йутболуа артя) | yaSucced: футболка ария | spellerFail: футболка арт
+Error: артя Expected: ария (freq: 28 diffRunes: 1), SpellerSuggest: арт (freq: 359 diffRunes: 1)
+------------------------------------------
+(мужские футболки на лето с принтом -> муэсуие футбллуи на летл с приньрм) | yaSucced: мужские футболки на лето с принтом | spellerFail: мужские футболки на лет с принтом
+Error: летл Expected: лето (freq: 2248 diffRunes: 1), SpellerSuggest: лет (freq: 4003 diffRunes: 1)
+------------------------------------------
+(купить кастрюлю -> куамть кастрюоб) | yaSucced: купить кастрюлю | spellerFail: купить кастрюли
+Error: кастрюоб Expected: кастрюлю (freq: 33 diffRunes: 2), SpellerSuggest: кастрюли (freq: 318 diffRunes: 2)
+------------------------------------------
+(мужские одежда -> мужскмн лдеэда) | yaSucced: мужские одежда | spellerFail: мужская одежда
+Error: мужскмн Expected: мужские (freq: 14892 diffRunes: 2), SpellerSuggest: мужская (freq: 9731 diffRunes: 2)
+------------------------------------------
+(джинсовые юбки большие размеры -> джинслвык юбкм блоьшие рвзсеры) | yaSucced: джинсовые юбки большие размеры | spellerFail: джинсовые юбка большие размеры
+Error: юбкм Expected: юбки (freq: 758 diffRunes: 1), SpellerSuggest: юбка (freq: 4890 diffRunes: 1)
+------------------------------------------
+(хуа чэн -> хца яэн) | yaSucced: хуа чэн | spellerFail: на фен
+Error: хца Expected: хуа (freq: 9 diffRunes: 1), SpellerSuggest: на (freq: 76308 diffRunes: 3)
+Error: яэн Expected: чэн (freq: 3 diffRunes: 1), SpellerSuggest: фен (freq: 807 diffRunes: 2)
+------------------------------------------
+(полукеды детские -> плоукеды жетскте) | yaSucced: полукеды детские | spellerFail: полукеды женские
+Error: жетскте Expected: детские (freq: 10235 diffRunes: 2), SpellerSuggest: женские (freq: 31746 diffRunes: 2)
+------------------------------------------
+(линч -> лтнч) | yaSucced: линч | spellerFail: лен
+Error: лтнч Expected: линч (freq: 5 diffRunes: 1), SpellerSuggest: лен (freq: 666 diffRunes: 2)
+------------------------------------------
+(джинсовая куртка мужская с принтом -> джинсоапя куоткв мужскпф с приетлм) | yaSucced: джинсовая куртка мужская с принтом | spellerFail: джинсовая куртка мужские с принтом
+Error: мужскпф Expected: мужская (freq: 9731 diffRunes: 2), SpellerSuggest: мужские (freq: 14892 diffRunes: 2)
+------------------------------------------
+(шапка для мальчика подростка весенняя -> щарка лля свльчика подрлська вескннфя) | yaSucced: шапка для мальчика подростка весенняя | spellerFail: парка для мальчика подростка весенняя
+Error: щарка Expected: шапка (freq: 6135 diffRunes: 2), SpellerSuggest: парка (freq: 532 diffRunes: 1)
+------------------------------------------
+(матрасы поролоновые -> иатрасв поррлоновын) | yaSucced: матрасы поролоновые | spellerFail: матрас поролоновый
+Error: иатрасв Expected: матрасы (freq: 121 diffRunes: 2), SpellerSuggest: матрас (freq: 1110 diffRunes: 2)
+Error: поррлоновын Expected: поролоновые (freq: 19 diffRunes: 2), SpellerSuggest: поролоновый (freq: 33 diffRunes: 2)
+------------------------------------------
+(полотенца банное детское -> ролотенцп банеок дктмкое) | yaSucced: полотенца банное детское | spellerFail: полотенце банное детское
+Error: ролотенцп Expected: полотенца (freq: 871 diffRunes: 2), SpellerSuggest: полотенце (freq: 1880 diffRunes: 2)
+------------------------------------------
+(математика класс часть -> маткматикп кдачс часит) | yaSucced: математика класс часть | spellerFail: математике класс части
+Error: маткматикп Expected: математика (freq: 449 diffRunes: 2), SpellerSuggest: математике (freq: 212 diffRunes: 2)
+Error: часит Expected: часть (freq: 199 diffRunes: 2), SpellerSuggest: части (freq: 64 diffRunes: 2)
+------------------------------------------
+(чехол на телефон шкода -> чеълл на теоефое щеода) | yaSucced: чехол на телефон шкода | spellerFail: чехол на телефон года
+Error: щеода Expected: шкода (freq: 222 diffRunes: 2), SpellerSuggest: года (freq: 1297 diffRunes: 5)
+------------------------------------------
+(обманка лямбда зонда евро -> обмагкв лямбжп хондв еврл) | yaSucced: обманка лямбда зонда евро | spellerFail: обманка лямбда зонд евро
+Error: хондв Expected: зонда (freq: 5 diffRunes: 2), SpellerSuggest: зонд (freq: 33 diffRunes: 2)
+------------------------------------------
+(ла лама -> ла лпма) | yaSucced: ла лама | spellerFail: на лада
+Error: ла Expected: ла (freq: 124 diffRunes: 0), SpellerSuggest: на (freq: 76308 diffRunes: 1)
+Error: лпма Expected: лама (freq: 110 diffRunes: 1), SpellerSuggest: лада (freq: 725 diffRunes: 2)
+------------------------------------------
+(крестильные комплекты для девочек -> крестилтеые компдектв жля лквочек) | yaSucced: крестильные комплекты для девочек | spellerFail: крестильные комплект для девочек
+Error: компдектв Expected: комплекты (freq: 350 diffRunes: 2), SpellerSuggest: комплект (freq: 4653 diffRunes: 2)
+------------------------------------------
+(концевики для бижутерии -> концеыикт ддя бтжуьерии) | yaSucced: концевики для бижутерии | spellerFail: концевик для бижутерии
+Error: концеыикт Expected: концевики (freq: 7 diffRunes: 2), SpellerSuggest: концевик (freq: 15 diffRunes: 2)
+------------------------------------------
+(крючки на коляску -> крбяки на ерляску) | yaSucced: крючки на коляску | spellerFail: кружки на коляску
+Error: крбяки Expected: крючки (freq: 529 diffRunes: 2), SpellerSuggest: кружки (freq: 550 diffRunes: 2)
+------------------------------------------
+(рамки для холста -> рпмкт длч холсип) | yaSucced: рамки для холста | spellerFail: рамка для холста
+Error: рпмкт Expected: рамки (freq: 325 diffRunes: 2), SpellerSuggest: рамка (freq: 940 diffRunes: 2)
+------------------------------------------
+(рисование светом -> рисованмн свеьои) | yaSucced: рисование светом | spellerFail: рисования светом
+Error: рисованмн Expected: рисование (freq: 146 diffRunes: 2), SpellerSuggest: рисования (freq: 1076 diffRunes: 2)
+------------------------------------------
+(шоколадки кг -> шокодадкт кг) | yaSucced: шоколадки кг | spellerFail: шоколадка кг
+Error: шокодадкт Expected: шоколадки (freq: 58 diffRunes: 2), SpellerSuggest: шоколадка (freq: 88 diffRunes: 2)
+------------------------------------------
+(мормышка -> мориышкв) | yaSucced: мормышка | spellerFail: мормышки
+Error: мориышкв Expected: мормышка (freq: 24 diffRunes: 2), SpellerSuggest: мормышки (freq: 28 diffRunes: 2)
+------------------------------------------
+(юбка брюки женские -> юька юрбки жкнскин) | yaSucced: юбка брюки женские | spellerFail: юбки брюки женские
+Error: юька Expected: юбка (freq: 4890 diffRunes: 1), SpellerSuggest: юбки (freq: 758 diffRunes: 2)
+------------------------------------------
+(сластена -> чластнна) | yaSucced: сластена | spellerFail: пластина
+Error: чластнна Expected: сластена (freq: 8 diffRunes: 2), SpellerSuggest: пластина (freq: 170 diffRunes: 2)
+------------------------------------------
+(секс костюм для девушек -> чекс ерстюм длч девкшкк) | yaSucced: секс костюм для девушек | spellerFail: секс костюм для девушки
+Error: девкшкк Expected: девушек (freq: 399 diffRunes: 2), SpellerSuggest: девушки (freq: 343 diffRunes: 2)
+------------------------------------------
+(комбинезон детский весна для новорожденных -> комбиннзое детчкиц вечга жля новорождкннфх) | yaSucced: комбинезон детский весна для новорожденных | spellerFail: комбинезон детские весна для новорожденных
+Error: детчкиц Expected: детский (freq: 8262 diffRunes: 2), SpellerSuggest: детские (freq: 10235 diffRunes: 2)
+------------------------------------------
+(курточка летняя -> куртлска летнчч) | yaSucced: курточка летняя | spellerFail: куртка летняя
+Error: куртлска Expected: курточка (freq: 110 diffRunes: 2), SpellerSuggest: куртка (freq: 10593 diffRunes: 4)
+------------------------------------------
+(энн моура -> эгн мруоа) | yaSucced: энн моура | spellerFail: это рука
+Error: эгн Expected: энн (freq: 33 diffRunes: 1), SpellerSuggest: это (freq: 290 diffRunes: 2)
+Error: мруоа Expected: моура (freq: 1 diffRunes: 2), SpellerSuggest: рука (freq: 128 diffRunes: 5)
+------------------------------------------
+(набор лент -> нпюор дент) | yaSucced: набор лент | spellerFail: набор день
+Error: дент Expected: лент (freq: 42 diffRunes: 1), SpellerSuggest: день (freq: 1489 diffRunes: 1)
+------------------------------------------
+(бохо одежда для женщин -> боъо ожеждв жля эеещин) | yaSucced: бохо одежда для женщин | spellerFail: бодо одежда для женщин
+Error: боъо Expected: бохо (freq: 194 diffRunes: 1), SpellerSuggest: бодо (freq: 55 diffRunes: 1)
+------------------------------------------
+(термостол -> термостло) | yaSucced: термостол | spellerFail: термостат
+Error: термостло Expected: термостол (freq: 1 diffRunes: 2), SpellerSuggest: термостат (freq: 51 diffRunes: 2)
+------------------------------------------
+(самхита -> мамхиьа) | yaSucced: самхита | spellerFail: мамина
+Error: мамхиьа Expected: самхита (freq: 3 diffRunes: 2), SpellerSuggest: мамина (freq: 21 diffRunes: 4)
+------------------------------------------
+(подставка для губки для посуды -> аолставка лля шубкт лля посцжы) | yaSucced: подставка для губки для посуды | spellerFail: подставка для губка для посуды
+Error: шубкт Expected: губки (freq: 222 diffRunes: 2), SpellerSuggest: губка (freq: 525 diffRunes: 2)
+------------------------------------------
+(зонтик женский складной -> зонтме женсемй суладноц) | yaSucced: зонтик женский складной | spellerFail: зонт женский складной
+Error: зонтме Expected: зонтик (freq: 111 diffRunes: 2), SpellerSuggest: зонт (freq: 773 diffRunes: 2)
+------------------------------------------
+(сиропы для кофе -> смропф ддя уофе) | yaSucced: сиропы для кофе | spellerFail: сироп для кофе
+Error: смропф Expected: сиропы (freq: 32 diffRunes: 2), SpellerSuggest: сироп (freq: 631 diffRunes: 2)
+------------------------------------------
+(подгузники трусики для мальчиков шт -> полгузникт тпксики жля иальчиклв шт) | yaSucced: подгузники трусики для мальчиков шт | spellerFail: подгузники трусики для мальчиков от
+Error: шт Expected: шт (freq: 2965 diffRunes: 0), SpellerSuggest: от (freq: 8510 diffRunes: 1)
+------------------------------------------
+(плетение браслетов -> плктенин бпасоетов) | yaSucced: плетение браслетов | spellerFail: плетения браслетов
+Error: плктенин Expected: плетение (freq: 72 diffRunes: 2), SpellerSuggest: плетения (freq: 229 diffRunes: 2)
+------------------------------------------
+(защитные пленки -> звщитнве плеекм) | yaSucced: защитные пленки | spellerFail: защитное пленка
+Error: звщитнве Expected: защитные (freq: 324 diffRunes: 2), SpellerSuggest: защитное (freq: 3264 diffRunes: 2)
+Error: плеекм Expected: пленки (freq: 92 diffRunes: 2), SpellerSuggest: пленка (freq: 3064 diffRunes: 2)
+------------------------------------------
+(носочки детские кружевные -> нлсоски детсктк еружквные) | yaSucced: носочки детские кружевные | spellerFail: носки детские кружевные
+Error: нлсоски Expected: носочки (freq: 380 diffRunes: 2), SpellerSuggest: носки (freq: 6388 diffRunes: 5)
+------------------------------------------
+(липидная маска для волос -> омпидная самка жля воооч) | yaSucced: липидная маска для волос | spellerFail: откидная сумка для волос
+Error: омпидная Expected: липидная (freq: 3 diffRunes: 2), SpellerSuggest: откидная (freq: 11 diffRunes: 2)
+Error: самка Expected: маска (freq: 6727 diffRunes: 2), SpellerSuggest: сумка (freq: 9475 diffRunes: 1)
+------------------------------------------
+(летние платья мини -> лнтеие рлаьья миеи) | yaSucced: летние платья мини | spellerFail: летние платья миди
+Error: миеи Expected: мини (freq: 2768 diffRunes: 1), SpellerSuggest: миди (freq: 589 diffRunes: 1)
+------------------------------------------
+(шанель фреш -> щагель фрещ) | yaSucced: шанель фреш | spellerFail: гель крем
+Error: щагель Expected: шанель (freq: 213 diffRunes: 2), SpellerSuggest: гель (freq: 7931 diffRunes: 6)
+Error: фрещ Expected: фреш (freq: 58 diffRunes: 1), SpellerSuggest: крем (freq: 11799 diffRunes: 2)
+------------------------------------------
+(чай эрг грей -> чвй эрн грнй) | yaSucced: чай эрг грей | spellerFail: чай эрл грей
+Error: эрн Expected: эрг (freq: 0 diffRunes: 1), SpellerSuggest: эрл (freq: 20 diffRunes: 1)
+------------------------------------------
+(спортивные платье -> спортианфе плаьте) | yaSucced: спортивные платье | spellerFail: спортивное платье
+Error: спортианфе Expected: спортивные (freq: 4720 diffRunes: 2), SpellerSuggest: спортивное (freq: 415 diffRunes: 2)
+------------------------------------------
+(мужские обуви -> мцжсеие оюкви) | yaSucced: мужские обуви | spellerFail: мужские очки
+Error: оюкви Expected: обуви (freq: 1608 diffRunes: 2), SpellerSuggest: очки (freq: 4220 diffRunes: 3)
+------------------------------------------
+(группа -> гпуапа) | yaSucced: группа | spellerFail: папа
+Error: гпуапа Expected: группа (freq: 85 diffRunes: 2), SpellerSuggest: папа (freq: 205 diffRunes: 5)
+------------------------------------------
+(снпч -> снрч) | yaSucced: снпч | spellerFail: снуд
+Error: снрч Expected: снпч (freq: 18 diffRunes: 1), SpellerSuggest: снуд (freq: 702 diffRunes: 2)
+------------------------------------------
+(с пластиком -> с рластиуом) | yaSucced: с пластиком | spellerFail: с ластиком
+Error: рластиуом Expected: пластиком (freq: 3 diffRunes: 2), SpellerSuggest: ластиком (freq: 14 diffRunes: 9)
+------------------------------------------
+(чехол для раскладушка -> чкъол доя расклвдушкп) | yaSucced: чехол для раскладушка | spellerFail: чехол для раскладушки
+Error: расклвдушкп Expected: раскладушка (freq: 115 diffRunes: 2), SpellerSuggest: раскладушки (freq: 16 diffRunes: 2)
+------------------------------------------
+(коврики на панель -> уоврикм на ранелб) | yaSucced: коврики на панель | spellerFail: коврик на панель
+Error: уоврикм Expected: коврики (freq: 1295 diffRunes: 2), SpellerSuggest: коврик (freq: 4034 diffRunes: 2)
+------------------------------------------
+(детские заколки ручной работы -> детсеин зауолкт оучнлй рпботв) | yaSucced: детские заколки ручной работы | spellerFail: детские заколка ручной работы
+Error: зауолкт Expected: заколки (freq: 388 diffRunes: 2), SpellerSuggest: заколка (freq: 501 diffRunes: 2)
+------------------------------------------
+(худи мишка -> хкди мищкп) | yaSucced: худи мишка | spellerFail: худи микки
+Error: мищкп Expected: мишка (freq: 460 diffRunes: 2), SpellerSuggest: микки (freq: 352 diffRunes: 2)
+------------------------------------------
+(силиконовые чехлы для обуви детские -> силикоговве чнхоы длч лбувт летскик) | yaSucced: силиконовые чехлы для обуви детские | spellerFail: силиконовые чехол для обуви детские
+Error: чнхоы Expected: чехлы (freq: 3481 diffRunes: 2), SpellerSuggest: чехол (freq: 24585 diffRunes: 2)
+------------------------------------------
+(витафон для мужчин -> витаырн жля мужчме) | yaSucced: витафон для мужчин | spellerFail: витамин для мужчин
+Error: витаырн Expected: витафон (freq: 11 diffRunes: 2), SpellerSuggest: витамин (freq: 578 diffRunes: 2)
+------------------------------------------
+(наклейка на руль бмв -> наклкйкв на рцль бив) | yaSucced: наклейка на руль бмв | spellerFail: наклейки на руль бмв
+Error: наклкйкв Expected: наклейка (freq: 1688 diffRunes: 2), SpellerSuggest: наклейки (freq: 4285 diffRunes: 2)
+------------------------------------------
+(кеддо мужские кеды -> кеджл иужскин кежы) | yaSucced: кеддо мужские кеды | spellerFail: кеды мужские кеды
+Error: кеджл Expected: кеддо (freq: 33 diffRunes: 2), SpellerSuggest: кеды (freq: 2951 diffRunes: 2)
+------------------------------------------
+(уровень строительные -> уоовкнь строительнвн) | yaSucced: уровень строительные | spellerFail: уровень строительный
+Error: строительнвн Expected: строительные (freq: 268 diffRunes: 2), SpellerSuggest: строительный (freq: 255 diffRunes: 2)
+------------------------------------------
+(игла для тату -> иглп жля таьу) | yaSucced: игла для тату | spellerFail: иглы для тату
+Error: иглп Expected: игла (freq: 249 diffRunes: 1), SpellerSuggest: иглы (freq: 291 diffRunes: 1)
+------------------------------------------
+(интерактивная рыбка -> иниерактиыная пыбеа) | yaSucced: интерактивная рыбка | spellerFail: интерактивная рыба
+Error: пыбеа Expected: рыбка (freq: 129 diffRunes: 2), SpellerSuggest: рыба (freq: 174 diffRunes: 3)
+------------------------------------------
+(подушки из меха -> подущкм из мнха) | yaSucced: подушки из меха | spellerFail: подушка из меха
+Error: подущкм Expected: подушки (freq: 679 diffRunes: 2), SpellerSuggest: подушка (freq: 3049 diffRunes: 2)
+------------------------------------------
+(смарт часы для лайт -> чмврт чвсы жля лпйт) | yaSucced: смарт часы для лайт | spellerFail: смарт часы для лет
+Error: лпйт Expected: лайт (freq: 581 diffRunes: 1), SpellerSuggest: лет (freq: 4003 diffRunes: 3)
+------------------------------------------
+(огрн -> лгрн) | yaSucced: огрн | spellerFail: игра
+Error: лгрн Expected: огрн (freq: 2 diffRunes: 1), SpellerSuggest: игра (freq: 3157 diffRunes: 2)
+------------------------------------------
+(карманы для шкафчика именные -> кпрманф длч шквфчиеа имеееые) | yaSucced: карманы для шкафчика именные | spellerFail: карман для шкафчика именные
+Error: кпрманф Expected: карманы (freq: 41 diffRunes: 2), SpellerSuggest: карман (freq: 111 diffRunes: 2)
+------------------------------------------
+(эмпатия -> жмпатиф) | yaSucced: эмпатия | spellerFail: эмпатии
+Error: жмпатиф Expected: эмпатия (freq: 1 diffRunes: 2), SpellerSuggest: эмпатии (freq: 2 diffRunes: 2)
+------------------------------------------
+(шарф с -> шврф с) | yaSucced: шарф с | spellerFail: шары с
+Error: шврф Expected: шарф (freq: 1366 diffRunes: 1), SpellerSuggest: шары (freq: 1589 diffRunes: 2)
+------------------------------------------
+(матрасы на диван -> маирасф на жиыан) | yaSucced: матрасы на диван | spellerFail: матрас на диван
+Error: маирасф Expected: матрасы (freq: 121 diffRunes: 2), SpellerSuggest: матрас (freq: 1110 diffRunes: 2)
+------------------------------------------
+(шиппер -> щмппер) | yaSucced: шиппер | spellerFail: шоппер
+Error: щмппер Expected: шиппер (freq: 5 diffRunes: 2), SpellerSuggest: шоппер (freq: 1023 diffRunes: 2)
+------------------------------------------
+(кредитки -> кредмткм) | yaSucced: кредитки | spellerFail: кредитка
+Error: кредмткм Expected: кредитки (freq: 2 diffRunes: 2), SpellerSuggest: кредитка (freq: 5 diffRunes: 2)
+------------------------------------------
+(полюбить себя -> ррлюбить себф) | yaSucced: полюбить себя | spellerFail: любить себя
+Error: ррлюбить Expected: полюбить (freq: 2 diffRunes: 2), SpellerSuggest: любить (freq: 62 diffRunes: 8)
+------------------------------------------
+(заклятье -> звклятбе) | yaSucced: заклятье | spellerFail: заклятие
+Error: звклятбе Expected: заклятье (freq: 6 diffRunes: 2), SpellerSuggest: заклятие (freq: 6 diffRunes: 2)
+------------------------------------------
+(растущий стол и стул -> растушмй чтол и сьул) | yaSucced: растущий стол и стул | spellerFail: растущий стул и стол
+Error: чтол Expected: стол (freq: 2371 diffRunes: 1), SpellerSuggest: стул (freq: 1482 diffRunes: 2)
+Error: сьул Expected: стул (freq: 1482 diffRunes: 1), SpellerSuggest: стол (freq: 2371 diffRunes: 2)
+------------------------------------------
+(вакуумные пакеты с вешалкой -> ввкуусные паеетв с вншвлкой) | yaSucced: вакуумные пакеты с вешалкой | spellerFail: вакуумные пакет с вешалкой
+Error: паеетв Expected: пакеты (freq: 1066 diffRunes: 2), SpellerSuggest: пакет (freq: 1149 diffRunes: 2)
+------------------------------------------
+(кроватки для кукол деревянные -> кроввткм доя кукло деревяенфе) | yaSucced: кроватки для кукол деревянные | spellerFail: кроватка для кукол деревянные
+Error: кроввткм Expected: кроватки (freq: 160 diffRunes: 2), SpellerSuggest: кроватка (freq: 180 diffRunes: 2)
+------------------------------------------
+(уилбер -> уилюкр) | yaSucced: уилбер | spellerFail: уилбур
+Error: уилюкр Expected: уилбер (freq: 1 diffRunes: 2), SpellerSuggest: уилбур (freq: 4 diffRunes: 2)
+------------------------------------------
+(мультирамка -> мультиоаика) | yaSucced: мультирамка | spellerFail: мультиварка
+Error: мультиоаика Expected: мультирамка (freq: 3 diffRunes: 2), SpellerSuggest: мультиварка (freq: 116 diffRunes: 2)
+------------------------------------------
+(дхо для авто свет -> дхр длч аыто свеи) | yaSucced: дхо для авто свет | spellerFail: для для авто свет
+Error: дхр Expected: дхо (freq: 33 diffRunes: 1), SpellerSuggest: для (freq: 264457 diffRunes: 2)
+------------------------------------------
+(горшок для собаки -> гоошлк длч союакм) | yaSucced: горшок для собаки | spellerFail: горшок для собак
+Error: союакм Expected: собаки (freq: 444 diffRunes: 2), SpellerSuggest: собак (freq: 4310 diffRunes: 2)
+------------------------------------------
+(книги мебель -> кеигт мебноь) | yaSucced: книги мебель | spellerFail: книга мебель
+Error: кеигт Expected: книги (freq: 3386 diffRunes: 2), SpellerSuggest: книга (freq: 8336 diffRunes: 2)
+------------------------------------------
+(колонки с сабвуфером для компьютера -> кологкм с чабвуферои доя косптютера) | yaSucced: колонки с сабвуфером для компьютера | spellerFail: колонка с сабвуфером для компьютера
+Error: кологкм Expected: колонки (freq: 510 diffRunes: 2), SpellerSuggest: колонка (freq: 736 diffRunes: 2)
+------------------------------------------
+(балкона -> балеонп) | yaSucced: балкона | spellerFail: баллон
+Error: балеонп Expected: балкона (freq: 97 diffRunes: 2), SpellerSuggest: баллон (freq: 215 diffRunes: 2)
+------------------------------------------
+(ми бэнд браслет -> ми бжнд бпаслкт) | yaSucced: ми бэнд браслет | spellerFail: ми бенд браслет
+Error: бжнд Expected: бэнд (freq: 20 diffRunes: 1), SpellerSuggest: бенд (freq: 61 diffRunes: 1)
+------------------------------------------
+(стул хлоя -> стцл ълоя) | yaSucced: стул хлоя | spellerFail: стол для
+Error: стцл Expected: стул (freq: 1482 diffRunes: 1), SpellerSuggest: стол (freq: 2371 diffRunes: 1)
+Error: ълоя Expected: хлоя (freq: 8 diffRunes: 1), SpellerSuggest: для (freq: 264457 diffRunes: 3)
+------------------------------------------
