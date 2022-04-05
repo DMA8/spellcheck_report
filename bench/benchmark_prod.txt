@@ -1,0 +1,17 @@
+goos: linux
+goarch: amd64
+cpu: AMD Ryzen 5 4600H with Radeon Graphics         
+BenchmarkSpellCheck/test-12 			     100	       414.5 ns/op	      16 B/op	       1 allocs/op кастюм
+BenchmarkSpellCheck2/test-12         	     100	       764.9 ns/op	     160 B/op	       6 allocs/op сухрй шампкнь
+BenchmarkSpellCheck3/test-12         	     100	      1280 ns/op	     368 B/op	      15 allocs/op маслр для звгара
+BenchmarkSpellCheck4/test-12         	     100	      1595 ns/op	     560 B/op	      16 allocs/op зврядное устройствл для акумулятора
+BenchmarkSpellCheck5/test-12         	     100	      2676 ns/op	    1320 B/op	      36 allocs/op ввто прлив для домпшних расиений
+BenchmarkSpellCheck6/test-12         	     100	      3275 ns/op	    1984 B/op	      49 allocs/op сегнализация с автазапуском и обратнрй свясью
+BenchmarkSpellCheck7/test-12         	     100	      6483 ns/op	    2784 B/op	      59 allocs/op ьраслет из натурпльного камьня и серибра пррбы
+BenchmarkSpellCheck8/test-12         	     100	      4443 ns/op	    2832 B/op	      65 allocs/op мвска для кожы вакруг глас с липестками золотово
+BenchmarkSpellCheck9/test-12         	     100	      3724 ns/op	    2256 B/op	      45 allocs/op мяхкая игрушька ростения из ростения протиф зомьби для дитей
+BenchmarkSpellCheck10/test-12        	     100	      9451 ns/op	    2800 B/op	      52 allocs/op оверсайс фудболки висна летр для девачек подросков красная модноя молодешная
+BenchmarkSpellCheck11/test-12        	     100	      7823 ns/op	    6688 B/op	     113 allocs/op польто жентское стеганое демисизонное с капушоном для прагулок с сабакой кросивое
+BenchmarkSpellCheck12/test-12        	     100	     12972 ns/op	    6816 B/op	     111 allocs/op сандалии женскме нптуральная кожжа на пладформе италлия лето на липучьках на ноку
+PASS
+ok  	command-line-arguments	7.450s

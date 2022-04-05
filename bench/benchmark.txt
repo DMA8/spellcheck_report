@@ -1,0 +1,19 @@
+Model loading...
+Model loaded[3.616972978s]: models/model-without_singleWords.gz
+goos: linux
+goarch: amd64
+cpu: AMD Ryzen 5 4600H with Radeon Graphics         
+BenchmarkSpellCheck/test-12 			     100	     45534 ns/op кастюм
+BenchmarkSpellCheck2/test-12         	     100	    130490 ns/op сухрй шампкнь
+BenchmarkSpellCheck3/test-12         	     100	   7220160 ns/op маслр для звгара
+BenchmarkSpellCheck4/test-12         	     100	   2204033 ns/op зврядное устройствл для акумулятора
+BenchmarkSpellCheck5/test-12         	     100	  17993523 ns/op ввто прлив для домпшних расиений
+BenchmarkSpellCheck6/test-12         	     100	   1033962 ns/op сегнализация с автазапуском и обратнрй свясью
+BenchmarkSpellCheck7/test-12         	     100	   2389318 ns/op ьраслет из натурпльного камьня и серибра пррбы
+BenchmarkSpellCheck8/test-12         	     100	  29011550 ns/op мвска для кожы вакруг глас с липестками золотово
+BenchmarkSpellCheck9/test-12         	     100	  13280393 ns/op мяхкая игрушька ростения из ростения протиф зомьби для дитей
+BenchmarkSpellCheck10/test-12        	     100	  30842059 ns/op оверсайс фудболки висна летр для девачек подросков красная модноя молодешная
+BenchmarkSpellCheck11/test-12        	     100	   5559815 ns/op польто жентское стеганое демисизонное с капушоном для прагулок с сабакой кросивое
+BenchmarkSpellCheck12/test-12        	     100	  20936478 ns/op сандалии женскме нптуральная кожжа на пладформе италлия лето на липучьках на ноку
+PASS
+ok  	command-line-arguments	21.631s
