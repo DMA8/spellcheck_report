@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/csv"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -22,7 +23,7 @@ import (
 )
 
 const (
-	nTests           = 3000
+	nTests           = 50000
 	testCasesPerWord = 5
 )
 
@@ -105,57 +106,100 @@ func ya(inp string, out chan string, wg *sync.WaitGroup) {
 	out <- ans
 }
 
-func correctLearnData() {
-	set := make(map[string]struct{})
-	a := make(chan string, 10000)
-	file, err := os.Open("uniqueRandomQueries.txt")
+func benchmark(speller func(string)string) (int, time.Duration){
+	var testCounter int
+	testCases := make([]map[string][]string, 0, nTests)
+	testFile, err := os.Open("CleanedUniqueRandomQueries.txt")
 	if err != nil {
 		panic(err)
 	}
-	defer file.Close()
-	reader1 := bufio.NewScanner(file)
-	for ok := reader1.Scan(); ok; {
-		set[strings.ToLower(reader1.Text())] = struct{}{}
-		ok = reader1.Scan()
-	}
-	file3, err :=  os.Open("allUnique40M_onlyRU.txt")
+	txt, err := ioutil.ReadAll(testFile)
 	if err != nil {
 		panic(err)
 	}
-	defer file3.Close()
-	file2, err := os.Create("cleanedAllRussian40M.txt")
-	if err != nil {
-		panic(err)
+	lines := strings.Split(string(txt), "\n")
+	log.Println("error generator is starting")
+	for _, v := range lines {
+		testCases = append(testCases, errorGenerator.GenerateTwoErrorNTimes(v, testCasesPerWord))
 	}
-	defer file2.Close()
-	reader := bufio.NewScanner(file3)
-	//var mu sync.Mutex
+	log.Println("errors are generated", len(testCases) * testCasesPerWord)
+	start := time.Now()
+	log.Println("synchro test has been started")
+
+	for _, test := range testCases {
+		for _, errors := range test {
+			for _, errorWord := range errors {
+				testCounter++
+				speller(errorWord)
+			}
+		}
+	}
+	log.Printf("tests %d Elapsed time %v", testCounter, time.Since(start))
+	log.Printf("query/s %f query/ms %f", float64(testCounter) / float64(time.Since(start).Seconds()),
+				float64(testCounter) / float64(time.Since(start).Milliseconds()))
+
+	time.Sleep(time.Second * 10)
+	return testCounter, time.Since(start)
+}
+
+func benchmarkMulti(nWorkers int, speller func(string)string) (int, time.Duration) {
+	var testCounter int
 	var wg sync.WaitGroup
-	go func(){
-		for {
-			select {
-			case msg := <- a:
-				fmt.Fprintf(file2, "%s\n", msg)
-			}
-		}
-	}()
-	ok := true
-	for ok{
-		for i := 0; i < 100 && ok; i++ {
-			ok = reader.Scan()
-			msg := reader.Text()
-			if _, ok := set[msg]; ok {
-				continue
-			}
-			wg.Add(1)
-			go ya(reader.Text(), a, &wg)
-		}
-		wg.Wait()
+	//var mu sync.Mutex
+
+	queue := make(chan string, nWorkers)
+
+	testCases := make([]map[string][]string, 0, nTests)
+	testFile, err := os.Open("CleanedUniqueRandomQueries.txt")
+	if err != nil {
+		panic(err)
 	}
+	defer testFile.Close()
+	txt, err := ioutil.ReadAll(testFile)
+	if err != nil {
+		panic(err)
+	}
+	lines := strings.Split(string(txt), "\n")
+	log.Println("eror generator is starting")
+	for _, v := range lines {
+		testCases = append(testCases, errorGenerator.GenerateTwoErrorNTimes(v, testCasesPerWord))
+	}
+	log.Println("errors are generated", len(testCases) * testCasesPerWord)
+
+	go func(){
+		for _, test := range testCases {
+			for _, errors := range test {
+				for _, errorWord := range errors {
+					queue <- errorWord
+					testCounter++
+				}
+			}
+		}
+		close(queue)
+	}()
+	start := time.Now()
+	for i := 0; i < nWorkers; i++ {
+		wg.Add(1)
+		go func (wg *sync.WaitGroup){
+			for msg := range queue{
+					speller(msg)
+			}
+			wg.Done()
+		} (&wg)
+	}
+	wg.Wait()
+	log.Printf("workers: %d tests %d Elapsed time %v", nWorkers, testCounter, time.Since(start))
+	log.Printf("query/s %f query/ms %f", float64(testCounter) / float64(time.Since(start).Seconds()),
+				float64(testCounter) / float64(time.Since(start).Milliseconds()))
+
+	return testCounter, time.Since(start)
 }
 
 func main() {
 	var mu sync.Mutex
+	// correctLearnData()
+	// fmt.Println("DONE")
+	// os.Exit(1)
 	tokenizer := normalize.NewNormalizer()
 	err := tokenizer.LoadDictionariesLocal("./data/words.csv.gz", "./data/spellcheck1.csv") //Для токенайзера
 	if err != nil {
@@ -247,7 +291,16 @@ func main() {
 		set[strings.ToLower(reader.Text())] = struct{}{}
 		ok = reader.Scan()
 	}
+	nTest2, timeDur2 := benchmarkMulti(10, speller.SpellCorrect)
+	fmt.Println(nTest2, float64(nTest2) / float64(timeDur2.Milliseconds()))
+	nTest, timeDur := benchmark(speller.SpellCorrect)
+
+	fmt.Println(nTest, timeDur)
+
+	os.Exit(1)
 	
+
+	yandexSpellerClient.SpellCheck("generatedError")
 	fmt.Fprint(failLogs, "(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*\n\n")
 	for msg, _ := range set {
 		var flagLine, flagLine2, flagLine3, flagLine4, flagLine5, flagLine6 bool
@@ -267,7 +320,8 @@ func main() {
 			spelRight, yaRigth := 0, 0
 			fmt.Printf("Tested word is | %s |\n", RightWord)
 			for _, generatedError := range generatedErrors {
-				yandexResult, _ := yandexSpellerClient.SpellCheck(generatedError)
+				yandexResult := ""
+				// yandexResult, _ := yandexSpellerClient.SpellCheck(generatedError)
 				spellerResult := speller.SpellCorrect(generatedError)
 				wordsCounter.allTested += len(strings.Split(generatedError, " "))
 				wordsCounter.spellerCorrected += countRightSuggest(RightWord, spellerResult)
