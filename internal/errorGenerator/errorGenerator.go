@@ -96,7 +96,7 @@ func init() {
 func OneRandomError(inpWord string) string {
 	inpWord = strings.ToLower(inpWord)
 	wRunes := []rune(inpWord)
-	if len(wRunes) < 3 {
+	if len(wRunes) <= 3 {
 		return inpWord
 	}
 	rand.Seed(int64(randomSeed))

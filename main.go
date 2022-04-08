@@ -106,19 +106,29 @@ func ya(inp string, out chan string, wg *sync.WaitGroup) {
 }
 
 func correctLearnData() {
-	a := make(chan string, 100)
-	file, err := os.Open("queriesRU.txt")
+	set := make(map[string]struct{})
+	a := make(chan string, 10000)
+	file, err := os.Open("uniqueRandomQueries.txt")
 	if err != nil {
 		panic(err)
 	}
 	defer file.Close()
-
-	file2, err := os.Create("cleanedSentences.txt")
+	reader1 := bufio.NewScanner(file)
+	for ok := reader1.Scan(); ok; {
+		set[strings.ToLower(reader1.Text())] = struct{}{}
+		ok = reader1.Scan()
+	}
+	file3, err :=  os.Open("allUnique40M_onlyRU.txt")
+	if err != nil {
+		panic(err)
+	}
+	defer file3.Close()
+	file2, err := os.Create("cleanedAllRussian40M.txt")
 	if err != nil {
 		panic(err)
 	}
 	defer file2.Close()
-	reader := bufio.NewScanner(file)
+	reader := bufio.NewScanner(file3)
 	//var mu sync.Mutex
 	var wg sync.WaitGroup
 	go func(){
@@ -133,6 +143,10 @@ func correctLearnData() {
 	for ok{
 		for i := 0; i < 100 && ok; i++ {
 			ok = reader.Scan()
+			msg := reader.Text()
+			if _, ok := set[msg]; ok {
+				continue
+			}
 			wg.Add(1)
 			go ya(reader.Text(), a, &wg)
 		}
@@ -143,7 +157,7 @@ func correctLearnData() {
 func main() {
 	var mu sync.Mutex
 	tokenizer := normalize.NewNormalizer()
-	err := tokenizer.LoadDictionariesLocal("./data/words.csv.gz", "./data/spellcheck1.csv")
+	err := tokenizer.LoadDictionariesLocal("./data/words.csv.gz", "./data/spellcheck1.csv") //Для токенайзера
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -152,7 +166,7 @@ func main() {
 	wordsCounter := wordsTestCounters{}
 	done := make(chan struct{})
 	set := make(map[string]struct{})
-	freqMapFile, err := os.Open("datasets/freq.txt")
+	freqMapFile, err := os.Open("datasets/freq.txt") //FREQ лучше свежий закинуть
 	freqMap := make(map[string]int)
 	if err != nil {
 		panic(err)
@@ -177,14 +191,14 @@ func main() {
 	)
 
 	// load model
-	err = speller.LoadModel("models/model-without_singleWords.gz") 
+	err = speller.LoadModel("models/NoShortWords.gz") //MODEL
 	if err != nil {
 		fmt.Printf("No such file: %v\n", err)
 		done <- struct{}{}
 		panic(err)
 	}
 
-	testFile, err := os.Open("without_singleWords.txt") // PROVIDE A PATH TO THE QUERIES
+	testFile, err := os.Open("CleanedUniqueRandomQueries.txt") // QUERY
 	if err != nil {
 		panic(err)
 	}
@@ -233,7 +247,7 @@ func main() {
 		set[strings.ToLower(reader.Text())] = struct{}{}
 		ok = reader.Scan()
 	}
-
+	
 	fmt.Fprint(failLogs, "(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*\n\n")
 	for msg, _ := range set {
 		var flagLine, flagLine2, flagLine3, flagLine4, flagLine5, flagLine6 bool
@@ -246,7 +260,7 @@ func main() {
 		if !isCyrillic(msg) {
 			continue
 		}
-		myErrors := errorGenerator.GenerateOneErrorNTimes(msg, testCasesPerWord)
+		myErrors := errorGenerator.GenerateTwoErrorNTimes(msg, testCasesPerWord)
 
 		mu.Lock()
 		for RightWord, generatedErrors := range myErrors {

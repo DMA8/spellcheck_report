@@ -2,6 +2,10 @@ git.wildberries.ru/oer/tokenizer v0.2.8 h1:srlxWhKMnb7YnYASCXu8EhtcxfA3/WUnKkT/X
 git.wildberries.ru/oer/tokenizer v0.2.8/go.mod h1:nBsR83daC7FdJSU+wzLe5HHFS2Q8UtMXFrnewrv3QiA=
 github.com/Saimunyz/speller v0.0.0-20220404135354-850843271f2b h1:T35nWbtWGXBtfrEFNFA5VFtXrNw27T+qkDYk//CTSL0=
 github.com/Saimunyz/speller v0.0.0-20220404135354-850843271f2b/go.mod h1:vaEcRgFjsTKKK4+bxYjSUvRyg1DHr58mIp8+b/VxK5A=
+github.com/Saimunyz/speller v0.0.0-20220407135848-17724063962e h1:0QjfzNa3nycCo8xaNTPb0dW+PJGquS9kRFaL5GrNhMM=
+github.com/Saimunyz/speller v0.0.0-20220407135848-17724063962e/go.mod h1:VnMP3QLgAuBoT35CcWW6uD3cXVsM1soR2DeyNapG1os=
+github.com/Saimunyz/speller v0.0.0-20220408110413-178ae093f72d h1:06C9dS82Z2oXHOwiWAIOwqn8cOaMUDb9KBPbQUkV8Gc=
+github.com/Saimunyz/speller v0.0.0-20220408110413-178ae093f72d/go.mod h1:VnMP3QLgAuBoT35CcWW6uD3cXVsM1soR2DeyNapG1os=
 github.com/andybalholm/brotli v1.0.2/go.mod h1:loMXtMfwqflxFJPmdbJO0a3KNoPuLBgiu3qAvBg8x/Y=
 github.com/andybalholm/brotli v1.0.4 h1:V7DdXeJtZscaqfNuAdSRuRFzuiKlHSC/Zh3zl9qY3JY=
 github.com/andybalholm/brotli v1.0.4/go.mod h1:fO7iG3H7G2nSZ7m0zPUDn85XEX2GTukHGRSepvi9Eig=
