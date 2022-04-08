@@ -71,17 +71,17 @@ func (ys *YandexSpeller) prepareURL(text string) (string, error) {
 }
 
 // SpellCheck returns corrected string checked by Yandex's speller.
-func (ys YandexSpeller) SpellCheck(query string) (string, error) {
+func (ys YandexSpeller) SpellCheck(query string) string {
 
 	res, err := ys.makeRequestToYandexSpeller(query)
 	if err != nil {
-		return "", nil
+		return ""
 	}
 
 	corrected := ys.correctQuery(query, res)
 
 
-	return corrected, nil
+	return corrected
 }
 
 func (ys YandexSpeller) makeRequestToYandexSpeller(

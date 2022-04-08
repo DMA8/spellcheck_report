@@ -11,7 +11,7 @@ go 1.17
 
 require (
 	git.wildberries.ru/oer/tokenizer v0.2.8
-	github.com/Saimunyz/speller v0.0.0-20220407135848-17724063962e
+	github.com/Saimunyz/speller v0.0.0-20220408193320-521c6f523dbd
 )
 
 require ( // indirect
@@ -25,6 +25,6 @@ require ( // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	github.com/valyala/fasthttp v1.34.0 // indirect
+	github.com/valyala/fasthttp v1.35.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )

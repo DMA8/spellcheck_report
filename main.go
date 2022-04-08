@@ -10,6 +10,7 @@ import (
 	"os"
 	"os/signal"
 	"regexp"
+	"runtime"
 	"strconv"
 	"strings"
 	"sync"
@@ -23,7 +24,7 @@ import (
 )
 
 const (
-	nTests           = 50000
+	nTests           = 10000
 	testCasesPerWord = 5
 )
 
@@ -88,25 +89,25 @@ func differnetRunes(errorWord, suggested string) int {
 	return counter
 }
 
-func ya(inp string, out chan string, wg *sync.WaitGroup) {
-	defer wg.Done()
-	yandexSpellerClient := yandexspeller.New(
-		yandexspeller.Config{
-			Lang: "RU",
-		},
-		&http.Client{Timeout: time.Second * 20},
-	)
-	ans, err := yandexSpellerClient.SpellCheck(inp)
-	if err != nil {
-		ans, err = yandexSpellerClient.SpellCheck(inp)
-		if err != nil {
-			return
-		}
-	}
-	out <- ans
-}
+// func ya(inp string, out chan string, wg *sync.WaitGroup) {
+// 	defer wg.Done()
+// 	yandexSpellerClient := yandexspeller.New(
+// 		yandexspeller.Config{
+// 			Lang: "RU",
+// 		},
+// 		&http.Client{Timeout: time.Second * 20},
+// 	)
+// 	ans := yandexSpellerClient.SpellCheck(inp)
+// 	if err != nil {
+// 		ans, err = yandexSpellerClient.SpellCheck(inp)
+// 		if err != nil {
+// 			return
+// 		}
+// 	}
+// 	out <- ans
+// }
 
-func benchmark(speller func(string)string) (int, time.Duration){
+func benchmark(speller func(string) string) (int, time.Duration) {
 	var testCounter int
 	testCases := make([]map[string][]string, 0, nTests)
 	testFile, err := os.Open("CleanedUniqueRandomQueries.txt")
@@ -120,9 +121,9 @@ func benchmark(speller func(string)string) (int, time.Duration){
 	lines := strings.Split(string(txt), "\n")
 	log.Println("error generator is starting")
 	for _, v := range lines {
-		testCases = append(testCases, errorGenerator.GenerateTwoErrorNTimes(v, testCasesPerWord))
+		testCases = append(testCases, errorGenerator.GenerateOneErrorNTimes(v, testCasesPerWord))
 	}
-	log.Println("errors are generated", len(testCases) * testCasesPerWord)
+	log.Println("errors are generated", len(testCases)*testCasesPerWord)
 	start := time.Now()
 	log.Println("synchro test has been started")
 
@@ -135,14 +136,12 @@ func benchmark(speller func(string)string) (int, time.Duration){
 		}
 	}
 	log.Printf("tests %d Elapsed time %v", testCounter, time.Since(start))
-	log.Printf("query/s %f query/ms %f", float64(testCounter) / float64(time.Since(start).Seconds()),
-				float64(testCounter) / float64(time.Since(start).Milliseconds()))
-
-	time.Sleep(time.Second * 10)
+	log.Printf("query/s %f query/ms %f", float64(testCounter)/float64(time.Since(start).Seconds()),
+		float64(testCounter)/float64(time.Since(start).Milliseconds()))
 	return testCounter, time.Since(start)
 }
 
-func benchmarkMulti(nWorkers int, speller func(string)string) (int, time.Duration) {
+func benchmarkMulti(nWorkers int, speller func(string) string) (int, time.Duration) {
 	var testCounter int
 	var wg sync.WaitGroup
 	//var mu sync.Mutex
@@ -162,11 +161,11 @@ func benchmarkMulti(nWorkers int, speller func(string)string) (int, time.Duratio
 	lines := strings.Split(string(txt), "\n")
 	log.Println("eror generator is starting")
 	for _, v := range lines {
-		testCases = append(testCases, errorGenerator.GenerateTwoErrorNTimes(v, testCasesPerWord))
+		testCases = append(testCases, errorGenerator.GenerateOneErrorNTimes(v, testCasesPerWord))
 	}
-	log.Println("errors are generated", len(testCases) * testCasesPerWord)
+	log.Println("errors are generated", len(testCases)*testCasesPerWord)
 
-	go func(){
+	go func() {
 		for _, test := range testCases {
 			for _, errors := range test {
 				for _, errorWord := range errors {
@@ -180,26 +179,41 @@ func benchmarkMulti(nWorkers int, speller func(string)string) (int, time.Duratio
 	start := time.Now()
 	for i := 0; i < nWorkers; i++ {
 		wg.Add(1)
-		go func (wg *sync.WaitGroup){
-			for msg := range queue{
+		go func(wg *sync.WaitGroup) {
+			for msg := range queue {
+				if msg != "" {
 					speller(msg)
+				}
 			}
 			wg.Done()
-		} (&wg)
+		}(&wg)
 	}
 	wg.Wait()
 	log.Printf("workers: %d tests %d Elapsed time %v", nWorkers, testCounter, time.Since(start))
-	log.Printf("query/s %f query/ms %f", float64(testCounter) / float64(time.Since(start).Seconds()),
-				float64(testCounter) / float64(time.Since(start).Milliseconds()))
-
+	log.Printf("query/s %f query/ms %f", float64(testCounter)/float64(time.Since(start).Seconds()),
+		float64(testCounter)/float64(time.Since(start).Milliseconds()))
 	return testCounter, time.Since(start)
+}
+
+func PrintMemUsage() {
+	var m runtime.MemStats
+	runtime.ReadMemStats(&m)
+
+	fmt.Printf("Alloc = %v MiB", bToMb(m.Alloc))
+	fmt.Printf("\tTotalAlloc = %v MiB", bToMb(m.TotalAlloc))
+	fmt.Printf("\tSys = %v MiB", bToMb(m.Sys))
+	fmt.Printf("\tNumGC = %v\n", m.NumGC)
+}
+
+func bToMb(b uint64) uint64 {
+	return b / 1024 / 1024
 }
 
 func main() {
 	var mu sync.Mutex
-	// correctLearnData()
-	// fmt.Println("DONE")
-	// os.Exit(1)
+
+	// log.Println("mem usage at launching")
+	// PrintMemUsage()
 	tokenizer := normalize.NewNormalizer()
 	err := tokenizer.LoadDictionariesLocal("./data/words.csv.gz", "./data/spellcheck1.csv") //Для токенайзера
 	if err != nil {
@@ -233,14 +247,32 @@ func main() {
 		},
 		&http.Client{Timeout: time.Second * 20},
 	)
+	// nTest2, timeDur2 := benchmarkMulti(12, yandexSpellerClient.SpellCheck)
+	// fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
 
-	// load model
-	err = speller.LoadModel("models/NoShortWords.gz") //MODEL
+	// nTest2, timeDur2 := benchmarkMulti(12,yandexSpellerClient.SpellCheck)
+	// log.Println("mem usage when speller_1error test ends")
+	// PrintMemUsage()
+	// // // load model
+	// fmt.Println("mem usage before model loading")
+	// PrintMemUsage()
+	// os.Exit(1)
+
+	err = speller.LoadModel("models/AllRu-model.gz") //MODEL
 	if err != nil {
 		fmt.Printf("No such file: %v\n", err)
 		done <- struct{}{}
 		panic(err)
 	}
+
+
+
+	// nTest2, timeDur2 := benchmark(speller.SpellCorrect2)
+	// fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
+	// log.Println("mem usage when yandex test ends")
+	// PrintMemUsage()
+	// os.Exit(1)
+
 
 	testFile, err := os.Open("CleanedUniqueRandomQueries.txt") // QUERY
 	if err != nil {
@@ -291,14 +323,7 @@ func main() {
 		set[strings.ToLower(reader.Text())] = struct{}{}
 		ok = reader.Scan()
 	}
-	nTest2, timeDur2 := benchmarkMulti(10, speller.SpellCorrect)
-	fmt.Println(nTest2, float64(nTest2) / float64(timeDur2.Milliseconds()))
-	nTest, timeDur := benchmark(speller.SpellCorrect)
 
-	fmt.Println(nTest, timeDur)
-
-	os.Exit(1)
-	
 
 	yandexSpellerClient.SpellCheck("generatedError")
 	fmt.Fprint(failLogs, "(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*\n\n")
@@ -313,16 +338,16 @@ func main() {
 		if !isCyrillic(msg) {
 			continue
 		}
-		myErrors := errorGenerator.GenerateTwoErrorNTimes(msg, testCasesPerWord)
+		myErrors := errorGenerator.GenerateOneErrorNTimes(msg, testCasesPerWord)
 
 		mu.Lock()
 		for RightWord, generatedErrors := range myErrors {
 			spelRight, yaRigth := 0, 0
 			fmt.Printf("Tested word is | %s |\n", RightWord)
 			for _, generatedError := range generatedErrors {
-				yandexResult := ""
-				// yandexResult, _ := yandexSpellerClient.SpellCheck(generatedError)
-				spellerResult := speller.SpellCorrect(generatedError)
+				// yandexResult := ""
+				yandexResult := yandexSpellerClient.SpellCheck(generatedError)
+				spellerResult := speller.SpellCorrect2(generatedError)
 				wordsCounter.allTested += len(strings.Split(generatedError, " "))
 				wordsCounter.spellerCorrected += countRightSuggest(RightWord, spellerResult)
 				wordsCounter.yandexCorrected += countRightSuggest(RightWord, yandexResult)

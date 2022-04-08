@@ -1,0 +1,5 @@
+1
+Alloc = 1 MiB	TotalAlloc = 1 MiB	Sys = 8 MiB	NumGC = 0
+Model loading...
+Model loaded[10.691232325s]: models/NoShortWords.gz
+Alloc = 1538 MiB	TotalAlloc = 3425 MiB	Sys = 2401 MiB	NumGC = 12
