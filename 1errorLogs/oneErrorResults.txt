@@ -1,0 +1,4 @@
+Results:
+ TotalTests: 10005
+ SpellerRate 89.58% (Norm: 92.74%),  YandexRate 78.30% (Norm: 80.40%)
+Total words: 74120, SpellerRate 97.99, YandexRate 94.44
