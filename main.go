@@ -89,24 +89,6 @@ func differnetRunes(errorWord, suggested string) int {
 	return counter
 }
 
-// func ya(inp string, out chan string, wg *sync.WaitGroup) {
-// 	defer wg.Done()
-// 	yandexSpellerClient := yandexspeller.New(
-// 		yandexspeller.Config{
-// 			Lang: "RU",
-// 		},
-// 		&http.Client{Timeout: time.Second * 20},
-// 	)
-// 	ans := yandexSpellerClient.SpellCheck(inp)
-// 	if err != nil {
-// 		ans, err = yandexSpellerClient.SpellCheck(inp)
-// 		if err != nil {
-// 			return
-// 		}
-// 	}
-// 	out <- ans
-// }
-
 func benchmark(speller func(string) string) (int, time.Duration) {
 	var testCounter int
 	testCases := make([]map[string][]string, 0, nTests)
@@ -141,10 +123,9 @@ func benchmark(speller func(string) string) (int, time.Duration) {
 	return testCounter, time.Since(start)
 }
 
-func benchmarkMulti(nWorkers int, speller func(string) string) (int, time.Duration) {
+func benchmarkMulti(nWorkers int, speller1 func(string) string) (int, time.Duration) {
 	var testCounter int
 	var wg sync.WaitGroup
-	//var mu sync.Mutex
 
 	queue := make(chan string, nWorkers)
 
@@ -182,7 +163,7 @@ func benchmarkMulti(nWorkers int, speller func(string) string) (int, time.Durati
 		go func(wg *sync.WaitGroup) {
 			for msg := range queue {
 				if msg != "" {
-					speller(msg)
+					speller1(msg)
 				}
 			}
 			wg.Done()
@@ -211,42 +192,23 @@ func bToMb(b uint64) uint64 {
 
 func main() {
 	var mu sync.Mutex
+	var testBench bool
+	if len(os.Args) > 1 {
+		testBench = true
+	}
+	log.Println("mem usage at launching")
+	PrintMemUsage()
+	
+	speller1 := speller.NewSpeller("config.yaml")
 
-	// log.Println("mem usage at launching")
-	// PrintMemUsage()
-	tokenizer := normalize.NewNormalizer()
-	err := tokenizer.LoadDictionariesLocal("./data/words.csv.gz", "./data/spellcheck1.csv") //Для токенайзера
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	sentenceCounter := fullSentenceTestCounters{}
-	wordsCounter := wordsTestCounters{}
-	done := make(chan struct{})
-	set := make(map[string]struct{})
-	freqMapFile, err := os.Open("datasets/freq.txt") //FREQ лучше свежий закинуть
-	freqMap := make(map[string]int)
-	if err != nil {
-		panic(err)
-	}
-	reader2 := bufio.NewScanner(freqMapFile)
-	for ok := reader2.Scan(); ok; {
-		splitted := strings.Split(reader2.Text(), " ")
-		if len(splitted) != 2 {
-			ok = reader2.Scan()
-			continue
-		}
-		freq, _ := strconv.Atoi(splitted[1])
-		freqMap[splitted[0]] = freq
-		ok = reader2.Scan()
-	}
-	speller := speller.NewSpeller("config.yaml")
 	yandexSpellerClient := yandexspeller.New(
 		yandexspeller.Config{
 			Lang: "RU",
 		},
 		&http.Client{Timeout: time.Second * 20},
 	)
+	// speller2 := speller.NewSpeller("config.yaml")
+
 	// nTest2, timeDur2 := benchmarkMulti(12, yandexSpellerClient.SpellCheck)
 	// fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
 
@@ -254,24 +216,35 @@ func main() {
 	// log.Println("mem usage when speller_1error test ends")
 	// PrintMemUsage()
 	// // // load model
-	// fmt.Println("mem usage before model loading")
-	// PrintMemUsage()
+	fmt.Println("mem usage before model loading")
+	PrintMemUsage()
 	// os.Exit(1)
 
-	err = speller.LoadModel("models/AllRu-model.gz") //MODEL
+	err = speller1.LoadModel("models/AllRu-model.gz") //MODEL
 	if err != nil {
 		fmt.Printf("No such file: %v\n", err)
 		done <- struct{}{}
 		panic(err)
 	}
+	// err = speller2.LoadModel("models/AllRu-model.gz") //MODEL
+	// if err != nil {
+	// 	fmt.Printf("No such file: %v\n", err)
+	// 	done <- struct{}{}
+	// 	panic(err)
+	// }
 
+	speller1.SpellCorrect2("генерал топтыгин стихотворение")
 
-
-	// nTest2, timeDur2 := benchmark(speller.SpellCorrect2)
-	// fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
-	// log.Println("mem usage when yandex test ends")
-	// PrintMemUsage()
-	// os.Exit(1)
+	// speller.SpellCorrect2("лаыалампа см")
+	// speller.SpellCorrect2("оавалампа см")
+	// time.Sleep(time.Second)
+	if testBench {
+		nTest2, timeDur2 := benchmarkMulti(12, speller1.SpellCorrect)
+		fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
+		log.Println("mem usage when yandex test ends")
+		PrintMemUsage()
+		os.Exit(1)
+	}
 
 
 	testFile, err := os.Open("CleanedUniqueRandomQueries.txt") // QUERY
@@ -324,7 +297,32 @@ func main() {
 		ok = reader.Scan()
 	}
 
+	tokenizer := normalize.NewNormalizer()
+	err = tokenizer.LoadDictionariesLocal("./data/words.csv.gz", "./data/spellcheck1.csv") //Для токенайзера
+	if err != nil {
+		log.Fatal(err)
+	}
 
+	sentenceCounter := fullSentenceTestCounters{}
+	wordsCounter := wordsTestCounters{}
+	done := make(chan struct{})
+	set := make(map[string]struct{})
+	freqMapFile, err := os.Open("datasets/freq.txt") //FREQ лучше свежий закинуть
+	freqMap := make(map[string]int)
+	if err != nil {
+		panic(err)
+	}
+	reader2 := bufio.NewScanner(freqMapFile)
+	for ok := reader2.Scan(); ok; {
+		splitted := strings.Split(reader2.Text(), " ")
+		if len(splitted) != 2 {
+			ok = reader2.Scan()
+			continue
+		}
+		freq, _ := strconv.Atoi(splitted[1])
+		freqMap[splitted[0]] = freq
+		ok = reader2.Scan()
+	}
 	yandexSpellerClient.SpellCheck("generatedError")
 	fmt.Fprint(failLogs, "(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*\n\n")
 	for msg, _ := range set {
@@ -345,9 +343,9 @@ func main() {
 			spelRight, yaRigth := 0, 0
 			fmt.Printf("Tested word is | %s |\n", RightWord)
 			for _, generatedError := range generatedErrors {
-				// yandexResult := ""
-				yandexResult := yandexSpellerClient.SpellCheck(generatedError)
-				spellerResult := speller.SpellCorrect2(generatedError)
+				yandexResult := ""
+				// yandexResult := yandexSpellerClient.SpellCheck(generatedError)
+				spellerResult := speller1.SpellCorrect2(generatedError)
 				wordsCounter.allTested += len(strings.Split(generatedError, " "))
 				wordsCounter.spellerCorrected += countRightSuggest(RightWord, spellerResult)
 				wordsCounter.yandexCorrected += countRightSuggest(RightWord, yandexResult)

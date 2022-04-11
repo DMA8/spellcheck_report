@@ -8,6 +8,14 @@ github.com/Saimunyz/speller v0.0.0-20220408110413-178ae093f72d h1:06C9dS82Z2oXHO
 github.com/Saimunyz/speller v0.0.0-20220408110413-178ae093f72d/go.mod h1:VnMP3QLgAuBoT35CcWW6uD3cXVsM1soR2DeyNapG1os=
 github.com/Saimunyz/speller v0.0.0-20220408193320-521c6f523dbd h1:8s7UCpisM5oTyWdJJDdda2++Asi1WqXDKeL/+zAHC4c=
 github.com/Saimunyz/speller v0.0.0-20220408193320-521c6f523dbd/go.mod h1:VnMP3QLgAuBoT35CcWW6uD3cXVsM1soR2DeyNapG1os=
+github.com/Saimunyz/speller v0.0.0-20220411112437-6ee129e6a3d4 h1:xqymspRqdLhTjArUx3ecSXl1PE4Xesfk965+xhNb5i8=
+github.com/Saimunyz/speller v0.0.0-20220411112437-6ee129e6a3d4/go.mod h1:VnMP3QLgAuBoT35CcWW6uD3cXVsM1soR2DeyNapG1os=
+github.com/Saimunyz/speller v0.0.0-20220411113929-398cf90ef375 h1:8nbvHrKi2ZAClDBwb19HocQ/MmNCY+uzvHRyfbq6/Kw=
+github.com/Saimunyz/speller v0.0.0-20220411113929-398cf90ef375/go.mod h1:VnMP3QLgAuBoT35CcWW6uD3cXVsM1soR2DeyNapG1os=
+github.com/Saimunyz/speller v0.0.0-20220411123449-150e17c55fbb h1:oglLxA7HLxqTF2NEHhpavXOEimrRfRGmqL7lt5CFclk=
+github.com/Saimunyz/speller v0.0.0-20220411123449-150e17c55fbb/go.mod h1:VnMP3QLgAuBoT35CcWW6uD3cXVsM1soR2DeyNapG1os=
+github.com/Saimunyz/speller v0.0.0-20220411184207-c5322b93e83e h1:DffLL2YY0RueVldptE/sWaLqfz4vzhb6sSk8W8FdSvQ=
+github.com/Saimunyz/speller v0.0.0-20220411184207-c5322b93e83e/go.mod h1:VnMP3QLgAuBoT35CcWW6uD3cXVsM1soR2DeyNapG1os=
 github.com/andybalholm/brotli v1.0.2/go.mod h1:loMXtMfwqflxFJPmdbJO0a3KNoPuLBgiu3qAvBg8x/Y=
 github.com/andybalholm/brotli v1.0.4 h1:V7DdXeJtZscaqfNuAdSRuRFzuiKlHSC/Zh3zl9qY3JY=
 github.com/andybalholm/brotli v1.0.4/go.mod h1:fO7iG3H7G2nSZ7m0zPUDn85XEX2GTukHGRSepvi9Eig=

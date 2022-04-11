@@ -1,0 +1,2 @@
+(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*
+
