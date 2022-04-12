@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"encoding/csv"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -15,6 +16,7 @@ import (
 	"strings"
 	"sync"
 	"time"
+	"unicode"
 
 	"reportSpeller/internal/errorGenerator"
 	"reportSpeller/internal/yandexspeller"
@@ -67,11 +69,49 @@ func min(a, b int) int {
 	return b
 }
 
+// slowTest := []string{
+// 	"детчкий кпем зажмвай ка от чсадин царааок и ущибов с масласи обоепихи сяты и шалыея мое солнышкл",
+// 	"полртенце сахровое ьанное кухрнное для рук для ног для дица подарое сужчине пвпе мужц андоей",
+// 	"каотина картмна на холсие еартина на холсье для игтерьера олееь геометпический арт х",
+// 	"пюкзак женскиц для левочки для щколы для рабрты для офмса городсклй для прогулрк",
+// 	"значрк кокаода на рилотку шппку краснач щвезда иеталл эсаль снрия совктская чимволика",
+// 	"швабпа с отжииом и ведоом для мыття полоы оког сьен для уборкт ведрл со гваброй вкдро и шваюра",
+// 	"швпбра с отдимом и ведррм для мвтья поллв оклн мтен для убррки вкдро со шааброй аедро и швабоа",
+// 	"чай череый клубникп со сдивками гр чай чепный с жхинацеей и лмпой гр",
+// 	"картинв по номепам ван гог во мне бабочкв на розоыом букетк х см холмт на подрамниуе",
+// 	"картинп по номнрам живопмсь по номкрам кафк на берегц хллст на родрамнике х см",
+// }
+
 func max(a, b int) int {
 	if a > b {
 		return a
 	}
 	return b
+}
+
+func TokenNgramsNew(query string, size int) []string {
+	spaceIndexes := make([]int, 0, size)
+	for i, r := range query {
+		if unicode.IsSpace(r) {
+			spaceIndexes = append(spaceIndexes, i)
+		}
+	}
+	spaceIndexes = append(spaceIndexes, len(query))
+	outCap := len(spaceIndexes) - size + 1
+	if outCap < 0 {
+		outCap = 1
+	}
+	out := make([]string, 0, outCap)
+	leftIndex := 0
+	for i := 0; i < len(spaceIndexes) - size + 1; i++ {
+		step := i + size - 1
+		if step >= len(spaceIndexes) {
+			step = len(spaceIndexes) - 1
+		}
+		out = append(out, query[leftIndex:spaceIndexes[step]])
+		leftIndex = spaceIndexes[i] + 1
+	}
+	return out
 }
 
 func differnetRunes(errorWord, suggested string) int {
@@ -89,7 +129,7 @@ func differnetRunes(errorWord, suggested string) int {
 	return counter
 }
 
-func benchmark(speller func(string) string) (int, time.Duration) {
+func benchmark(twoError bool, speller func(string) string) (int, time.Duration) {
 	var testCounter int
 	testCases := make([]map[string][]string, 0, nTests)
 	testFile, err := os.Open("CleanedUniqueRandomQueries.txt")
@@ -102,8 +142,14 @@ func benchmark(speller func(string) string) (int, time.Duration) {
 	}
 	lines := strings.Split(string(txt), "\n")
 	log.Println("error generator is starting")
-	for _, v := range lines {
-		testCases = append(testCases, errorGenerator.GenerateOneErrorNTimes(v, testCasesPerWord))
+	if twoError{
+		for _, v := range lines {
+			testCases = append(testCases, errorGenerator.GenerateTwoErrorNTimes(v, testCasesPerWord))
+		}
+	} else {
+		for _, v := range lines {
+			testCases = append(testCases, errorGenerator.GenerateOneErrorNTimes(v, testCasesPerWord))
+		}
 	}
 	log.Println("errors are generated", len(testCases)*testCasesPerWord)
 	start := time.Now()
@@ -123,7 +169,7 @@ func benchmark(speller func(string) string) (int, time.Duration) {
 	return testCounter, time.Since(start)
 }
 
-func benchmarkMulti(nWorkers int, speller1 func(string) string) (int, time.Duration) {
+func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string) string) (int, time.Duration) {
 	var testCounter int
 	var wg sync.WaitGroup
 
@@ -141,8 +187,14 @@ func benchmarkMulti(nWorkers int, speller1 func(string) string) (int, time.Durat
 	}
 	lines := strings.Split(string(txt), "\n")
 	log.Println("eror generator is starting")
-	for _, v := range lines {
-		testCases = append(testCases, errorGenerator.GenerateOneErrorNTimes(v, testCasesPerWord))
+	if twoError{
+		for _, v := range lines {
+			testCases = append(testCases, errorGenerator.GenerateTwoErrorNTimes(v, testCasesPerWord))
+		}
+	} else {
+		for _, v := range lines {
+			testCases = append(testCases, errorGenerator.GenerateOneErrorNTimes(v, testCasesPerWord))
+		}
 	}
 	log.Println("errors are generated", len(testCases)*testCasesPerWord)
 
@@ -157,13 +209,25 @@ func benchmarkMulti(nWorkers int, speller1 func(string) string) (int, time.Durat
 		}
 		close(queue)
 	}()
+	slowest := make([]time.Duration, 10)
+	slowestQuery := make([]string, 10)
+	for i := range slowest {
+		slowest[i] = time.Nanosecond
+	}
 	start := time.Now()
 	for i := 0; i < nWorkers; i++ {
 		wg.Add(1)
 		go func(wg *sync.WaitGroup) {
 			for msg := range queue {
-				if msg != "" {
-					speller1(msg)
+				t1 := time.Now()
+				speller1(msg)
+				dur := time.Since(t1)
+				for i := range slowest {
+					if dur > slowest[i] {
+						slowest[i] = dur
+						slowestQuery[i] = msg
+						break
+					}
 				}
 			}
 			wg.Done()
@@ -173,6 +237,9 @@ func benchmarkMulti(nWorkers int, speller1 func(string) string) (int, time.Durat
 	log.Printf("workers: %d tests %d Elapsed time %v", nWorkers, testCounter, time.Since(start))
 	log.Printf("query/s %f query/ms %f", float64(testCounter)/float64(time.Since(start).Seconds()),
 		float64(testCounter)/float64(time.Since(start).Milliseconds()))
+	for i := range slowest {
+		fmt.Println(slowestQuery[i], slowest[i])
+	}
 	return testCounter, time.Since(start)
 }
 
@@ -189,13 +256,16 @@ func PrintMemUsage() {
 func bToMb(b uint64) uint64 {
 	return b / 1024 / 1024
 }
-
+var TwoError = flag.Bool("e2", false, "Generate two errors for tests")
+var NWorkers = flag.Int("w", 0, "N workers for test. if 0 then syncroTest")
 func main() {
+	// var NWorkers *int
+	// var TwoError, OneError *bool
 	var mu sync.Mutex
-	var testBench bool
-	if len(os.Args) > 1 {
-		testBench = true
-	}
+	flag.Parse()
+
+	fmt.Println(*TwoError, *NWorkers)
+
 	log.Println("mem usage at launching")
 	PrintMemUsage()
 	tokenizer := normalize.NewNormalizer()
@@ -245,7 +315,7 @@ func main() {
 	PrintMemUsage()
 	// os.Exit(1)
 
-	err = speller1.LoadModel("models/AllRu-model.gz") //MODEL
+	err = speller1.LoadModel("models/AllRu-model_tree.gz") //MODEL
 	if err != nil {
 		fmt.Printf("No such file: %v\n", err)
 		done <- struct{}{}
@@ -258,13 +328,21 @@ func main() {
 	// 	panic(err)
 	// }
 
-	speller1.SpellCorrect2("генерал топтыгин стихотворение")
+	speller1.SpellCorrect2("один и дваач и триич для четыре пятый и шестидесятый")
+	speller1.SpellCorrect2("наклейка к мая это наша победа х см")
+
 
 	// speller.SpellCorrect2("лаыалампа см")
 	// speller.SpellCorrect2("оавалампа см")
 	// time.Sleep(time.Second)
-	if testBench {
-		nTest2, timeDur2 := benchmarkMulti(12, speller1.SpellCorrect)
+	if *NWorkers > 0 {
+		nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError,speller1.SpellCorrect2)
+		fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
+		log.Println("mem usage when yandex test ends")
+		PrintMemUsage()
+		os.Exit(1)
+	} else {
+		nTest2, timeDur2 := benchmark(*TwoError, speller1.SpellCorrect2)
 		fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
 		log.Println("mem usage when yandex test ends")
 		PrintMemUsage()
