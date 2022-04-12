@@ -257,6 +257,7 @@ func bToMb(b uint64) uint64 {
 	return b / 1024 / 1024
 }
 var TwoError = flag.Bool("e2", false, "Generate two errors for tests")
+var b = flag.Bool("b", false, "Bench mode")
 var NWorkers = flag.Int("w", 0, "N workers for test. if 0 then syncroTest")
 func main() {
 	// var NWorkers *int
@@ -332,21 +333,20 @@ func main() {
 	speller1.SpellCorrect2("наклейка к мая это наша победа х см")
 
 
-	// speller.SpellCorrect2("лаыалампа см")
-	// speller.SpellCorrect2("оавалампа см")
-	// time.Sleep(time.Second)
-	if *NWorkers > 0 {
-		nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError,speller1.SpellCorrect2)
-		fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
-		log.Println("mem usage when yandex test ends")
-		PrintMemUsage()
-		os.Exit(1)
-	} else {
-		nTest2, timeDur2 := benchmark(*TwoError, speller1.SpellCorrect2)
-		fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
-		log.Println("mem usage when yandex test ends")
-		PrintMemUsage()
-		os.Exit(1)
+	if *b{
+		if *NWorkers > 0 {
+			nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError,speller1.SpellCorrect2)
+			fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
+			log.Println("mem usage when yandex test ends")
+			PrintMemUsage()
+			os.Exit(1)
+		} else {
+			nTest2, timeDur2 := benchmark(*TwoError, speller1.SpellCorrect2)
+			fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
+			log.Println("mem usage when yandex test ends")
+			PrintMemUsage()
+			os.Exit(1)
+		}
 	}
 
 
