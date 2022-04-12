@@ -198,7 +198,32 @@ func main() {
 	}
 	log.Println("mem usage at launching")
 	PrintMemUsage()
-	
+	tokenizer := normalize.NewNormalizer()
+	err := tokenizer.LoadDictionariesLocal("./data/words.csv.gz", "./data/spellcheck1.csv") //Для токенайзера
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	sentenceCounter := fullSentenceTestCounters{}
+	wordsCounter := wordsTestCounters{}
+	done := make(chan struct{})
+	set := make(map[string]struct{})
+	freqMapFile, err := os.Open("datasets/freq.txt") //FREQ лучше свежий закинуть
+	freqMap := make(map[string]int)
+	if err != nil {
+		panic(err)
+	}
+	reader2 := bufio.NewScanner(freqMapFile)
+	for ok := reader2.Scan(); ok; {
+		splitted := strings.Split(reader2.Text(), " ")
+		if len(splitted) != 2 {
+			ok = reader2.Scan()
+			continue
+		}
+		freq, _ := strconv.Atoi(splitted[1])
+		freqMap[splitted[0]] = freq
+		ok = reader2.Scan()
+	}
 	speller1 := speller.NewSpeller("config.yaml")
 
 	yandexSpellerClient := yandexspeller.New(
@@ -297,32 +322,7 @@ func main() {
 		ok = reader.Scan()
 	}
 
-	tokenizer := normalize.NewNormalizer()
-	err = tokenizer.LoadDictionariesLocal("./data/words.csv.gz", "./data/spellcheck1.csv") //Для токенайзера
-	if err != nil {
-		log.Fatal(err)
-	}
 
-	sentenceCounter := fullSentenceTestCounters{}
-	wordsCounter := wordsTestCounters{}
-	done := make(chan struct{})
-	set := make(map[string]struct{})
-	freqMapFile, err := os.Open("datasets/freq.txt") //FREQ лучше свежий закинуть
-	freqMap := make(map[string]int)
-	if err != nil {
-		panic(err)
-	}
-	reader2 := bufio.NewScanner(freqMapFile)
-	for ok := reader2.Scan(); ok; {
-		splitted := strings.Split(reader2.Text(), " ")
-		if len(splitted) != 2 {
-			ok = reader2.Scan()
-			continue
-		}
-		freq, _ := strconv.Atoi(splitted[1])
-		freqMap[splitted[0]] = freq
-		ok = reader2.Scan()
-	}
 	yandexSpellerClient.SpellCheck("generatedError")
 	fmt.Fprint(failLogs, "(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*\n\n")
 	for msg, _ := range set {
