@@ -30,13 +30,14 @@ var (
 	testCasesPerWord = 5
 )
 
+//FLAGS
 var ShowMemory = flag.Bool("m", false, "Show memory usage")
 var TwoError = flag.Bool("e2", false, "Generate two errors for tests")
 var NoError = flag.Bool("e0", false, "Don't generate errors")
-var Silent = flag.Bool("s", false, "Dont show testCases")
+var SilentLogs = flag.Bool("s", false, "Dont show testCases")
 var ShowSlow = flag.Bool("lags", false, "Show top 10 slowest queries and it's time")
-var b = flag.Bool("b", false, "Benchmark mode")
-var all = flag.Bool("all", false, "Show quality after benchmark")
+var benchmarkMode = flag.Bool("b", false, "Benchmark mode")
+var allBench_Quality = flag.Bool("all", false, "Show quality after benchmark")
 var NWorkers = flag.Int("w", 0, "N workers for test. if 0 then syncroTest")
 
 func benchmark(twoError bool, speller func(string) string) (int, time.Duration) {
@@ -219,7 +220,7 @@ func main() {
 		panic(err)
 	}
 
-	if *b{
+	if *benchmarkMode{
 		if *NWorkers > 0 {
 			nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError,speller1.SpellCorrect2) //Передача функции в бенчмарк
 			fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
@@ -227,7 +228,7 @@ func main() {
 				log.Println("mem usage when test ends")
 				PrintMemUsage()
 			}
-			if !*all{
+			if !*allBench_Quality{
 				os.Exit(1)
 			}
 		} else {
@@ -237,7 +238,7 @@ func main() {
 				log.Println("mem usage when test ends")
 				PrintMemUsage()
 			}
-			if !*all{
+			if !*allBench_Quality{
 				os.Exit(1)
 			}
 		}
@@ -321,7 +322,7 @@ func main() {
 		mu.Lock()
 		for RightWord, generatedErrors := range myErrors {
 			spelRight, yaRigth := 0, 0
-			if !*Silent{
+			if !*SilentLogs{
 				fmt.Printf("Tested word is | %s |\n", RightWord)
 			}
 			for _, generatedError := range generatedErrors {
@@ -404,12 +405,12 @@ func main() {
 					flagLine2 = true
 					fmt.Fprintf(bothWrong, "Error: %s Expected: %s SpellerSuggest: %s YandexSuggest: %s\n", generatedError, RightWord, spellerResult, yandexResult)
 				}
-				if !*Silent{
+				if !*SilentLogs{
 				fmt.Printf("generated error is: %s; | S: %s %v |", generatedError, spellerResult, spellerResult == RightWord)
 				fmt.Printf(" Y: %s %v |\n", yandexResult, yandexResult == RightWord)
 				}
 			}
-			if !*Silent{
+			if !*SilentLogs{
 			fmt.Printf("spellerRight: %d, yaRight %d \n", spelRight, yaRigth)
 			fmt.Println("------------------------------------------------------------------")
 			}
