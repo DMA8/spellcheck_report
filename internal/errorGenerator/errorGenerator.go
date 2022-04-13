@@ -2,7 +2,6 @@ package errorGenerator
 
 import (
 	"bytes"
-	"fmt"
 	"math/rand"
 	"strings"
 	"time"
@@ -12,7 +11,6 @@ var nearKeyboardLetters map[string]string
 var randomSeed int
 
 func init() {
-	fmt.Println(1)
 	randomSeed = 0
 	//все соседние буквы на клавиатуре
 	combinations := map[string]string{

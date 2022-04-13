@@ -30,104 +30,14 @@ var (
 	testCasesPerWord = 5
 )
 
-func countRightSuggest(right, suggest string) int {
-	rightSplitted := strings.Split(right, " ")
-	suggestSplitted := strings.Split(suggest, " ")
-	rightC := 0
-	if len(suggestSplitted) != len(rightSplitted) {
-		return 0
-	}
-	for i := 0; i < len(rightSplitted); i++ {
-		if rightSplitted[i] == suggestSplitted[i] {
-			rightC++
-		}
-	}
-	return rightC
-}
-
-type fullSentenceTestCounters struct {
-	AllTested                   int
-	SpellerRight                int
-	SpellerNormalizedRight      int
-	YaNormalizedRight           int
-	YandexRight                 int
-	YandexWrong                 int
-	SpellerRightWhenYandexWrong int
-}
-
-type wordsTestCounters struct {
-	allTested                         int
-	spellerCorrected                  int
-	yandexCorrected                   int
-	spellerSuggestAnotherWordFreqDict int
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
-// slowTest := []string{
-// 	"детчкий кпем зажмвай ка от чсадин царааок и ущибов с масласи обоепихи сяты и шалыея мое солнышкл",
-// 	"полртенце сахровое ьанное кухрнное для рук для ног для дица подарое сужчине пвпе мужц андоей",
-// 	"каотина картмна на холсие еартина на холсье для игтерьера олееь геометпический арт х",
-// 	"пюкзак женскиц для левочки для щколы для рабрты для офмса городсклй для прогулрк",
-// 	"значрк кокаода на рилотку шппку краснач щвезда иеталл эсаль снрия совктская чимволика",
-// 	"швабпа с отжииом и ведоом для мыття полоы оког сьен для уборкт ведрл со гваброй вкдро и шваюра",
-// 	"швпбра с отдимом и ведррм для мвтья поллв оклн мтен для убррки вкдро со шааброй аедро и швабоа",
-// 	"чай череый клубникп со сдивками гр чай чепный с жхинацеей и лмпой гр",
-// 	"картинв по номепам ван гог во мне бабочкв на розоыом букетк х см холмт на подрамниуе",
-// 	"картинп по номнрам живопмсь по номкрам кафк на берегц хллст на родрамнике х см",
-// }
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
-func TokenNgramsNew(query string, size int) []string {
-	spaceIndexes := make([]int, 0, size)
-	for i, r := range query {
-		if unicode.IsSpace(r) {
-			spaceIndexes = append(spaceIndexes, i)
-		}
-	}
-	spaceIndexes = append(spaceIndexes, len(query))
-	outCap := len(spaceIndexes) - size + 1
-	if outCap < 0 {
-		outCap = 1
-	}
-	out := make([]string, 0, outCap)
-	leftIndex := 0
-	for i := 0; i < len(spaceIndexes) - size + 1; i++ {
-		step := i + size - 1
-		if step >= len(spaceIndexes) {
-			step = len(spaceIndexes) - 1
-		}
-		out = append(out, query[leftIndex:spaceIndexes[step]])
-		leftIndex = spaceIndexes[i] + 1
-	}
-	return out
-}
-
-func differnetRunes(errorWord, suggested string) int {
-	counter := 0
-	s1 := []rune(errorWord)
-	s2 := []rune(suggested)
-	minLen := min(len(s1), len(s2))
-	diffLen := max(len(s1), len(s2)) - minLen
-	for i := 0; i < minLen; i++ {
-		if s1[i] != s2[i] {
-			counter++
-		}
-	}
-	counter += diffLen
-	return counter
-}
+var ShowMemory = flag.Bool("m", false, "Show memory usage")
+var TwoError = flag.Bool("e2", false, "Generate two errors for tests")
+var NoError = flag.Bool("e0", false, "Don't generate errors")
+var Silent = flag.Bool("s", false, "Dont show testCases")
+var ShowSlow = flag.Bool("lags", false, "Show top 10 slowest queries and it's time")
+var b = flag.Bool("b", false, "Benchmark mode")
+var all = flag.Bool("all", false, "Show quality after benchmark")
+var NWorkers = flag.Int("w", 0, "N workers for test. if 0 then syncroTest")
 
 func benchmark(twoError bool, speller func(string) string) (int, time.Duration) {
 	var testCounter int
@@ -174,7 +84,6 @@ func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string) string) (
 	var wg sync.WaitGroup
 
 	queue := make(chan string, nWorkers)
-
 	testCases := make([]map[string][]string, 0, nTests)
 	testFile, err := os.Open("CleanedUniqueRandomQueries.txt")
 	if err != nil {
@@ -198,7 +107,6 @@ func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string) string) (
 			}
 		}
 		log.Println("errors are generated", len(testCases)*testCasesPerWord)
-	
 		go func() {
 			for _, test := range testCases {
 				for _, errors := range test {
@@ -248,50 +156,33 @@ func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string) string) (
 	log.Printf("workers: %d tests %d Elapsed time %v", nWorkers, testCounter, time.Since(start))
 	log.Printf("query/s %f query/ms %f", float64(testCounter)/float64(time.Since(start).Seconds()),
 		float64(testCounter)/float64(time.Since(start).Milliseconds()))
-	for i := range slowest {
-		fmt.Println(slowestQuery[i], slowest[i])
+	if *ShowSlow{
+		for i := range slowest {
+			fmt.Println(slowestQuery[i], slowest[i])
+		}
 	}
 	return testCounter, time.Since(start)
 }
 
-func PrintMemUsage() {
-	var m runtime.MemStats
-	runtime.ReadMemStats(&m)
 
-	fmt.Printf("Alloc = %v MiB", bToMb(m.Alloc))
-	fmt.Printf("\tTotalAlloc = %v MiB", bToMb(m.TotalAlloc))
-	fmt.Printf("\tSys = %v MiB", bToMb(m.Sys))
-	fmt.Printf("\tNumGC = %v\n", m.NumGC)
-}
-
-func bToMb(b uint64) uint64 {
-	return b / 1024 / 1024
-}
-var TwoError = flag.Bool("e2", false, "Generate two errors for tests")
-var NoError = flag.Bool("e0", false, "Don't generate errors")
-
-var b = flag.Bool("b", false, "Bench mode")
-var NWorkers = flag.Int("w", 0, "N workers for test. if 0 then syncroTest")
 func main() {
-	// var NWorkers *int
-	// var TwoError, OneError *bool
 	var mu sync.Mutex
+	sentenceCounter := fullSentenceTestCounters{}
+	wordsCounter := wordsTestCounters{}
+	done := make(chan struct{})
+	set := make(map[string]struct{})
+
 	flag.Parse()
-
-	fmt.Println(*TwoError, *NWorkers)
-
-	log.Println("mem usage at launching")
-	PrintMemUsage()
+	if *ShowMemory{
+		log.Println("mem usage at launching")
+		PrintMemUsage()
+	}
 	tokenizer := normalize.NewNormalizer()
 	err := tokenizer.LoadDictionariesLocal("./data/words.csv.gz", "./data/spellcheck1.csv") //Для токенайзера
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	sentenceCounter := fullSentenceTestCounters{}
-	wordsCounter := wordsTestCounters{}
-	done := make(chan struct{})
-	set := make(map[string]struct{})
 	freqMapFile, err := os.Open("datasets/freq.txt") //FREQ лучше свежий закинуть
 	freqMap := make(map[string]int)
 	if err != nil {
@@ -316,49 +207,39 @@ func main() {
 		},
 		&http.Client{Timeout: time.Second * 20},
 	)
-	// speller2 := speller.NewSpeller("config.yaml")
-
-	// nTest2, timeDur2 := benchmarkMulti(12, yandexSpellerClient.SpellCheck)
-	// fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
-
-	// nTest2, timeDur2 := benchmarkMulti(12,yandexSpellerClient.SpellCheck)
-	// log.Println("mem usage when speller_1error test ends")
-	// PrintMemUsage()
-	// // // load model
-	fmt.Println("mem usage before model loading")
-	PrintMemUsage()
-	// os.Exit(1)
-
+	yandexSpellerClient.SpellCheck("")
+	if *ShowMemory{
+		fmt.Println("mem usage before model loading")
+		PrintMemUsage()
+	}
 	err = speller1.LoadModel("models/AllRu-model_tree.gz") //MODEL
 	if err != nil {
 		fmt.Printf("No such file: %v\n", err)
 		done <- struct{}{}
 		panic(err)
 	}
-	// err = speller2.LoadModel("models/AllRu-model.gz") //MODEL
-	// if err != nil {
-	// 	fmt.Printf("No such file: %v\n", err)
-	// 	done <- struct{}{}
-	// 	panic(err)
-	// }
-
-	speller1.SpellCorrect2("один и дваач и триич для четыре пятый и шестидесятый")
-	speller1.SpellCorrect2("наклейка к мая это наша победа х см")
-
 
 	if *b{
 		if *NWorkers > 0 {
-			nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError,speller1.SpellCorrect2)
+			nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError,speller1.SpellCorrect2) //Передача функции в бенчмарк
 			fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
-			log.Println("mem usage when yandex test ends")
-			PrintMemUsage()
-			os.Exit(1)
+			if *ShowMemory{
+				log.Println("mem usage when test ends")
+				PrintMemUsage()
+			}
+			if !*all{
+				os.Exit(1)
+			}
 		} else {
-			nTest2, timeDur2 := benchmark(*TwoError, speller1.SpellCorrect2)
+			nTest2, timeDur2 := benchmark(*TwoError, speller1.SpellCorrect2) //Передача функции в бенчмарк
 			fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
-			log.Println("mem usage when yandex test ends")
-			PrintMemUsage()
-			os.Exit(1)
+			if *ShowMemory{
+				log.Println("mem usage when test ends")
+				PrintMemUsage()
+			}
+			if !*all{
+				os.Exit(1)
+			}
 		}
 	}
 
@@ -413,8 +294,6 @@ func main() {
 		ok = reader.Scan()
 	}
 
-
-	yandexSpellerClient.SpellCheck("generatedError")
 	fmt.Fprint(failLogs, "(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*\n\n")
 	for msg, _ := range set {
 		var flagLine, flagLine2, flagLine3, flagLine4, flagLine5, flagLine6 bool
@@ -442,7 +321,9 @@ func main() {
 		mu.Lock()
 		for RightWord, generatedErrors := range myErrors {
 			spelRight, yaRigth := 0, 0
-			fmt.Printf("Tested word is | %s |\n", RightWord)
+			if !*Silent{
+				fmt.Printf("Tested word is | %s |\n", RightWord)
+			}
 			for _, generatedError := range generatedErrors {
 				yandexResult := ""
 				// yandexResult := yandexSpellerClient.SpellCheck(generatedError)
@@ -523,12 +404,15 @@ func main() {
 					flagLine2 = true
 					fmt.Fprintf(bothWrong, "Error: %s Expected: %s SpellerSuggest: %s YandexSuggest: %s\n", generatedError, RightWord, spellerResult, yandexResult)
 				}
+				if !*Silent{
 				fmt.Printf("generated error is: %s; | S: %s %v |", generatedError, spellerResult, spellerResult == RightWord)
 				fmt.Printf(" Y: %s %v |\n", yandexResult, yandexResult == RightWord)
-
+				}
 			}
+			if !*Silent{
 			fmt.Printf("spellerRight: %d, yaRight %d \n", spelRight, yaRigth)
 			fmt.Println("------------------------------------------------------------------")
+			}
 			if flagLine {
 				fmt.Fprintf(spellerRightWhenYandexWrond, "-------------------------------------\n")
 				flagLine = false
@@ -655,3 +539,117 @@ func isCyrillic(word string) bool {
 	}
 	return true
 }
+
+
+func countRightSuggest(right, suggest string) int {
+	rightSplitted := strings.Split(right, " ")
+	suggestSplitted := strings.Split(suggest, " ")
+	rightC := 0
+	if len(suggestSplitted) != len(rightSplitted) {
+		return 0
+	}
+	for i := 0; i < len(rightSplitted); i++ {
+		if rightSplitted[i] == suggestSplitted[i] {
+			rightC++
+		}
+	}
+	return rightC
+}
+
+type fullSentenceTestCounters struct {
+	AllTested                   int
+	SpellerRight                int
+	SpellerNormalizedRight      int
+	YaNormalizedRight           int
+	YandexRight                 int
+	YandexWrong                 int
+	SpellerRightWhenYandexWrong int
+}
+
+type wordsTestCounters struct {
+	allTested                         int
+	spellerCorrected                  int
+	yandexCorrected                   int
+	spellerSuggestAnotherWordFreqDict int
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+// slowTest := []string{
+// 	"детчкий кпем зажмвай ка от чсадин царааок и ущибов с масласи обоепихи сяты и шалыея мое солнышкл",
+// 	"полртенце сахровое ьанное кухрнное для рук для ног для дица подарое сужчине пвпе мужц андоей",
+// 	"каотина картмна на холсие еартина на холсье для игтерьера олееь геометпический арт х",
+// 	"пюкзак женскиц для левочки для щколы для рабрты для офмса городсклй для прогулрк",
+// 	"значрк кокаода на рилотку шппку краснач щвезда иеталл эсаль снрия совктская чимволика",
+// 	"швабпа с отжииом и ведоом для мыття полоы оког сьен для уборкт ведрл со гваброй вкдро и шваюра",
+// 	"швпбра с отдимом и ведррм для мвтья поллв оклн мтен для убррки вкдро со шааброй аедро и швабоа",
+// 	"чай череый клубникп со сдивками гр чай чепный с жхинацеей и лмпой гр",
+// 	"картинв по номепам ван гог во мне бабочкв на розоыом букетк х см холмт на подрамниуе",
+// 	"картинп по номнрам живопмсь по номкрам кафк на берегц хллст на родрамнике х см",
+// }
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func TokenNgramsNew(query string, size int) []string {
+	spaceIndexes := make([]int, 0, size)
+	for i, r := range query {
+		if unicode.IsSpace(r) {
+			spaceIndexes = append(spaceIndexes, i)
+		}
+	}
+	spaceIndexes = append(spaceIndexes, len(query))
+	outCap := len(spaceIndexes) - size + 1
+	if outCap < 0 {
+		outCap = 1
+	}
+	out := make([]string, 0, outCap)
+	leftIndex := 0
+	for i := 0; i < len(spaceIndexes) - size + 1; i++ {
+		step := i + size - 1
+		if step >= len(spaceIndexes) {
+			step = len(spaceIndexes) - 1
+		}
+		out = append(out, query[leftIndex:spaceIndexes[step]])
+		leftIndex = spaceIndexes[i] + 1
+	}
+	return out
+}
+
+func differnetRunes(errorWord, suggested string) int {
+	counter := 0
+	s1 := []rune(errorWord)
+	s2 := []rune(suggested)
+	minLen := min(len(s1), len(s2))
+	diffLen := max(len(s1), len(s2)) - minLen
+	for i := 0; i < minLen; i++ {
+		if s1[i] != s2[i] {
+			counter++
+		}
+	}
+	counter += diffLen
+	return counter
+}
+
+func PrintMemUsage() {
+	var m runtime.MemStats
+	runtime.ReadMemStats(&m)
+	fmt.Printf("Alloc = %v MiB", bToMb(m.Alloc))
+	fmt.Printf("\tTotalAlloc = %v MiB", bToMb(m.TotalAlloc))
+	fmt.Printf("\tSys = %v MiB", bToMb(m.Sys))
+	fmt.Printf("\tNumGC = %v\n", m.NumGC)
+}
+
+func bToMb(b uint64) uint64 {
+	return b / 1024 / 1024
+}
+

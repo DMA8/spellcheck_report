@@ -11,7 +11,7 @@ go 1.17
 
 require (
 	git.wildberries.ru/oer/tokenizer v0.2.8
-	github.com/Saimunyz/speller v0.0.0-20220412141342-ed2402cc533e
+	github.com/Saimunyz/speller v0.0.0-20220412182514-5fedd3d24f0f
 )
 
 require ( // indirect
