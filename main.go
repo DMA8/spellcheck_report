@@ -25,7 +25,7 @@ import (
 	"github.com/Saimunyz/speller" //спеллер
 )
 
-const (
+var (
 	nTests           = 10000
 	testCasesPerWord = 5
 )
@@ -187,28 +187,39 @@ func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string) string) (
 	}
 	lines := strings.Split(string(txt), "\n")
 	log.Println("eror generator is starting")
-	if twoError{
-		for _, v := range lines {
-			testCases = append(testCases, errorGenerator.GenerateTwoErrorNTimes(v, testCasesPerWord))
-		}
-	} else {
-		for _, v := range lines {
-			testCases = append(testCases, errorGenerator.GenerateOneErrorNTimes(v, testCasesPerWord))
-		}
-	}
-	log.Println("errors are generated", len(testCases)*testCasesPerWord)
-
-	go func() {
-		for _, test := range testCases {
-			for _, errors := range test {
-				for _, errorWord := range errors {
-					queue <- errorWord
-					testCounter++
-				}
+	if !*NoError{
+		if twoError{
+			for _, v := range lines {
+				testCases = append(testCases, errorGenerator.GenerateTwoErrorNTimes(v, testCasesPerWord))
+			}
+		} else {
+			for _, v := range lines {
+				testCases = append(testCases, errorGenerator.GenerateOneErrorNTimes(v, testCasesPerWord))
 			}
 		}
-		close(queue)
-	}()
+		log.Println("errors are generated", len(testCases)*testCasesPerWord)
+	
+		go func() {
+			for _, test := range testCases {
+				for _, errors := range test {
+					for _, errorWord := range errors {
+						queue <- errorWord
+						testCounter++
+					}
+				}
+			}
+			close(queue)
+		}()
+	} else {
+		go func() {
+			for _, test := range lines {
+						queue <- test
+						testCounter++
+					}
+			close(queue)
+		}()
+	}
+
 	slowest := make([]time.Duration, 10)
 	slowestQuery := make([]string, 10)
 	for i := range slowest {
@@ -257,6 +268,8 @@ func bToMb(b uint64) uint64 {
 	return b / 1024 / 1024
 }
 var TwoError = flag.Bool("e2", false, "Generate two errors for tests")
+var NoError = flag.Bool("e0", false, "Don't generate errors")
+
 var b = flag.Bool("b", false, "Bench mode")
 var NWorkers = flag.Int("w", 0, "N workers for test. if 0 then syncroTest")
 func main() {
@@ -414,10 +427,14 @@ func main() {
 		if !isCyrillic(msg) {
 			continue
 		}
-
 		var myErrors map[string][]string
 		if *TwoError{
 			myErrors = errorGenerator.GenerateTwoErrorNTimes(msg, testCasesPerWord)
+		} else if *NoError {
+			myErrors = make(map[string][]string)
+			myErrors[msg] = []string{msg}
+			nTests           = 9900
+			testCasesPerWord = 1
 		} else {
 			myErrors = errorGenerator.GenerateOneErrorNTimes(msg, testCasesPerWord)
 		}
