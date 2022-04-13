@@ -414,7 +414,13 @@ func main() {
 		if !isCyrillic(msg) {
 			continue
 		}
-		myErrors := errorGenerator.GenerateOneErrorNTimes(msg, testCasesPerWord)
+
+		var myErrors map[string][]string
+		if *TwoError{
+			myErrors = errorGenerator.GenerateTwoErrorNTimes(msg, testCasesPerWord)
+		} else {
+			myErrors = errorGenerator.GenerateOneErrorNTimes(msg, testCasesPerWord)
+		}
 
 		mu.Lock()
 		for RightWord, generatedErrors := range myErrors {
@@ -543,7 +549,11 @@ func main() {
 func finish(mut *sync.Mutex, c fullSentenceTestCounters, w wordsTestCounters, logFile *os.File) {
 	mut.Lock()
 	defer mut.Unlock()
-	fmt.Printf("\nResults:\n TotalTests: %d\n SpellerRate %.2f%% (Norm: %.2f%%),  YandexRate %.2f%% (Norm: %.2f%%)\n",
+	nErrors := 1
+	if *TwoError {
+		nErrors = 2
+	}
+	fmt.Printf("\nResults (nErrors %d):\n TotalTests: %d\n SpellerRate %.2f%% (Norm: %.2f%%),  YandexRate %.2f%% (Norm: %.2f%%)\n", nErrors,
 		c.AllTested, float64(c.SpellerRight)/float64(c.AllTested)*100, float64(c.SpellerRight+c.SpellerNormalizedRight)/float64(c.AllTested)*100,
 		float64(c.YandexRight)/float64(c.AllTested)*100, float64(c.YandexRight+c.YaNormalizedRight)/float64(c.AllTested)*100)
 	fmt.Fprintf(logFile, "YandexFails %d SpellerRight %d SpellerRate %.2f\n", c.YandexWrong, c.SpellerRightWhenYandexWrong,
