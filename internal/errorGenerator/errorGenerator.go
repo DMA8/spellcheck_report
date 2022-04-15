@@ -189,3 +189,72 @@ func GenerateTwoErrorNTimes(inpWord string, num int) map[string][]string {
 	}
 	return out
 }
+
+func NErrorPerEveryNWords(inpWord string, errorEveryNWords, NErrorsInWord, numTestCases int) map[string][]string {
+	//min 1 error
+	splt := strings.Fields(inpWord)
+	out := make(map[string][]string)
+	var nErrors int
+	if errorEveryNWords == 0 || errorEveryNWords == 1 {
+		nErrors = len(splt)
+	} else {
+		if len(splt) % errorEveryNWords != 0 {
+			nErrors = len(splt) / errorEveryNWords + 1
+		} else {
+			nErrors = len(splt) / errorEveryNWords
+		}
+	}
+	if NErrorsInWord >= 2 {
+		NErrorsInWord = 2
+	} else {
+		NErrorsInWord = 1
+	}
+	for i := 0; i < numTestCases; i++ {
+		errorQuery := strings.Fields(inpWord)
+		errorIndxs := make(map[int]struct{})
+		rand.Seed(int64(randomSeed))
+		randomSeed++
+		for len(errorIndxs) < nErrors {
+			indx := rand.Intn(len(splt))
+			errorIndxs[indx] = struct{}{}
+		}
+		for key := range errorIndxs {
+			if NErrorsInWord == 1 {
+				errorQuery[key] = OneRandomError(errorQuery[key])
+			} else {
+				errorQuery[key] = TwoRandomError(errorQuery[key])
+			}
+		}
+		out[inpWord] = append(out[inpWord], strings.Join(errorQuery, " "))
+
+	}
+	return out
+}
+
+func TwoErrorPerEveryNWords(inpWord string, errorEveryNWords,num int) map[string][]string {
+	//min 1 error
+	splt := strings.Fields(inpWord)
+	out := make(map[string][]string)
+	var nErrors int
+	if errorEveryNWords == 0 || errorEveryNWords == 1 {
+		nErrors = len(splt)
+	} else {
+		nErrors = len(splt) / errorEveryNWords + 1
+	}
+	for i := 0; i < num; i++ {
+		errorQuery := strings.Fields(inpWord)
+		errorIndxs := make(map[int]struct{})
+		rand.Seed(int64(randomSeed))
+		randomSeed++
+		for len(errorIndxs) < nErrors {
+			indx := rand.Intn(len(splt))
+			errorIndxs[indx] = struct{}{}
+		}
+		for key := range errorIndxs {
+			errorQuery[key] = OneRandomError(errorQuery[key])
+		}
+		out[inpWord] = append(out[inpWord], strings.Join(errorQuery, " "))
+
+	}
+	return out
+}

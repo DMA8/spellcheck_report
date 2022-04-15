@@ -1,5 +1,6 @@
 module reportSpeller
 
+//9639551
 go 1.17
 
 //require github.com/Saimunyz/speller v0.0.0-20220322162113-e98c0b85efdb
@@ -11,7 +12,7 @@ go 1.17
 
 require (
 	git.wildberries.ru/oer/tokenizer v0.2.8
-	github.com/Saimunyz/speller v0.0.0-20220412182514-5fedd3d24f0f
+	github.com/Saimunyz/speller v0.0.0-20220411153136-9639551f5002
 )
 
 require ( // indirect
