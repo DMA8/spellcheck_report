@@ -34,7 +34,6 @@ var freqMap map[string]int
 //FLAGS
 var ShowMemory = flag.Bool("m", false, "Show memory usage")
 var TestLogic = flag.Bool("logic", false, "Show memory usage")
-
 var TwoError = flag.Bool("e2", false, "Generate two errors for tests")
 var NoError = flag.Bool("e0", false, "Don't generate errors")
 var SilentLogs = flag.Bool("s", false, "Dont show testCases")
@@ -69,7 +68,6 @@ func benchmark(twoError bool, speller func(string) string) (int, time.Duration) 
 	log.Println("errors are generated", len(testCases)*testCasesPerWord)
 	start := time.Now()
 	log.Println("synchro test has been started")
-
 	for _, test := range testCases {
 		for _, errors := range test {
 			for _, errorWord := range errors {
@@ -84,7 +82,8 @@ func benchmark(twoError bool, speller func(string) string) (int, time.Duration) 
 	return testCounter, time.Since(start)
 }
 
-func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string, map[string]int) string) (int, time.Duration) {
+// func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string, map[string]int) string) (int, time.Duration) {
+func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string) string) (int, time.Duration) {
 	var testCounter int
 	var wg sync.WaitGroup
 
@@ -137,7 +136,6 @@ func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string, map[strin
 			close(queue)
 		}()
 	}
-
 	slowest := make([]time.Duration, 10)
 	slowestQuery := make([]string, 10)
 	for i := range slowest {
@@ -149,7 +147,7 @@ func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string, map[strin
 		go func(wg *sync.WaitGroup) {
 			for msg := range queue {
 				t1 := time.Now()
-				speller1(msg, freqMap)
+				speller1(msg)
 				dur := time.Since(t1)
 				for i := range slowest {
 					if dur > slowest[i] {
@@ -174,134 +172,6 @@ func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string, map[strin
 	return testCounter, time.Since(start)
 }
 
-// func getChucksIndx(notInFreqIndx []int, nWords int) [][]int {
-// 	var start, end int
-// 	chuncksInd := make([][]int, 0)
-
-// 	if notInFreqIndx[0] < 2 {
-// 		start = notInFreqIndx[0]
-// 	}
-// 	step := 0
-// 	for i := 1; i < len(notInFreqIndx); i++ {
-// 		if notInFreqIndx[i]-notInFreqIndx[i-1] > 2 {
-// 			end = notInFreqIndx[i-1] + 2
-// 			chuncksInd = append(chuncksInd, []int{start, end})
-// 			start = notInFreqIndx[i]
-// 		} else {
-// 			step++
-// 		}
-// 		if i == len(notInFreqIndx)-1 {
-// 			if notInFreqIndx[i]-notInFreqIndx[i-1] > 2 {
-// 				chuncksInd = append(chuncksInd, []int{notInFreqIndx[i] - 2, notInFreqIndx[i]})
-// 			} else {
-// 				start = notInFreqIndx[i] - 2
-// 				step = 0
-// 				if nWords > notInFreqIndx[i]+2 {
-// 					end = notInFreqIndx[i] + 2
-// 				} else {
-// 					end = nWords
-// 				}
-// 				chuncksInd = append(chuncksInd, []int{start, end})
-// 			}
-// 		}
-// 	}
-// 	return chuncksInd
-
-// }
-func getChucksIndx(notInFreqIndx []int, nWords int) [][]int {
-	var start, end int
-	chuncksInd := make([][]int, 0)
-
-	if notInFreqIndx[0] < 2 {
-		start = 0
-	} else {
-		start = notInFreqIndx[0]
-	}
-	step := 0
-	for i := 1; i < len(notInFreqIndx); i++ {
-		end = notInFreqIndx[i]
-		if end-start > 2 {
-			end += 2
-			chuncksInd = append(chuncksInd, []int{start, end})
-			if i != len(notInFreqIndx)-1 {
-				start = notInFreqIndx[i+1] - 2
-			} else {
-				start = notInFreqIndx[i] - 2
-			}
-			continue
-		} else {
-			step++
-		}
-		if i == len(notInFreqIndx)-1 {
-			if end-start > 2 {
-				chuncksInd = append(chuncksInd, []int{notInFreqIndx[i] - 2, notInFreqIndx[i]})
-			} else {
-				start = notInFreqIndx[i] - 2
-				step = 0
-				if nWords > notInFreqIndx[i]+2 {
-					end = notInFreqIndx[i] + 2
-				} else {
-					end = nWords
-				}
-				chuncksInd = append(chuncksInd, []int{start, end})
-			}
-		}
-	}
-	return chuncksInd
-}
-
-func filterWords(words []string, chuncksIndx [][]int) []string {
-	chuncks := make([]string, 0)
-
-	for _, v := range chuncksIndx {
-		left := v[0] + 1
-		right := v[1] + 1
-		if left >= len(words)-1 {
-			continue
-		} else if right > len(words)-1 {
-			right = len(words)
-		}
-		chuncks = append(chuncks, strings.Join(words[left:right], " "))
-	}
-	return chuncks
-}
-
-func testNewWay(query string) {
-	spltQuery := strings.Fields(query)
-
-	notInFreqIndx := make([]int, 0)
-	for i, v := range spltQuery {
-		if _, ok := freqMap[v]; !ok {
-			notInFreqIndx = append(notInFreqIndx, i)
-		}
-	}
-	if len(notInFreqIndx) == 0 {
-		return
-	}
-	chuncksIndx := getChucksIndx(notInFreqIndx, len(spltQuery))
-	restIndx := make([]int, 0)
-
-	var notAffectedIndx int
-	for i := 0; i < len(spltQuery); i++ {
-		if !in(chuncksIndx[notAffectedIndx], i) {
-			restIndx = append(restIndx, i)
-		} else {
-			i = chuncksIndx[notAffectedIndx][1]
-			notAffectedIndx++
-		}
-	}
-	fmt.Println(restIndx)
-	//chunks := filterWords(spltQuery, chuncksIndx)
-
-}
-
-func in(limits []int, num int) bool {
-	if num >= limits[0] && num <= limits[1] {
-		return true
-	}
-	return false
-}
-
 func main() {
 	var mu sync.Mutex
 	sentenceCounter := fullSentenceTestCounters{}
@@ -319,7 +189,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	freqMapFile, err := os.Open("datasets/AllRu-freq-dict.txt") //FREQ лучше свежий закинуть
 	freqMap = make(map[string]int)
 	if err != nil {
@@ -352,18 +221,15 @@ func main() {
 		PrintMemUsage()
 	}
 	err = speller1.LoadModel("models/AllRu-model_new.gz") //MODEL
-
-	// err = speller1.LoadModel("models/AllRu-model_tree.gz") //MODEL
-	//AllRu-model_new.gz
 	if err != nil {
 		fmt.Printf("No such file: %v\n", err)
 		done <- struct{}{}
 		panic(err)
 	}
-
+	speller1.SpellCorrect3("игрв карьочная для аечеринки для веседой компаеии еарт")
 	if *benchmarkMode {
 		if *NWorkers > 0 {
-			nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError, speller1.SpellCorrect3) //Передача функции в бенчмарк
+			nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError, speller1.SpellCorrect2) //Передача функции в бенчмарк
 			fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
 			if *ShowMemory {
 				log.Println("mem usage when test ends")
@@ -373,7 +239,7 @@ func main() {
 				os.Exit(1)
 			}
 		} else {
-			nTest2, timeDur2 := benchmark(*TwoError, speller1.SpellCorrect) //Передача функции в бенчмарк
+			nTest2, timeDur2 := benchmark(*TwoError, speller1.SpellCorrect2) //Передача функции в бенчмарк
 			fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
 			if *ShowMemory {
 				log.Println("mem usage when test ends")
@@ -384,7 +250,6 @@ func main() {
 			}
 		}
 	}
-
 	testFile, err := os.Open("CleanedUniqueRandomQueries.txt") // QUERY
 	if err != nil {
 		panic(err)
@@ -420,7 +285,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
 	normalizeSuccessYA, err := os.Create("normalizeSuccessYA.txt")
 	if err != nil {
 		panic(err)
@@ -429,20 +293,15 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
 	for ok := reader.Scan(); ok; {
 		set[strings.ToLower(reader.Text())] = struct{}{}
 		ok = reader.Scan()
 	}
 
-	
-
-
 	//speller1.SpellCorrect2("сумуа жееская шопрер спортивнаф чернз плнчо на плечр дорржная теаневая", freqMap)
 	fmt.Fprint(failLogs, "(word -> error) | yaSucced: *word* | spellerFail: *spellerSuggest*\n\n")
 	for msg, _ := range set {
 		var flagLine, flagLine2, flagLine3, flagLine4, flagLine5, flagLine6 bool
-		//msg := reader.Text()
 		if len([]rune(msg)) < 3 {
 			continue
 		}
@@ -471,7 +330,8 @@ func main() {
 			for _, generatedError := range generatedErrors {
 				yandexResult := ""
 				// yandexResult := yandexSpellerClient.SpellCheck(generatedError)
-				spellerResult := speller1.SpellCorrect3(generatedError, freqMap)
+				// spellerResult := speller1.SpellCorrect3(generatedError, freqMap)
+				spellerResult := speller1.SpellCorrect3(generatedError)
 				wordsCounter.allTested += len(strings.Split(generatedError, " "))
 				wordsCounter.spellerCorrected += countRightSuggest(RightWord, spellerResult)
 				wordsCounter.yandexCorrected += countRightSuggest(RightWord, yandexResult)
@@ -481,7 +341,6 @@ func main() {
 					spelRight++
 				} else {
 					normalizedSpellerSuggest, normalizedRightWord := normalizeDiffWords(spellerResult, RightWord, tokenizer)
-
 					if normalizedSpellerSuggest == normalizedRightWord {
 						if !flagLine3 {
 							fmt.Fprintf(normalizeSuccess, "Right: \"%s\" NormForm: \"%s\"|\n", RightWord, normalizedRightWord)
@@ -522,7 +381,6 @@ func main() {
 						sentenceCounter.SpellerRightWhenYandexWrong++
 						fmt.Fprintf(spellerRightWhenYandexWrond, "W: %s E: %s Y: %s S: %s\n", RightWord, generatedError, yandexResult, spellerResult)
 					}
-
 				}
 				if yandexResult == RightWord && spellerResult != RightWord {
 					fmt.Fprintf(failLogs, "(%s -> %s) | yaSucced: %s | spellerFail: %s\n", RightWord, generatedError, yandexResult, spellerResult)
@@ -588,7 +446,7 @@ func main() {
 				if *TestLogic{
 					fillTestLogicCollection()
 					for _, v := range testLogic {
-						result := speller1.SpellCorrect3(v[1], freqMap)
+						result := speller1.SpellCorrect3(v[1])
 						// result := speller1.SpellCorrect2(v[1])
 						if result == v[0] {
 							continue
@@ -756,19 +614,6 @@ func min(a, b int) int {
 	return b
 }
 
-// slowTest := []string{
-// 	"детчкий кпем зажмвай ка от чсадин царааок и ущибов с масласи обоепихи сяты и шалыея мое солнышкл",
-// 	"полртенце сахровое ьанное кухрнное для рук для ног для дица подарое сужчине пвпе мужц андоей",
-// 	"каотина картмна на холсие еартина на холсье для игтерьера олееь геометпический арт х",
-// 	"пюкзак женскиц для левочки для щколы для рабрты для офмса городсклй для прогулрк",
-// 	"значрк кокаода на рилотку шппку краснач щвезда иеталл эсаль снрия совктская чимволика",
-// 	"швабпа с отжииом и ведоом для мыття полоы оког сьен для уборкт ведрл со гваброй вкдро и шваюра",
-// 	"швпбра с отдимом и ведррм для мвтья поллв оклн мтен для убррки вкдро со шааброй аедро и швабоа",
-// 	"чай череый клубникп со сдивками гр чай чепный с жхинацеей и лмпой гр",
-// 	"картинв по номепам ван гог во мне бабочкв на розоыом букетк х см холмт на подрамниуе",
-// 	"картинп по номнрам живопмсь по номкрам кафк на берегц хллст на родрамнике х см",
-// }
-
 func max(a, b int) int {
 	if a > b {
 		return a
@@ -828,3 +673,24 @@ func PrintMemUsage() {
 func bToMb(b uint64) uint64 {
 	return b / 1024 / 1024
 }
+
+
+
+
+
+/*
+spellcorrect.go
+func (o *SpellCorrector) CheckInFreqDict(query string) bool {
+	return o.spell.CheckExistance(query)
+}
+
+spell.go
+func (s *Spell) CheckExistance(input string) bool {
+	lookupParams := s.defaultLookupParams()
+	dict := lookupParams.dictOpts.name
+	// Check for an exact match
+	_, exists := s.library.load(dict, input)
+	return exists
+}
+
+*/

@@ -115,19 +115,6 @@ func TwoRandomError(inpWord string) string {
 	if len(wRunes) < 5 {
 		return OneRandomError(inpWord)
 	}
-
-	// indxToChange3 := rand.Intn(len(wRunes) - 1)
-	// option := rand.Intn(4)
-	// if option == 1 { //сдваиваем
-	// 	r := wRunes[indxToChange3]
-	// 	wRunes = wRunes[:len(wRunes) + 1]
-	// 	copy(wRunes[indxToChange3 + 1 :], wRunes[indxToChange3:])
-	// 	wRunes[indxToChange3] = r
-	// 	return string(wRunes)
-	// } else if option == 2 { //пропускаем символ
-	// 	copy(wRunes[indxToChange3:], wRunes[indxToChange3 + 1:])
-	// 	return string(wRunes[:len(wRunes) - 1])
-	// }
 	rand.Seed(int64(randomSeed))
 	randomSeed++
 	indxToChange1 := rand.Intn(len(wRunes))

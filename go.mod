@@ -12,7 +12,7 @@ go 1.17
 
 require (
 	git.wildberries.ru/oer/tokenizer v0.2.8
-	github.com/Saimunyz/speller v0.0.0-20220411153136-9639551f5002
+	github.com/Saimunyz/speller v0.0.0-20220415161934-40ec7f82b13d
 )
 
 require ( // indirect
