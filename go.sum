@@ -30,6 +30,8 @@ github.com/Saimunyz/speller v0.0.0-20220415134747-9c45b035f2a4 h1:7OP4TnvlJHbiIU
 github.com/Saimunyz/speller v0.0.0-20220415134747-9c45b035f2a4/go.mod h1:MizqnXZPaOew54Nkdd72hMiuJPICsjOibVp9XcMEWts=
 github.com/Saimunyz/speller v0.0.0-20220415161934-40ec7f82b13d h1:J5PlzFRho9la3bHUVDdAh8w/xEwaTYqAzxX4NQlzjyw=
 github.com/Saimunyz/speller v0.0.0-20220415161934-40ec7f82b13d/go.mod h1:VnMP3QLgAuBoT35CcWW6uD3cXVsM1soR2DeyNapG1os=
+github.com/Saimunyz/speller v0.0.0-20220418094947-6172cbe195df h1:sS930Iccf1MtlQCQRqlSZ6UOtJpN6GJrnsji5D9qN5U=
+github.com/Saimunyz/speller v0.0.0-20220418094947-6172cbe195df/go.mod h1:MizqnXZPaOew54Nkdd72hMiuJPICsjOibVp9XcMEWts=
 github.com/andybalholm/brotli v1.0.2/go.mod h1:loMXtMfwqflxFJPmdbJO0a3KNoPuLBgiu3qAvBg8x/Y=
 github.com/andybalholm/brotli v1.0.4 h1:V7DdXeJtZscaqfNuAdSRuRFzuiKlHSC/Zh3zl9qY3JY=
 github.com/andybalholm/brotli v1.0.4/go.mod h1:fO7iG3H7G2nSZ7m0zPUDn85XEX2GTukHGRSepvi9Eig=

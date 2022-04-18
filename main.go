@@ -229,7 +229,7 @@ func main() {
 	speller1.SpellCorrect3("игрв карьочная для аечеринки для веседой компаеии еарт")
 	if *benchmarkMode {
 		if *NWorkers > 0 {
-			nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError, speller1.SpellCorrect2) //Передача функции в бенчмарк
+			nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError, speller1.SpellCorrect3) //Передача функции в бенчмарк
 			fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
 			if *ShowMemory {
 				log.Println("mem usage when test ends")
@@ -239,7 +239,7 @@ func main() {
 				os.Exit(1)
 			}
 		} else {
-			nTest2, timeDur2 := benchmark(*TwoError, speller1.SpellCorrect2) //Передача функции в бенчмарк
+			nTest2, timeDur2 := benchmark(*TwoError, speller1.SpellCorrect3) //Передача функции в бенчмарк
 			fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
 			if *ShowMemory {
 				log.Println("mem usage when test ends")
