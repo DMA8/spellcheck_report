@@ -12,7 +12,6 @@ import (
 	"os/signal"
 	"regexp"
 	"runtime"
-	"strconv"
 	"strings"
 	"sync"
 	"time"
@@ -42,6 +41,7 @@ var benchmarkMode = flag.Bool("b", false, "Benchmark mode")
 var allBench_Quality = flag.Bool("all", false, "Show quality after benchmark")
 var NWorkers = flag.Int("w", 0, "N workers for test. if 0 then syncroTest")
 var ErrorsEveryNWords = flag.Int("errorFreq", 0, "How many errors generate per query (NWordsQuery / freqErr = totalErrors in query)")
+var ErrorTypes = flag.Int("errorType", 0, "0 - closest; 1 - around key; 2 - permutation; 3 - skipping; 4 - doubling; 5 - all")
 
 func benchmark(twoError bool, speller func(string) string) (int, time.Duration) {
 	var testCounter int
@@ -58,11 +58,11 @@ func benchmark(twoError bool, speller func(string) string) (int, time.Duration) 
 	log.Println("error generator is starting")
 	if twoError {
 		for _, v := range lines {
-			testCases = append(testCases, errorGenerator.GenerateTwoErrorNTimes(v, testCasesPerWord))
+			testCases = append(testCases, errorGenerator.Engine(v, *ErrorTypes, *ErrorsEveryNWords, 2, testCasesPerWord))
 		}
 	} else {
 		for _, v := range lines {
-			testCases = append(testCases, errorGenerator.GenerateOneErrorNTimes(v, testCasesPerWord))
+			testCases = append(testCases, errorGenerator.Engine(v, *ErrorTypes, *ErrorsEveryNWords, 1, testCasesPerWord))
 		}
 	}
 	log.Println("errors are generated", len(testCases)*testCasesPerWord)
@@ -103,16 +103,15 @@ func benchmarkMulti(nWorkers int, twoError bool, speller1 func(string) string) (
 	if !*NoError {
 		if twoError {
 			for _, v := range lines {
-				// testCases = append(testCases, errorGenerator.GenerateTwoErrorNTimes(v, testCasesPerWord))
 				if v == "" {
 					continue
 				}
-				testCases = append(testCases, errorGenerator.NErrorPerEveryNWords(v, *ErrorsEveryNWords, 2, testCasesPerWord))
+				testCases = append(testCases, errorGenerator.Engine(v, *ErrorTypes, *ErrorsEveryNWords, 2, testCasesPerWord))
 
 			}
 		} else {
 			for _, v := range lines {
-				testCases = append(testCases, errorGenerator.NErrorPerEveryNWords(v, *ErrorsEveryNWords, 1, testCasesPerWord))
+				testCases = append(testCases, errorGenerator.Engine(v, *ErrorTypes, *ErrorsEveryNWords, 1, testCasesPerWord))
 			}
 		}
 		log.Println("errors are generated", len(testCases)*testCasesPerWord)
@@ -180,8 +179,9 @@ func main() {
 	set := make(map[string]struct{})
 
 	flag.Parse()
+	//*ErrorTypes = 3
 	if *ShowMemory {
-		log.Println("mem usage at launching")
+		fmt.Println("mem usage at launching...")
 		PrintMemUsage()
 	}
 	tokenizer := normalize.NewNormalizer()
@@ -189,26 +189,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	freqMapFile, err := os.Open("datasets/AllRu-freq-dict.txt") //FREQ лучше свежий закинуть
-	freqMap = make(map[string]int)
-	if err != nil {
-		panic(err)
-	}
-	reader2 := bufio.NewScanner(freqMapFile)
-	for ok := reader2.Scan(); ok; {
-		splitted := strings.Split(reader2.Text(), " ")
-		if len(splitted) != 2 {
-			ok = reader2.Scan()
-			continue
-		}
-		freq, _ := strconv.Atoi(splitted[1])
-		freqMap[splitted[0]] = freq
-		ok = reader2.Scan()
-	}
-	//filterWords("бэдВорд1 халат бэдворд2 халат бэдворд3 халат халат халат халат бэдворд4 бэдворд5")
-
 	speller1 := speller.NewSpeller("config.yaml")
-
 	yandexSpellerClient := yandexspeller.New(
 		yandexspeller.Config{
 			Lang: "RU",
@@ -217,7 +198,7 @@ func main() {
 	)
 	yandexSpellerClient.SpellCheck("")
 	if *ShowMemory {
-		fmt.Println("mem usage before model loading")
+		fmt.Println("mem usage before model loading...")
 		PrintMemUsage()
 	}
 	err = speller1.LoadModel("models/AllRu-model_new.gz") //MODEL
@@ -226,10 +207,11 @@ func main() {
 		done <- struct{}{}
 		panic(err)
 	}
-	speller1.SpellCorrect3("игрв карьочная для аечеринки для веседой компаеии еарт")
+
 	if *benchmarkMode {
 		if *NWorkers > 0 {
 			nTest2, timeDur2 := benchmarkMulti(*NWorkers, *TwoError, speller1.SpellCorrect3) //Передача функции в бенчмарк
+
 			fmt.Println(nTest2, float64(nTest2)/float64(timeDur2.Milliseconds()))
 			if *ShowMemory {
 				log.Println("mem usage when test ends")
@@ -312,25 +294,27 @@ func main() {
 		}
 		var myErrors map[string][]string
 		if *TwoError {
-			myErrors = errorGenerator.NErrorPerEveryNWords(msg, *ErrorsEveryNWords, 2, testCasesPerWord)
+			// myErrors = errorGenerator.NErrorPerEveryNWords(msg, *ErrorsEveryNWords, 2, testCasesPerWord)
+			myErrors = errorGenerator.Engine(msg, *ErrorTypes, *ErrorsEveryNWords, 2, testCasesPerWord)
+
 		} else if *NoError {
 			myErrors = make(map[string][]string)
 			myErrors[msg] = []string{msg}
 			nTests = 9900
 			testCasesPerWord = 1
 		} else {
-			myErrors = errorGenerator.NErrorPerEveryNWords(msg, *ErrorsEveryNWords, 1, testCasesPerWord)
+			// myErrors = errorGenerator.NErrorPerEveryNWords(msg, *ErrorsEveryNWords, 1, testCasesPerWord)
+			myErrors = errorGenerator.Engine(msg, *ErrorTypes, *ErrorsEveryNWords, 1, testCasesPerWord)
+
 		}
 		mu.Lock()
 		for RightWord, generatedErrors := range myErrors {
 			spelRight, yaRigth := 0, 0
-			if !*SilentLogs {
+			if !*SilentLogs && !*NoError {
 				fmt.Printf("Tested word is | %s |\n", RightWord)
 			}
 			for _, generatedError := range generatedErrors {
 				yandexResult := ""
-				// yandexResult := yandexSpellerClient.SpellCheck(generatedError)
-				// spellerResult := speller1.SpellCorrect3(generatedError, freqMap)
 				spellerResult := speller1.SpellCorrect3(generatedError)
 				wordsCounter.allTested += len(strings.Split(generatedError, " "))
 				wordsCounter.spellerCorrected += countRightSuggest(RightWord, spellerResult)
@@ -443,7 +427,7 @@ func main() {
 				mu.Unlock()
 				fmt.Println(*TestLogic)
 				var fail int
-				if *TestLogic{
+				if *TestLogic {
 					fillTestLogicCollection()
 					for _, v := range testLogic {
 						result := speller1.SpellCorrect3(v[1])
@@ -452,8 +436,8 @@ func main() {
 							continue
 						} else {
 							fail++
-							fmt.Printf("%s -> %s (%s)\n", v[1],result ,v[0])
-						} 
+							fmt.Printf("%s -> %s (%s)\n", v[1], result, v[0])
+						}
 					}
 					fmt.Printf("Logic errors %d/10 ", fail)
 				}
@@ -464,7 +448,9 @@ func main() {
 		mu.Unlock()
 	}
 }
+
 var testLogic [][]string
+
 func fillTestLogicCollection() {
 	testLogic = make([][]string, 0)
 	testLogic = append(testLogic, []string{"томат дородный", "томат дорожный"})
@@ -477,7 +463,6 @@ func fillTestLogicCollection() {
 	testLogic = append(testLogic, []string{"фотошторы для мальчика", "фотошторы для пальчика"})
 	testLogic = append(testLogic, []string{"повседневное боди", "повседневное боги"})
 	testLogic = append(testLogic, []string{"подушка розовая", "подушка разовая"})
-
 
 }
 func finish(mut *sync.Mutex, c fullSentenceTestCounters, w wordsTestCounters, logFile *os.File) {
@@ -674,23 +659,3 @@ func bToMb(b uint64) uint64 {
 	return b / 1024 / 1024
 }
 
-
-
-
-
-/*
-spellcorrect.go
-func (o *SpellCorrector) CheckInFreqDict(query string) bool {
-	return o.spell.CheckExistance(query)
-}
-
-spell.go
-func (s *Spell) CheckExistance(input string) bool {
-	lookupParams := s.defaultLookupParams()
-	dict := lookupParams.dictOpts.name
-	// Check for an exact match
-	_, exists := s.library.load(dict, input)
-	return exists
-}
-
-*/

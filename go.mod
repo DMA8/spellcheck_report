@@ -12,15 +12,17 @@ go 1.17
 
 require (
 	git.wildberries.ru/oer/tokenizer v0.2.8
-	github.com/Saimunyz/speller v0.0.0-20220418094947-6172cbe195df
+	github.com/Saimunyz/speller v0.0.0-20220428204120-bedc7555f688
 )
 
 require ( // indirect
+	github.com/DMA8/levenDistance v0.0.0-20220427135414-c13cebd65e7d // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/eskriett/spell v0.0.0-20210919200434-03313e3b725f // indirect
 	github.com/eskriett/strmet v0.0.0-20200126103939-2653f802bdb0 // indirect
 	github.com/klauspost/compress v1.15.1 // indirect
 	github.com/mitchellh/mapstructure v1.4.3 // indirect
+	github.com/sajari/fuzzy v1.0.0 // indirect
 	github.com/segmentio/fasthash v1.0.3 // indirect
 	github.com/tidwall/gjson v1.14.0 // indirect
 	github.com/tidwall/match v1.1.1 // indirect

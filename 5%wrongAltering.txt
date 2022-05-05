@@ -1,0 +1,8 @@
+Model loading...
+Model loaded[13.431739561s]: models/AllRu-model_new.gz
+false
+
+Results (nErrors 0):
+ TotalTests: 9901
+ SpellerRate 94.60% (Norm: 95.82%),  YandexRate 0.00% (Norm: 0.00%)
+Total words: 74357, SpellerRate 99.14, YandexRate 0.00
